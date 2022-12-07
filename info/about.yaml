@@ -1,0 +1,102 @@
+- bio:
+    - short: I am a Postdoc at Argonne National Laboratory in the Mathematics and Computer Science (MCS) Division. I received my Ph.D. in Computer Science from Virginia Tech in 2020, where my thesis was Mathematical Software for Multiobjective Optimization Problems.
+    - research-short: |
+My current research interests include optimization, approximation theory, computational geometry, algorithms, and parallel computing, for applications in scientific computing, data science, and engineering.
+
+Some specific examples of my work include
+    multiobjective optimization of computationally expensive blackbox simulations; 
+    efficiently computing Delaunay Triangulations in medium to high dimensions;
+    Interpolation of high-dimensional blackbox functions; and
+    producing high quality, portable Mathematical Software (both serial and parallel).
+
+I am particularly passionate about producing open-source scientific software. Check out some of my Software below or on my GitHub, and don't hesitate to reach out if you have questions, comments, or feedback! 
+
+- experience:
+    - year: Jun 2020 - Present
+    - title: Postdoctoral appointee
+    - institution: Argonne National Laboratory
+    - department: MCS Division
+    - description:
+        - Built, tested, and documented a Python framework for deploying multiobjective optimization solvers
+        - Deployed optimization solvers for accelerator design, material manufacturing, and inverse problems
+        - Advised graduate and undergraduate interns and contributed to research proposals
+
+- experience:
+    - year: Aug 2016 - May 2020
+    - title: Cunningham fellow
+    - institution: Virginia Tech
+    - department: Dept. of Computer Science
+    - description:
+        - Designed parallel algorithms and software for multivariate interpolation and blackbox optimization
+        - Applied solvers to problems in HPC performance modeling and tuning
+        - Conducted fundamental research in approximation theory and computational geometry
+
+- experience:
+    - year: Jun 2019 - Dec 2019
+    - title: SCGSR awardee
+    - institution: Argonne National Laboratory
+    - department: MCS Division
+    - description:
+        - Conducting research in multiobjective optimization software via DOE SCGSR program (see awards)
+
+- experience:
+    - year: Feb 2016 - Aug 2016
+    - title: Research assistant
+    - institution: Old Dominion University
+    - department: Dept. of Computer Science
+    - description:
+        - Aided in parallelizing NASA's FUN3D CFD kernel on NVIDIA GPUs using CUDA and MPI
+
+- experience:
+    - year: ["Dec 2015 - Jan 2016", "May 2015 - Aug 2015"]
+    - title: [Intern, Intern]
+    - institution: [US Army Research Labs, US Army Research Labs]
+    - department: [Computational Science Division, Computational Science Division]
+    - description:
+        - Accelerating software for real-time optimal control (summer) & using AR technology for info viz (winter)
+
+- experience:
+    - year: ["Dec 2014 - Jan 2015", "May 2014 - Aug 2014"]
+    - title: [Intern, Intern]
+    - institution: [US Army Research Labs, US Army Research Labs]
+    - department: [Guidance Technology Branch, Guidance Technology Branch]
+    - description:
+        - Using OpenCV for real-time sensing (summer) & developing software for embedded systems (winter)
+
+- award:
+    - year: 2021
+    - title: Nominee for Outstanding Dissertation Award
+    - institution: Virginia Tech
+    - department: Graduate School
+    - description:
+        - Finalist for Outstanding Dissertation Award, nominated by CS faculty for 2020 dissertation
+
+- award:
+    - year: [2019, 2018, 2017, 2016]
+    - title: [Davenport Leadership Fellowship,Pratt Fellowship,Pratt Fellowship,Davenport Leadership Fellowship]
+    - institution: Virginia Tech
+    - department: College of Engineering
+    - description:
+        - Supplemental awards given by the College of Engineering on a per-year basis
+
+- award:
+    - year: 2018
+    - title: SCGSR Award
+    - institution: U.S. Dept. of Energy, Office of Science (SC)
+    - description:
+        - One of 70 proposals funded by the Graduate Student Research (SCGSR) program during 2018, 2nd call
+
+- award:
+    - year: 2016
+    - title: Cunningham Doctoral Fellowship
+    - institution: Virginia Tech
+    - department: Graduate School
+    - description:
+        - Institution-wide award guaranteeing 4 years of research funding to incoming doctoral students
+
+- award:
+    - year: 2016
+    - title: Outstanding Student in Computer Science & Mathematics
+    - institution: Virginia Wesleyan University
+    - description:
+        - One of 2 students selected to share award by Depts. of Mathematics and Computer Science

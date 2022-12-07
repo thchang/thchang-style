@@ -1,0 +1,36 @@
+% Useful packages
+\usepackage{geometry, hyperref, sectsty}
+
+% Reduce bibtex indent
+\makeatletter
+\def\@biblabel#1{}
+\makeatother
+
+% Set the page style. Uncomment one of the following:
+% US STYLE
+\geometry{letterpaper,
+          total={7in,9.5in},
+          left=0.75in,
+          top=0.75in}
+% EUROPEAN STYLE
+%\geometry{a4paper,
+%          total={170mm,280mm},
+%          left=20mm,
+%          top=10mm}
+
+% Set default spacing and font
+\parindent = 0pt
+\parskip = 6pt
+\renewcommand{\familydefault}{\sfdefault}
+
+% Set section size/spacing
+\sectionfont{\fontsize{14}{4}\selectfont}
+\sectionfont{\fontsize{14}{16}\selectfont\sectionrule{0ex}{0pt}{-1ex}{1pt}}
+\subsectionfont{\fontsize{12}{4}\selectfont}
+
+% Define bullitem macro for adding bullet-points
+\def\bullitem{\parskip 1pt \par\hangindent=15pt \hangafter=1
+\noindent\hbox to 20pt{\hfil$\bullet$\hfil}\ignorespaces}
+
+% Define hrulefull macro for section delimiters
+\def\hrulefull{\noindent\rule{\textwidth}{0.2pt}}

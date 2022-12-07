@@ -1,0 +1,117 @@
+- software:
+    - title: ParMOO
+    - subtitle: Python library for parallel multiobjective simulation optimization
+    - year: 2022
+    - author: T. H. Chang (lead), S. M. Wild, and H. Dickinson
+    - version: 0.1.0
+    - language: Python 3
+    - git: https://github.com/parmoo/parmoo
+    - description: >
+            The multiobjective optimization problem (MOP) is a generalization
+            of the single objective optimization problem.
+            Instead of attempting to minimize a single cost or loss function,
+            a MOP attempts to balance the tradeoff between multiple,
+            potentially conflicting criteria.
+            The solution to a MOP is a set of nondominated points describing
+            the tradeoff between the conflicting objectives, called the Pareto
+            front.
+            In a multiobjective simulation optimization problem, the cost
+            functions are derived from computationally expensive numerical
+            simulations.
+            Example applications include
+            aerospace design engineering,
+            material and drug manufacturing,
+            and particle accelerator design.
+
+            ParMOO is a Python framework for solving multiobjective simulation
+            optimization problems, by exploiting the underlying structure of
+            the simulation.
+            In order to achieve scalability on extreme-scale hardware, ParMOO
+            layers over the libEnsemble library.
+    - logo: img/parmoo.png
+    - links:
+        - Docs: https://parmoo.readthedocs.io/en/latest
+        - Tutorial: https://www.youtube.com/watch?v=gQha8URLEHM
+
+- software:
+    - title: VTMOP
+    - subtitle: Solver for blackbox multiobjective optimization problems
+    - year: 2022
+    - author: T. H. Chang (sole)
+    - language: Fortran 2008
+    - git: https://github.com/vtopt/VTMOP
+    - description: >
+        'VTMOP is a flexible open-source Fortran package for solving generic
+        MOPs; see ParMOO (above) for a description of MOPs.
+        While many current MOP algorithms do not scale well for more than
+        2 or 3 objectives, VTMOP aims at approximating tradeoff curves between
+        larger numbers of objectives.
+        VTMOP is targeted at large scale multidisciplinary design optimization
+        problems, such as particle accelerator design optimization
+        and aerospace engineering design applications.
+        This work was partially funded by a DOE SCGSR award, in
+        collaboration with Argonne National Laboratory (see awards).
+
+        The original VTMOP source code is implemented in Fortran 2008, using
+        OpenMP to issue simulation tasks asynchronously.
+        However, a VTMOP generator function is also available for Python usage
+        through the libEnsemble library.'
+    - logo: img/vtmop.png
+    - links:
+        - Docs/Webpage: https://vtopt.github.io/VTMOP
+        - libEnsemble (Python) interface: href="https://github.com/Libensemble/libe-community-examples
+        - Algorithm paper: https://doi.org/10.1080/10556788.2015.1048861
+        - Software paper: https://doi.org/10.1145/3529258
+        - libEnsemble paper: https://doi.org/10.22360/springsim.2020.hpc.001
+
+- software:
+    - title: DelaunaySparse
+    - subtitle: Interpolation via a sparse subset of the Delaunay triangulation
+    - year: 2020
+    - author: T. H. Chang (lead) and T. C. H. Lux
+    - language: Fortran 2003
+    - git: https://github.com/vtopt/DelaunaySparse
+    - description: >
+        'The Delaunay triangulation is a well-studied simplicial mesh,
+        widely considered optimal for interpolation applications.
+        Delaunay triangulations have recently garnered some interest in
+        the machine learning community, for their interpretability in the
+        context of regression and classification problems.
+        Unfortunately, the "curse of dimensionality" manifests in the
+        size of the Delaunay triangulation, making it uncomputable for
+        high-dimensional big data problems.
+
+        DELAUNAYSPARSE is an open-source Fortran package that computes
+        sparse subsets of the complete Delaunay triangulation, as needed
+        to perform interpolation.
+        The resulting codebase is fast, robust, and portable; and features
+        both serial and parallel implementations.
+        Interfaces are available for usage as a Fortran library,
+        C/C++ library, Python module, or from the command line.'
+    - logo: img/delsparse.png
+    - links:
+        - Docs/website: https://vtopt.github.io/DelaunaySparse
+        - Algorithm paper: https://doi.org/10.1145/3190645.3190680
+        - Software paper: https://doi.org/10.1145/3422818
+
+- software:
+    - title: QAML
+    - subtitle: Quantume annealing math library
+    - year: 2019
+    - author: T. C. H. Lux, T. H. Chang, and S. S. Tipirneni
+    - language: Python 3
+    - git: https://github.com/tchlux/qaml
+    - description: >
+        'Quantum annealing (QA) is an implementation of the general purpose
+        adiabatic quantum computing (AQC) model for quantum computing.
+        QA balances the theoretical properties of AQC against real-world
+        practicalities, allowing for faster progress in near-term QA hardware.
+
+        QAML is an open-source Python project, which embeds least squares
+        and polynomial sum-of-squares problems (with real, integer, Boolean
+        or mixed variables) on the D-Wave quantum annealer.
+        These broad classes of problems are ubiquitous in scientific computing,
+        machine learning, and data science.'
+    - logo: img/qaml-dark.svg
+    - links:
+        - Paper: https://doi.org/10.1007/s11128-019-2489-x

@@ -1,0 +1,710 @@
+<!Doctype html>
+
+<!--
+Tyler Chang's Research Page
+Research info, links, pubs, etc.
+Created w/ bootstrap.min.css
+Last Update: 12/22
+-->
+
+<html>
+<head>
+
+<title> Tyler Chang MCS@ANL</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- Load Bootstrap -->
+<link href="styles/bootstrap.min.css" rel="stylesheet" />
+
+<!-- Set style -->
+<style>
+    html {
+    	background: url(img/delvor.png) no-repeat center center fixed;
+    	-webkit-background-size: cover;
+    	-moz-background-size: cover;
+    	-o-background-size: cover;
+    	background-size: cover;
+    }
+    
+    body { 
+    	padding-top: 20px;
+    	font-size: 16px;
+    	background-color: rgba(250, 250, 255, 0.9)
+    }
+
+    .panel {
+    	background-color: rgba(255, 255, 255, 1.0);
+    }
+
+    .panel-top {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        border: 0px solid black;
+    	background-color: rgba(255, 255, 255, 1.0);
+    }
+
+    .panel-inner {
+        padding-top: 5em;
+        padding-bottom: 5em;
+        text-align: justify;
+        text-justify: inter-word;
+        border: 0px solid black;
+    	background-color: rgba(255, 255, 255, 1.0);
+    }
+
+    .margin-base-vertical {
+    	margin: 40px 0;
+    }
+
+</style>
+</head>
+
+<!-- Begin document body -->
+<body>
+
+<!-- Begin outer-most containter -->
+<div class="container-fluid">
+
+<!-- Title row -->
+<div class"row">
+  <div class="col-xs-12 col-md-10 col-md-offset-1 
+    col-lg-8 col-lg-offset-2 panel panel-default">
+  <div class="col-xs-12 col-md-10 col-md-offset-1 
+    col-lg-8 col-lg-offset-2 panel-top panel-default">
+
+    <!-- Profile image, name, dept, etc. -->
+    <div class="row">
+
+    <!-- Profile image -->
+    <img src="img/Profile.jpg" class="img-responsive" align="left" width="20%" hspace="15em" vspace="30em">
+
+    <!-- General info -->
+    <h1 class="margin-base-vertical">
+    <b> Tyler H. Chang </b><br>
+    Argonne National Laboratory,
+    <br>
+    MCS Division
+    </h1>
+    </div>
+
+    <!-- Navigation pill menu -->
+    <ul class="nav nav-pills">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projs">Software</a></li>
+      <li><a href="#pubs">Publications</a></li>
+      <li><a href="#awards">Awards</a></li>
+      <li><a href="#misc">Misc</a></li>
+      <li><a href="files/TylerChangCV.pdf">My CV</a></li>
+    </ul>
+  </div>
+  </div>
+</div>
+
+<!-- About row -->
+<div class"row">
+  <div class="col-xs-12 col-md-10 col-md-offset-1 
+    col-lg-8 col-lg-offset-2 panel panel-default">
+  <div class="col-xs-12 col-md-10 col-md-offset-1 
+    col-lg-8 col-lg-offset-2 panel-inner panel-default">
+    <h1 class="margin-base-vertical">
+    <a class="anchor" name="about"></a>About me:
+    </h1>
+
+    <p>
+    I am a Postdoc at Argonne National Laboratory working with
+    Stefan Wild in the Mathematics and Computer Science (MCS) Division.
+    I received my Ph.D. in Computer Science from
+    Virginia Tech in 2020, where my thesis was
+    <a target="_blank"
+    href="https://vtechworks.lib.vt.edu/handle/10919/98915">
+    Mathematical Software for Multiobjective Optimization Problems</a>.
+    </p>
+    <p>
+    My current research interests include
+    <b>
+    optimization,
+    approximation theory,
+    computational geometry,
+    algorithms,
+    </b>
+    and
+    <b>
+    parallel computing,
+    </b>
+    for applications
+    in
+    <b>
+    scientific computing,
+    data science,
+    </b>
+    and
+    <b>
+    engineering.
+    </b>
+    </p>
+    <p>
+    Specifically, some of my work has included:
+    <ul>
+    <li><b>Multiobjective Optimization</b> of
+    computationally expensive blackbox simulations;</li>
+    <li>efficiently computing <b>Delaunay Triangulations</b>
+    in medium to high dimensions;</li>
+    <li><b>Interpolation</b> of high-dimensional blackbox
+    functions;</li>
+    <li>and producing high quality, portable <b>Mathematical
+    Software</b> (both serial and parallel).</li>
+    </ul>
+    </p>
+
+    <br><br>
+
+    <p>
+    I am particularly passionate about producing open-source
+    scientific software.
+    Check out some of my
+    <a href="#projs">Software</a> below or on my
+    <a target="_blank"
+    href="https://github.com/thchang">GitHub</a>,
+    and don't hesitate to reach out if you have questions, comments, or
+    feedback!
+    </p>
+
+    <br><br>
+
+    <!-- External links menu -->
+    <p>
+    <a target="_blank"
+    	href="mailto:tchang@anl.gov">
+    <img src="img/emicon.png" width="50em" height="50em" hspace="20em" vspace="20em">
+    </a>
+    <a target="_blank"
+    	href="https://scholar.google.com/citations?user=XvFLOWsAAAAJ&hl=en">
+    <img src="img/gsicon.png" width="50em" height="50em" hspace="20em" vspace="20em">
+    </a>
+    <a target="_blank" 
+    	href="https://github.com/thchang">
+    <img src="img/ghicon.png" width="50em" height="50em" hspace="20em" vspace="20em">
+    </a>
+    <a target="_blank" 
+    	href="https://www.linkedin.com/in/tyler-chang-2524b9182/">
+    <img src="img/liicon.png" width="50em" height="50em" hspace="20em" vspace="20em">
+    </a>
+    <a target="_blank" 
+    	href="https://orcid.org/0000-0001-9541-7041">
+    <img src="img/orcidicon.png" width="50em" height="50em" hspace="20em" vspace="20em">
+    </a>
+    <a target="_blank" 
+    	href="https://twitter.com/thchang94">
+    <img src="img/twittericon.png" width="50em" height="50em" hspace="20em" vspace="20em">
+    </a>
+    </p>
+  </div>
+  </div>
+</div>
+
+<!-- Projects -->
+<div class"row">
+  <div class="col-xs-12 col-md-10 col-md-offset-1
+    col-lg-8 col-lg-offset-2 panel panel-default">
+  <div class="col-xs-12 col-md-10 col-md-offset-1
+    col-lg-8 col-lg-offset-2 panel-inner panel-default">
+    <h1 class="margin-base-vertical">
+    <a class="anchor" name="projs"></a>Software:
+    </h1>
+
+    <div class"row">
+    <font size=5> <b>ParMOO</b>: Python library for parallel multiobjective
+    simulation optimization. </font>
+	<p>
+    <p>
+    Developers: T. H. Chang (lead) and S. M. Wild.
+    <br>
+    Primary Programming Language: Python.
+    <br>
+    <button onclick="parmooDesc()">More Info</button>
+    <button onclick="parmooLinks()">Links</button>
+    </p>
+    <p id="parmooInfo"></p>
+
+    <script>
+    function parmooDesc() {
+        document.getElementById("parmooInfo").innerHTML = `
+    <button onclick="parmooHide()">hide</button><br>
+    <img src="img/parmoo.png" class="img-responsive" align="right" width="40%" hspace="20em">
+	The multiobjective optimization problem (MOP) is a generalization of
+	the single objective optimization problem.
+	Instead of attempting to minimize a single cost or loss function,
+	a MOP attempts to balance the tradeoff between multiple, potentially
+	conflicting criteria.
+	The solution to a MOP is a set of nondominated points describing the
+	tradeoff between the conflicting objectives, called the Pareto front.
+    In a multiobjective <i>simulation</i> optimization problem, the cost
+    functions are derived from computationally expensive numerical simulations.
+	Example applications include
+    aerospace design engineering,
+    material and drug manufacturing,
+    and particle accelerator design.
+    <br><br>
+    ParMOO is a Python framework for solving multiobjective simulation
+    optimization problems, by exploiting the underlying structure of the
+    simulation.
+    In order to achieve scalability on extreme-scale hardware, ParMOO layers
+    over the
+    <a target="_blank"
+    href="https://github.com/Libensemble/libensemble">libEnsemble</a>
+    library.
+    `;
+    }
+
+	function parmooLinks() {
+        document.getElementById("parmooInfo").innerHTML = `
+    <button onclick="parmooHide()">hide</button><br>
+    <ul>
+	<li><a target="_blank"
+    href="https://parmoo.readthedocs.io/en/latest">Docs</a>
+    (including quickstart, installation, use cases, API, and tutorials)</li>
+	<li><a target="_blank"
+    href="https://github.com/parmoo/parmoo">GitHub</a></li>
+	<li><a target="_blank"
+    href="https://www.youtube.com/watch?v=gQha8URLEHM">Recorded tutorial</a></li>
+    </ul>
+    `;
+    }
+
+    function parmooHide() {
+        document.getElementById("parmooInfo").innerHTML = "";
+    }
+    </script>
+
+    <br><br>
+    </div>
+
+    <div class"row">
+	<font size=5> <b>DELAUNAYSPARSE</b> </font>
+	<p>
+	<img src="img/delsparse.png" class="img-responsive" align="right" width="30%" hspace="20em">
+	The Delaunay triangulation is a well-studied simplicial mesh, widely
+	considered optimal for interpolation applications.
+	Delaunay triangulations have recently garnered some interest in the
+	machine learning community, for their interpretability in the context
+	of regression and classification problems.
+	Unfortunately, the "curse of dimensionality" manifests in the
+	size of the Delaunay triangulation, making it uncomputable for
+	high-dimensional big data problems.
+	</p>
+	<p>
+	DELAUNAYSPARSE is an open-source Fortran package that computes
+	sparse subsets of the complete Delaunay triangulation, as needed to
+	perform interpolation.
+	The resulting codebase is fast, robust, and portable; and features
+	both serial and parallel implementations.
+	Interfaces are available for usage as a Fortran library, C/C++ library,
+	Python module, or from the command line.
+    </p>
+    <p>
+    <ul>
+	<li><a target="_blank"
+    href="https://vtopt.github.io/DelaunaySparse">Docs/Webpage</a>
+    (including download links, getting started, and related publications)</li>
+	<li><a target="_blank"
+    href="https://github.com/vtopt/DelaunaySparse">GitHub</a></li>
+    <li><a target="_blank"
+	href="https://doi.org/10.1145/3190645.3190680">algorithm publication</a></li>
+    <li><a target="_blank"
+    href="https://doi.org/10.1145/3422818">software publication</a></li>
+    </ul>
+	</p>
+
+    <br><br>
+    </div>
+
+    <div class"row">
+	<font size=5> <b>VTMOP</b> </font>
+	<p>
+	<img src="img/vtmop.png" class="img-responsive" align="right" width="45%" hspace="20em">
+	VTMOP is a flexible open-source Fortran package for solving generic MOPs;
+    see ParMOO (above) for a description of MOPs. 
+    While many current MOP algorithms do not scale well for more than 2 or 3
+    objectives, VTMOP aims at approximating tradeoff curves between larger
+    numbers of objectives.
+    VTMOP is targeted at large scale multidisciplinary design optimization
+    problems, such as particle accelerator design optimization
+    and aerospace engineering design applications.
+	This work was partially funded by a DOE SCGSR award, in
+	collaboration with Argonne National Laboratory
+	(see <a href="#awards">Awards</a>).
+	</p>
+	<p>
+	The original VTMOP source code is implemented in Fortran 2008, using
+    OpenMP to issue simulation tasks asynchronously.
+	However, a VTMOP generator function is also available for Python usage
+    through the
+	<a target="_blank"
+    href="https://github.com/Libensemble/libensemble">libEnsemble</a>
+	library.</p>
+    <p>
+    <ul>
+    <li><a target="_blank"
+    href="https://vtopt.github.io/VTMOP">Docs/Webpage</a>
+    </li>
+    <li><a target="_blank"
+    href="https://github.com/vtopt/VTMOP">GitHub</a>
+    </li>
+    <li><a target="_blank"
+    href="https://github.com/Libensemble/libe-community-examples">libEnsemble interface (Python)</a></li>
+    <li><a target="_blank"
+	href="https://doi.org/10.1080/10556788.2015.1048861">algorithm publication</a></li>
+    <li><a target="_blank"
+	href="https://doi.org/10.1145/3529258">software publication</a></li>
+    <li><a target="_blank"
+	href="https://doi.org/10.22360/springsim.2020.hpc.001">libEnsemble interface publication</a></li>
+    </ul>
+	</p>
+
+    <br><br>
+    </div>
+
+<!--
+    <div class"row">
+	<font size=5> <b>VarSys</b> </font>
+	<p>
+	<img src="img/varsys.png" class="img-responsive" align="right" width="25%" hspace="20em">
+    The VarSys Project at Virginia Tech was a 4-year NSF-funded
+    (<a target="_blank"
+    href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1565314">
+    CISE CSR #1565314</a> and
+    <a target="_blank"
+    href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1838271">
+    CISE CSR #1838271</a>)
+    study of performance variability.
+    The project goals were to understand, model, and manage
+    performance variability in HPC and Cloud systems.
+    To study these goals, we investigated performance jitter using
+    several common benchmark tools, such as the
+    <a target="_blank"
+    href="http://www.iozone.org">IOzone benchmark tool</a>,
+    for studying I/O throughput variability,
+    and the
+    <a target="_blank"
+    href="https://www.netlib.org/benchmark/hpl">High-Performance Linpack (HPL) benchmark solver</a>,
+    which is used to measure peak FLOPs by the
+    <a target="_blank"
+    href="https://www.top500.org"> HPC Top 500 list</a>.
+    </p>
+    <p>
+    As a member of the math and algorithms team in the VarSys project,
+    I designed and used software to model and manage performance variability.
+    DELAUNAYSPARSE was used to model performance variability based on
+    I/O throughput data that was gathered using the IOzone benchmark tool.
+    VTMOP was used to manage the tradeoff between mean throughput and
+    throughput variability when tuning the HPL benchmark solver.
+    See the corresponding publications below.
+	</p>
+	<p>
+    <ul>
+    <li><a target="_blank"
+    href="https://varsys.cs.vt.edu/about-varsys/">VarSys webpage</a></li>
+    <li>Check back soon! Once VTMOP is released, code will follow to tune HPL for throughput variability and mean throughput!</li>
+    <li><a target="_blank"
+	href="https://doi.org/10.1109/WSC48552.2020.9383875">Using VTMOP to optimize performance variability of HPL</a></li>
+    <li><a target="_blank"
+	href="https://dl.acm.org/doi/10.5555/3213069.3213071">Using DELAUNAYSPARSE to predict performance variability of IOzone benchmark</a></li>
+    </li>
+    </ul>
+	</p>
+
+    <br><br>
+    </div>
+-->
+
+    <div class"row">
+	<font size=5> <b>Quantum Annealing Math Library (QAML)</b> </font>
+	<p>
+	<img src="img/qaml-dark.svg" class="img-responsive" align="right" width="15%" hspace="20em">
+	Quantum annealing (QA) is an implementation of the general purpose
+	adiabatic quantum computing (AQC) model for quantum computing.
+	QA balances the theoretical properties of AQC against real-world
+	practicalities, allowing for faster progress in near-term QA hardware.
+	</p>
+	<p>
+	QAML is an open-source Python project, which embeds least squares
+	and polynomial sum-of-squares problems (with real, integer, Boolean
+	or mixed variables) on the D-Wave quantum annealer.
+	These broad classes of problems are ubiquitous in scientific computing,
+	machine learning, and data science.
+    </p>
+    <p>
+    <ul>
+	<li><a target="_blank"
+    href="https://github.com/tchlux/qaml">GitHub</a></li>
+    <li><a target="_blank"
+	href="https://doi.org/10.1007/s11128-019-2489-x">Publication</a></li>
+    </ul>
+	</p>
+    </div>
+
+  </div>
+  </div>
+</div>
+
+<!-- Publications -->
+<div class"row">
+ <div class="col-xs-12 col-md-10 col-md-offset-1 
+  col-lg-8 col-lg-offset-2 panel panel-default">
+ <div class="col-xs-12 col-md-10 col-md-offset-1 
+  col-lg-8 col-lg-offset-2 panel-inner panel-default">
+   <h1 class="margin-base-vertical">
+   <a class="anchor" name="pubs"></a>Publications:
+   </h1>
+
+    <font size=5> <b>Selected Publications:</b> </font>
+    (For full list, see  
+    <a target="_blank"
+    href="files/TylerChangCV.pdf">my CV</a> 
+    or 
+    <a target="_blank"
+    href="https://scholar.google.com/citations?user=XvFLOWsAAAAJ&hl=en">
+    my Google Scholar page</a>)
+
+    <br><br>
+
+    <p>
+    Tyler H. Chang, Layne T. Watson, Jeffrey Larson, Nicole Neveu, William I. Thacker, Shubhangi Deshpande, and Thomas C.H. Lux.
+    2022.
+    Algorithm 1028: VTMOP: Solver for blackbox multiobjective optimization problems.
+    ACM Transactions on Mathematical Software 48(3), Article No. 36, 34 pages.
+    <br>
+    <a href="files/papers/vtmop-toms.pdf"><img src="img/pdficon.png" width="40" height="40"></a> &nbsp
+    <a target="_blank"
+    href="https://doi.org/10.1145/3529258">ACM DL</a> &nbsp
+    <a href="files/bibs/vtmop-toms.bib">BIB</a>
+    </p>
+    <p>
+    Tyler H. Chang, Jeffrey Larson, and Layne T. Watson.
+    2020.
+    Multiobjective optimization of the variability of the high-performance
+    Linpack solver.
+    In Proc. 2020 Winter Simulation Conference (WSC 2020).
+    Virtual event, pp. 3081--3092.
+    <br>
+    <a href="files/papers/hpl-wsc.pdf"><img src="img/pdficon.png" width="40" height="40"></a> &nbsp
+    <a target="_blank"
+    href="https://doi.org/10.1109/WSC48552.2020.9383875">
+    IEEE Xplore</a> &nbsp
+    <a href="files/bibs/hpl-wsc.bib">BIB</a> &nbsp
+    <a href="files/pres/hpl-pres-wsc.pdf">SLIDES</a>
+    </p>
+    <p>
+    Tyler H. Chang, Layne T. Watson, Thomas C.H. Lux, Ali R. Butt, Kirk W. Cameron,
+    and Yili Hong.
+    2020.
+    Algorithm 1012: DELAUNAYSPARSE: Interpolation via a sparse subset of the
+    Delaunay triangulation in medium to high dimensions.
+    ACM Transactions on Mathematical Software 46(4), Article No. 38, 20 pages.
+    <br>
+    <a href="files/papers/delaunay-toms.pdf"><img src="img/pdficon.png" width="40" height="40"></a> &nbsp
+    <a target="_blank"
+    href="https://doi.org/10.1145/3422818">ACM DL</a> &nbsp
+    <a href="files/bibs/delaunay-toms.bib">BIB</a>
+    </p>
+    <p>
+    Tyler H. Chang, Jeffrey Larson, Layne T. Watson, and Thomas C. H. Lux.
+    2020.
+    Managing computationally expensive blackbox multiobjective optimization
+    problems with libEnsemble.
+    In Proc. 2020 Spring Simulation Conference (SpringSim '20).
+    SCS, Fairfax, VA, USA, Article No. 31, 12 pages.
+    <br>
+    <a href="files/papers/libe-hpc.pdf"><img src="img/pdficon.png" width="40" height="40"></a> &nbsp
+    <a target="_blank"
+    href="https://doi.org/10.22360/springsim.2020.hpc.001">ACM DL</a> &nbsp
+    <a href="files/bibs/libe-hpc.bib">BIB</a> &nbsp
+    <a href="files/pres/libe-pres-hpc.pdf">SLIDES</a>
+    </p>
+    <p>
+    Tyler H. Chang, Thomas C.H. Lux, and Sai Sindhura Tipirneni.
+    2019.
+    Least-squares solutions to polynomial systems of equations with quantum
+    annealing.
+    Quantum Information Processing 18(12), Article No. 374.
+    Springer.<br>
+    <a href="files/papers/qaml-qinp.pdf"><img src="img/pdficon.png" width="40" height="40"></a> &nbsp
+    <a target="_blank"
+    href="https://doi.org/10.1007/s11128-019-2489-x">SpringerLink</a> &nbsp
+    <a href="files/bibs/qaml-qinp.bib">BIB</a>
+    </p>
+    <p>
+    Tyler H. Chang, Layne T. Watson, Thomas C. H. Lux, Bo Li, Li Xu, Ali R. Butt,
+    Kirk W. Cameron, and Yili Hong.
+    2018.
+    A polynomial time algorithm for multivariate interpolation in arbitrary
+    dimension via the Delaunay triangulation.
+    In Proc. 2018 ACM Southeast Concerence (ACMSE '18).
+    ACM, Richmond, KY, USA, Article No. 12, 8 pages.<br>
+    <a href="files/papers/delaunay-acmse.pdf"><img src="img/pdficon.png" width="40" height="40"></a> &nbsp
+    <a target="_blank"
+    href="https://doi.org/10.1145/3190645.3190680">ACM DL</a> &nbsp
+    <a href="files/bibs/delaunay-acmse.bib">BIB</a> &nbsp
+    <a href="files/pres/delaunay-acmse-pres.pdf">SLIDES</a>
+    </p>
+
+    <br><br>
+
+    <font size=5> <b>In Press:</b> </font><br><br>
+    <p>
+    Thomas C.H. Lux, Layne T. Watson, Tyler H. Chang, and William I. Thacker.
+    Algorithm XXXX: MQSI---Monotone quintic spline interpolation.
+    To appear in ACM Transactions on Mathematical Software.
+    </p>
+
+    <br><br>
+    
+    <font size=5> <b>Under Review:</b> </font><br><br>
+    <p>
+    Tyler H. Chang and Stefan M. Wild.
+    ParMOO: A Python library for parallel multiobjective simulation optimization.
+    Under review with Journal of Open Source Software (since May 2022).
+    </p>
+
+  </div>
+  </div>
+</div>
+
+<!-- Awards -->
+<div class"row">
+  <div class="col-xs-12 col-md-10 col-md-offset-1 
+    col-lg-8 col-lg-offset-2 panel panel-default">
+  <div class="col-xs-12 col-md-10 col-md-offset-1 
+    col-lg-8 col-lg-offset-2 panel-inner panel-default">
+    <h1 class="margin-base-vertical">
+    <a class="anchor" name="awards"></a>Awards:
+    </h1>
+
+	<font size=5> <b>Nominee for Outstanding Dissertation Award</b> </font>
+    <br>
+	(January 2021: Virginia Tech, Graduate School)
+	<p>
+    <ul>
+    <li>In 2021, I was a finalist for Virginia Tech's graduate school wide
+<a target="_blank" href=https://graduateschool.vt.edu/about/awards/student/oustanding-dissertation-award.html>Outstanding Dissertation Award</a></li>
+    <li>I was nominated by the Dept. of Computer Science for my 2020 Ph.D.
+    <a target="_blank" href="https://vtechworks.lib.vt.edu/handle/10919/98915">dissertation</a></li>
+    </ul>
+	</p>
+
+	<font size=5> <b>Cunningham Doctoral Fellowship</b> </font>
+    <br>
+	(August 2016 - May 2020: Virginia Tech, Graduate School)
+	<p>
+    <ul>
+    <li>The
+	<a target="_blank"
+href="https://graduateschool.vt.edu/funding/types-of-funding/funding-sponsored-by-the-graduate-school/cunningham-doctoral-assistantships.html">
+	Cunningham Doctoral Fellowship</a>
+	is a Virginia Tech university-level fellowship.</li>
+    <li>Guarantees 4 years of research funding to outstanding incoming
+    doctoral students</li>
+    </ul>
+	</p>
+
+	<font size=5> <b>DOE SCGSR Program Award</b> </font>
+    <br>
+	(June 2019 - December 2019: US Dept. of Energy, Office of Science)
+	<p>
+    <ul>
+    <li>Recipient of the
+	<a target="_blank"
+    href="https://www.energy.gov/articles/doe-s-science-graduate-student-research-program-selects-70-students-pursue-research-doe">
+	US DOE, Office of Science Graduate Student Research Program</a></li>
+	<li>One of 70 proposals funded during 2018 Solicitation 2 cycle</li>
+	<li>Award funded a 6 mo. appointment (June - December 2019) at
+    Argonne National Laboratory to develop VTMOP software
+    (see <a href="#projs">Software</a>)</li>
+    </ul>
+	</p>
+
+	<font size=5> <b>Departmental Fellowships</b> </font>
+    <br>
+	(2016 - 2020: Virginia Tech, College of Engineering)
+	<p>
+	<ul>
+    <li>Supplemental awards given by Virginia Tech, College of Engineering</li>
+	<li>Recipient of Davenport Leadership Fellowship for
+	2016-17 academic year and 2019-20 academic year</li>
+	<li>Recipient of Pratt Fellowship for
+	2017-18 academic year and 2018-19 academic year</li>
+	</ul>
+	</p>
+
+  </div>
+  </div>
+</div>
+
+<!-- Misc stuff -->
+<div class"row">
+  <div class="col-xs-12 col-md-10 col-md-offset-1 
+    col-lg-8 col-lg-offset-2 panel panel-default">
+  <div class="col-xs-12 col-md-10 col-md-offset-1 
+    col-lg-8 col-lg-offset-2 panel-inner panel-default">
+    <h1 class="margin-base-vertical">
+    <a class="anchor" name="misc"></a>Miscellaneous:
+    </h1>
+
+    <p>
+    Some class notes (from my time at VT) and other resources that I
+    regularly reference.
+    Mostly here so that I can easily find them.
+    </p>
+
+	<h1> Class Notes </h1>
+
+	<font size=5> <b>Math</b> </font><br>
+    <ul class="nav nav-pills">
+    <li><a href="files/courses/Algebra.pdf">Algebra (Self-Taught + Some UG)</a></li>
+    <li><a href="files/courses/GeneralTopology.pdf">General Topology (Self-Taught)</a></li>
+    <li><a href="files/courses/NumberTheory.pdf">Number Theory (UG + MATH 5984)</a></li>
+    <li><a href="files/courses/HarmonicAnalysis.pdf">SS: Harmonic Analysis (MATH 5984)</a></li>
+    <li><a href="files/courses/ComplexAnalysis.pdf">Complex Analysis 1 (MATH 5235)</a></li>
+    <li><a href="files/courses/NumericAnalysis1.pdf">Numerical Analysis 1 (MATH/CS 5465)</a></li>
+    <li><a href="files/courses/NumericAnalysis2.pdf">Numerical Analysis 2 (MATH/CS 5466)</a></li>
+    <li><a href="files/courses/RealAnalysis1.pdf">Real Analysis 1 (MATH 5225)</a></li>
+    <li><a href="files/courses/RealAnalysis2.pdf">Real Analysis 2 (MATH 5226)</a></li>
+    <li><a href="files/courses/FunAnalysis.pdf">Functional Analysis 1 (MATH 6255)</a></li>
+    <li><a href="files/courses/StochasticAnalysis.pdf">Stochastic Analysis (MATH 5984)</a></li>
+    </ul>
+    <br><font size=5> <b>Computer Science</b> </font><br>
+    <ul class="nav nav-pills">
+    <li><a href="files/courses/UrbComp.pdf">SS: Urban Computing (CS 5984)</a></li>
+    <li><a href="files/courses/CompArch.pdf">Computer Architecture (CS/ECE 5504)</a></li>
+    <li><a href="files/courses/CompArch.pdf">Adv. Parallel Computing (CS 5234)</a></li>
+    <li><a href="files/courses/TheoryAlg.pdf">Theory of Algorithms (CS 5114)</a></li>
+    <li><a href="files/courses/OptML.pdf">Optimization in Machine Learning (CS 6804)</a></li>
+    <li><a href="files/courses/TGDS.pdf">Theory Guided Data Science (CS 6804)</a></li>
+    <li><a href="files/courses/QuantumComputing.pdf">Quantum Computing for CS (CS 6504)</a></li>
+    </ul>
+    <br><font size=5> <b>Engineering</b> </font><br>
+    <ul class="nav nav-pills">
+    <li><a href="files/courses/VectorCalc.pdf">Vector Calculus (MATH 4574)</a></li>
+    <li><a href="files/courses/ClassicMechanics.pdf">Classical Mechanics (Self-Taught)</a></li>
+    <li><a href="files/courses/StatMechanics.pdf">Statistical Mechanics (Self-Taught)</a></li>
+    </ul>
+    
+    <h1> Helpful Resources </h1>
+    
+    <ul class="nav nav-pills">
+    <li><a target="_blank" href="https://j3-fortran.org/doc/year/10/10-007.pdf">Fortran 2008 ISO Document</a></li>
+    <li><a target="_blank" href="https://gams.nist.gov/">Guide to Available Math Software (GAMS)</a></li>
+    <li><a target="_blank" href="http://www.netlib.org/lapack/lug/">LAPACK User's Guide</a></li>
+    <li><a target="_blank" href="https://www.openmp.org/wp-content/uploads/openmp-4.5.pdf">OpenMP 4.5 Standards Document</a></li>
+    </ul>
+
+  </div>
+  </div>
+</div>
+
+<!-- End of outer-most container -->
+</div>
+
+</body>
+</html>
