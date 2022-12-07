@@ -103,7 +103,7 @@ def addEntry():
     global isbn
     global note
 
-    import utils
+    from .utils import parseAuthors, parseTitle
 
     if entry_type is None or entry_content is None:
         return
@@ -115,7 +115,7 @@ def addEntry():
     entry_content = entry_content.replace("\\%", "%")
     entry_content = entry_content.replace("$", "")
     entry_content = entry_content.replace("\\$", "$")
-    entry_content = entry_content.replace("\\sim", "$TILDE")
+    entry_content = entry_content.replace("\\sim", "TILDE")
     entry_content = entry_content.replace("\\{", "{")
     entry_content = entry_content.replace("\\}", "}")
     if (    (entry_content[0] == "{" and entry_content[-1] == "}") or
@@ -127,15 +127,15 @@ def addEntry():
             (entry_content[0] == "'" and entry_content[-2:] == "',")):
         entry_content = entry_content[1:-2]
     if entry_type.lower() in ("type", "howpublished"):
-        howpublished = "".join(entry_content.lower().strip().split())
+        howpublished = entry_content
     elif entry_type.lower() in ("year"):
         year = entry_content
     elif entry_type.lower() in ("month"):
         month = entry_content
     elif entry_type.lower() in ("author"):
-        author = utils.parseAuthors(entry_content)
+        author = parseAuthors(entry_content)
     elif entry_type.lower() in ("title"):
-        title = utils.parseTitle(entry_content)
+        title = parseTitle(entry_content)
     elif entry_type.lower() in ("journal"):
         journal = entry_content
     elif entry_type.lower() in ("editor"):
@@ -201,185 +201,211 @@ def joinAll():
     elif itemtype.lower() == "article":
         output = "- article:\n"
         if year is not None:
-            output = output + f'    - year: "{year}"\n'
+            output = output + f'    year: "{year}"\n'
         if author is not None:
-            output = output + f'    - author: "{author}"\n'
+            output = output + f'    author: "{author}"\n'
         if title is not None:
-            output = output + f'    - title: "{title}"\n'
+            output = output + f'    title: "{title}"\n'
         if journal is not None:
-            output = output + f'    - journal: "{journal}"\n'
+            output = output + f'    journal: "{journal}"\n'
         if volume is not None:
-            output = output + f'    - volume: "{volume}"\n'
+            output = output + f'    volume: "{volume}"\n'
         if number is not None:
-            output = output + f'    - number: "{number}"\n'
+            output = output + f'    number: "{number}"\n'
         if articleno is not None:
-            output = output + f'    - articleno: "{articleno}"\n'
+            output = output + f'    articleno: "{articleno}"\n'
         if pages is not None:
-            output = output + f'    - pages: "{pages}"\n'
+            output = output + f'    pages: "{pages}"\n'
         if doi is not None:
-            output = output + f'    - doi: "{doi}"\n'
+            output = output + f'    doi: "{doi}"\n'
         if url is not None:
-            output = output + f'    - url: "{url}"\n'
+            output = output + f'    url: "{url}"\n'
         if isbn is not None:
-            output = output + f'    - isbn: "{isbn}"\n'
+            output = output + f'    isbn: "{isbn}"\n'
         if note is not None:
-            output = output + f'    - note: "{note}"\n'
+            output = output + f'    note: "{note}"\n'
     elif itemtype.lower() in ("inproceedings", "conference", "incollection",
                               "inbook"):
         output = f"- {itemtype}:\n"
         if year is not None:
-            output = output + f'    - year: "{year}"\n'
+            output = output + f'    year: "{year}"\n'
         if author is not None:
-            output = output + f'    - author: "{author}"\n'
+            output = output + f'    author: "{author}"\n'
         if title is not None:
-            output = output + f'    - title: "{title}"\n'
+            output = output + f'    title: "{title}"\n'
         if editor is not None:
-            output = output + f'    - editor: "{editor}"\n'
+            output = output + f'    editor: "{editor}"\n'
         if booktitle is not None:
-            output = output + f'    - booktitle: "{booktitle}"\n'
+            output = output + f'    booktitle: "{booktitle}"\n'
         if volume is not None:
-            output = output + f'    - volume: "{volume}"\n'
+            output = output + f'    volume: "{volume}"\n'
         if number is not None:
-            output = output + f'    - number: "{number}"\n'
+            output = output + f'    number: "{number}"\n'
         if articleno is not None:
-            output = output + f'    - articleno: "{articleno}"\n'
+            output = output + f'    articleno: "{articleno}"\n'
         if chapter is not None:
-            output = output + f'    - chapter: "{chapter}"\n'
+            output = output + f'    chapter: "{chapter}"\n'
         if pages is not None:
-            output = output + f'    - pages: "{pages}"\n'
+            output = output + f'    pages: "{pages}"\n'
         if organization is not None:
-            output = output + f'    - organization: "{organization}"\n'
+            output = output + f'    organization: "{organization}"\n'
         if location is not None:
-            output = output + f'    - location: "{location}"\n'
+            output = output + f'    location: "{location}"\n'
         if doi is not None:
-            output = output + f'    - doi: "{doi}"\n'
+            output = output + f'    doi: "{doi}"\n'
         if url is not None:
-            output = output + f'    - url: "{url}"\n'
+            output = output + f'    url: "{url}"\n'
         if isbn is not None:
-            output = output + f'    - isbn: "{isbn}"\n'
+            output = output + f'    isbn: "{isbn}"\n'
         if note is not None:
-            output = output + f'    - note: "{note}"\n'
+            output = output + f'    note: "{note}"\n'
     elif itemtype.lower() in ("techreport", "mastersthesis", "phdthesis"):
         if itemtype == "techreport":
-            output = "- techreport:\n    - type: Technical Report\n"
+            output = "- techreport:\n    type: Technical Report\n"
         else:
             output = "- thesis:\n"
             if howpublished is not None:
-                output = output + f'    - type: {howpublished}\n'
+                output = output + f'    type: {howpublished}\n'
             elif itemtype == "mastersthesis":
-                output = output + '    - type: Masters Thesis\n'
+                output = output + '    type: Masters Thesis\n'
             else:
-                output = output + '    - type: Ph.D. Dissertation\n'
+                output = output + '    type: Ph.D. Dissertation\n'
         if year is not None:
-            output = output + f'    - year: "{year}"\n'
+            output = output + f'    year: "{year}"\n'
         if author is not None:
-            output = output + f'    - author: "{author}"\n'
+            output = output + f'    author: "{author}"\n'
         if title is not None:
-            output = output + f'    - title: "{title}"\n'
+            output = output + f'    title: "{title}"\n'
         if number is not None:
-            output = output + f'    - number: "{number}"\n'
+            output = output + f'    number: "{number}"\n'
         if organization is not None:
-            output = output + f'    - organization: "{organization}"\n'
+            output = output + f'    organization: "{organization}"\n'
         if location is not None:
-            output = output + f'    - location: "{location}"\n'
+            output = output + f'    location: "{location}"\n'
         if doi is not None:
-            output = output + f'    - doi: "{doi}"\n'
+            output = output + f'    doi: "{doi}"\n'
         if url is not None:
-            output = output + f'    - url: "{url}"\n'
+            output = output + f'    url: "{url}"\n'
         if isbn is not None:
-            output = output + f'    - isbn: "{isbn}"\n'
+            output = output + f'    isbn: "{isbn}"\n'
         if note is not None:
-            output = output + f'    - note: "{note}"\n'
+            output = output + f'    note: "{note}"\n'
     elif itemtype.lower() in ("book", "proceedings", "booklet"):
-        output = f"- {itemtype}:\n    - type: Technical Report\n"
+        output = f"- {itemtype}:\n    type: Technical Report\n"
         if year is not None:
-            output = output + f'    - year: "{year}"\n'
+            output = output + f'    year: "{year}"\n'
         if author is not None:
-            output = output + f'    - author: "{author}"\n'
+            output = output + f'    author: "{author}"\n'
         if title is not None:
-            output = output + f'    - title: "{title}"\n'
+            output = output + f'    title: "{title}"\n'
         if number is not None:
-            output = output + f'    - number: "{number}"\n'
+            output = output + f'    number: "{number}"\n'
         if editor is not None:
-            output = output + f'    - editor: "{editor}"\n'
+            output = output + f'    editor: "{editor}"\n'
         if organization is not None:
-            output = output + f'    - organization: "{organization}"\n'
+            output = output + f'    organization: "{organization}"\n'
         if location is not None:
-            output = output + f'    - location: "{location}"\n'
+            output = output + f'    location: "{location}"\n'
         if doi is not None:
-            output = output + f'    - doi: "{doi}"\n'
+            output = output + f'    doi: "{doi}"\n'
         if url is not None:
-            output = output + f'    - url: "{url}"\n'
+            output = output + f'    url: "{url}"\n'
         if isbn is not None:
-            output = output + f'    - isbn: "{isbn}"\n'
+            output = output + f'    isbn: "{isbn}"\n'
         if note is not None:
-            output = output + f'    - note: "{note}"\n'
+            output = output + f'    note: "{note}"\n'
     elif itemtype.lower() == "misc":
         if howpublished is not None:
-            output = f"- {howpublished}:\n"
+            output = f"- {''.join(howpublished.lower().strip().split())}:\n"
         else:
             output = output + "- misc:\n"
         if year is not None:
-            output = output + f'    - year: "{year}"\n'
+            output = output + f'    year: "{year}"\n'
         if month is not None:
-            output = output + f'    - month: "{month}"\n'
+            output = output + f'    month: "{month}"\n'
         if author is not None:
-            output = output + f'    - author: "{author}"\n'
+            output = output + f'    author: "{author}"\n'
         if title is not None:
-            output = output + f'    - title: "{title}"\n'
+            output = output + f'    title: "{title}"\n'
         if journal is not None:
-            output = output + f'    - journal: "{journal}"\n'
+            output = output + f'    journal: "{journal}"\n'
         if number is not None:
-            output = output + f'    - number: "{number}"\n'
+            output = output + f'    number: "{number}"\n'
         if booktitle is not None:
-            output = output + f'    - booktitle: "{booktitle}"\n'
+            output = output + f'    booktitle: "{booktitle}"\n'
         if organization is not None:
-            output = output + f'    - organization: "{organization}"\n'
+            output = output + f'    organization: "{organization}"\n'
         if location is not None:
-            output = output + f'    - location: "{location}"\n'
+            output = output + f'    location: "{location}"\n'
         if doi is not None:
-            output = output + f'    - doi: "{doi}"\n'
+            output = output + f'    doi: "{doi}"\n'
         if url is not None:
-            output = output + f'    - url: "{url}"\n'
+            output = output + f'    url: "{url}"\n'
         if isbn is not None:
-            output = output + f'    - isbn: "{isbn}"\n'
+            output = output + f'    isbn: "{isbn}"\n'
         if note is not None:
-            output = output + f'    - note: "{note}"\n'
+            output = output + f'    note: "{note}"\n'
     else:
         raise Warning(f"Entry type '{itemtype}' not recognized, skipping...")
     return output + "\n"
 
 
-# Get filenames from CL
-fin = sys.argv[1]
-fout = sys.argv[2]
+def bib2yml(fin):
+    """ Convert fin to a yaml-style string and return """
+
+    # Reference global variables
+    global entry_type
+    global entry_content
+    global itemtype
+    global howpublished
+    global year
+    global month
+    global author
+    global title
+    global journal
+    global editor
+    global booktitle
+    global volume
+    global number
+    global articleno
+    global chapter
+    global pages
+    global organization
+    global location
+    global doi
+    global url
+    global isbn
+    global note
  
-# Read the input .bib file
-with open(fin, 'r') as fp:
-    inlines = fp.readlines()
-
-# Initialize list of output lines and loop over all lines in the file
-reset()
-outlines = []
-for line in inlines:
-    # Append item and join types
-    if line[0].strip() == '@':
-        # remove trailing bracket
-        if entry_content is not None:
-            entry_content = entry_content[:-1].strip()
-        addEntry()
-        outlines.append(joinAll())
-        reset()
-        itemtype = line.split('@')[1].split("{")[0]
-    else:
-        if len(line.strip().split('=')) >= 2:
+    # Read the input .bib file
+    with open(fin, 'r') as fp:
+        inlines = fp.readlines()
+    
+    # Initialize list of output lines and loop over all lines in the file
+    reset()
+    outlines = []
+    for line in inlines:
+        # Append item and join types
+        if line[0].strip() == '@':
+            # remove trailing bracket
+            if entry_content is not None:
+                entry_content = entry_content[:-1].strip()
             addEntry()
-            entry_type = line.strip().split('=')[0].strip()
-            entry_content = "=".join(line.strip().split('=')[1:]).strip()
-        elif len(line.strip()) > 0 and entry_content is not None:
-            if len(line.strip()) > 0:
-                entry_content = entry_content + " " + line.strip()
-
-# Dump yaml-style string to output file
-with open(fout, 'w') as fp:
-    fp.write("".join(outlines))
+            outlines.append(joinAll())
+            reset()
+            itemtype = line.split('@')[1].split("{")[0]
+        else:
+            if len(line.strip().split('=')) >= 2:
+                addEntry()
+                entry_type = line.strip().split('=')[0].strip()
+                entry_content = "=".join(line.strip().split('=')[1:]).strip()
+            elif len(line.strip()) > 0 and entry_content is not None:
+                if len(line.strip()) > 0:
+                    entry_content = entry_content + " " + line.strip()
+    # Add last trailing item to the yaml
+    if entry_content is not None:
+        entry_content = entry_content[:-1].strip()
+    addEntry()
+    outlines.append(joinAll())
+    
+    return "".join(outlines)

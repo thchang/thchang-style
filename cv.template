@@ -1,0 +1,44 @@
+PDFLATEX
+
+# Tyler Chang
+info/meta.yaml, twocolTex: me.institution, me.email, me.department, me.website, me.address, me.github
+
+# Interests
+info/meta.yaml, singlelineTex: me.interests
+
+# Research Experience
+info/about.yaml, experienceLongTex: experience
+
+# Awards
+info/about.yaml, experienceShortTex: award
+
+# Publications
+
+## Publications In-Press
+info/pubs.bib, articleTex: inpress
+
+## Publications Under Review
+info/pubs.bib, miscPubTex: submitted
+
+## Publications In Preparation
+info/pubs.bib, miscPubTex: inpreparation
+
+## Peer-Reviewed Journal Articles
+info/pubs.bib, articleTex: article
+
+## Peer-Reviewed Conference Papers
+info/pubs.bib, proceedingsTex: inproceedings
+
+## Tech. Reports and Dissertations
+info/pubs.bib, techreportTex: techreport, thesis
+
+# Talks
+
+## Conference Talks
+info/talks.bib, talkTex: conferencetalk
+
+## Seminars and Colloquia
+info/talks.bib, talkTex: seminar
+
+## Tutorials and Guest Lectures
+info/talks.bib, talkTex: tutorial, guestlecture

@@ -1,18 +1,18 @@
 - web:
-    - profile: img/profile_2022_web.jpg
-    - background: img/delvor.png
-    - bgcolor: rgba(250, 250, 255, 0.9)
-    - fgcolor: rgba(255, 255, 255, 1.0)
+    profile: img/profile_2022_web.jpg
+    background: img/delvor.png
+    bgcolor: rgba(250, 250, 255, 0.9)
+    fgcolor: rgba(255, 255, 255, 1.0)
 
 - me:
-    - name: Chang, Tyler H.
-    - intitution: Argonne National Laboratory
-    - department: Mathematics and Computer Science (MCS) Division
-    - address: 9700 S. Cass Ave, Bldg. 240, Lemont, IL 60439
-    - website: https://thchang.github.io
-    - github: https://github.com/thchang
-    - email: tchang@anl.gov
-    - interests:
+    name: Chang, Tyler H.
+    institution: Argonne National Laboratory
+    department: Mathematics and Computer Science (MCS) Division
+    address: 9700 S. Cass Ave, Bldg. 240, Lemont, IL 60439
+    website: https://thchang.github.io
+    github: https://github.com/thchang
+    email: tchang@anl.gov
+    interests:
         - numerical optimization
         - machine learning
         - analysis of algorithms
@@ -20,23 +20,23 @@
         - scientific software
 
 - advisor:
-    - name: Watson, Layne T.
-    - type: phd
-    - institution: Virginia Tech
-    - website: https://people.cs.vt.edu/~ltw/shortvita.html
+    name: Watson, Layne T.
+    type: phd
+    institution: Virginia Tech
+    website: https://people.cs.vt.edu/~ltw/shortvita.html
 
 - advisor:
-    - name: Wild, Stefan M.
-    - type: postdoc
-    - institution: Lawrence Berkley National Laboratory
-    - website: https://wildsm.github.io
+    name: Wild, Stefan M.
+    type: postdoc
+    institution: Lawrence Berkley National Laboratory
+    website: https://wildsm.github.io
 
 - advisee:
-    - name: Garg, Manisha
-    - type: student
-    - institution: University of Illinois Urbana-Champaign
+    name: Garg, Manisha
+    type: student
+    institution: University of Illinois Urbana-Champaign
 
 - collaborator:
-    - name: Lux, Thomas C. H.
-    - institution: Meta Research
-    - website: https://tchlux.github.io
+    name: Lux, Thomas C. H.
+    institution: Meta Research
+    website: https://tchlux.github.io
