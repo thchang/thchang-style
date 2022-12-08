@@ -9,6 +9,16 @@ global swaplines
 with open("styles/html-subs.csv") as fp:
     swaplines = fp.readlines()
 
+# Read row template
+with open("styles/body-content.html") as fp:
+    rowtemp = fp.readlines()
+rowtemplate = "".join(rowtemp)
+
+global titleweb
+global contentweb
+titleweb = ""
+contentweb = ""
+
 # Read metadata
 global metanames
 global metaweb
@@ -30,7 +40,11 @@ def web_swapper(line):
     global swaplines
     global metanames
     global metaweb
+    global titleweb
+    global contentweb
     newline = line
+    newline = newline.replace("$TITLE", titleweb)
+    newline = newline.replace("$CONTENT", contentweb)
     for swaps in swaplines:
         cols = [ci.strip() for ci in swaps.split(",")]
         newline = newline.replace(cols[0], cols[1])
@@ -68,7 +82,7 @@ for count, line in enumerate(inlines):
         if len(words[0]) > 1 and words[0][1] == "#":
             outlines.append("\\subsection*{" + " ".join(words[1:]) + "}")
         else:
-            outlines.append("\\section*{" + " ".join(words[1:]) + "}")
+            titleweb = " ".join(words[1:])
     # Extract data from yaml/bib files
     else:
         # Parse + tokenize command
@@ -126,8 +140,9 @@ for count, line in enumerate(inlines):
             import formatters
             try:
                 styler = getattr(formatters, style[1])
-                outline = styler(topic_list)
-                outlines.append(web_swapper(outline))
+                contentweb = styler(topic_list)
+                if len(titleweb) > 0:
+                    outlines.append(web_swapper(rowtemplate))
             except AttributeError:
                 raise ValueError(f"Line {count} format spec {style[1]} not recognized ...")
                 #print(f"Line {count} format spec {style[1]} not recognized ...")
