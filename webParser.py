@@ -4,16 +4,6 @@ import yaml
 with open(sys.argv[1], "r") as fp:
     inlines = fp.readlines()
 
-# Initialize output lines
-outlines = []
-outlines.append("\\documentclass[10pt]{article}")
-
-# Read template
-with open("styles/cv-style.tex", "r") as fp:
-    lines = fp.readlines()
-outlines.append("".join(lines))
-outlines.append("\\begin{document}")
-
 # Read swaps
 global swaplines
 with open("styles/latex-subs.csv") as fp:
@@ -21,7 +11,9 @@ with open("styles/latex-subs.csv") as fp:
 
 # Read metadata
 global metanames
+global metaweb
 metanames = []
+metaweb = []
 with open("info/meta.yaml") as fp:
     yamllist = yaml.load(fp, Loader=yaml.Loader)
     for item in yamllist:
@@ -30,17 +22,36 @@ with open("info/meta.yaml") as fp:
             if 'alias' in item['me'].keys():
                 for ai in item['me']['alias']:
                     metanames.append(ai)
+        if 'web' in item.keys():
+            for key in item['web'].keys():
+                metaweb.append((key, item['web'][key]))
 
-def latex_swapper(line):
+def web_swapper(line):
     global swaplines
     global metanames
+    global metaweb
     newline = line
     for swaps in swaplines:
         cols = [ci.strip() for ci in swaps.split(",")]
         newline = newline.replace(cols[0], cols[1])
     for name in metanames:
-        newline = newline.replace(name, "{\\bf " + name + "}")
+        newline = newline.replace(name, "<b>" + name + "</b>")
+    for cols in metaweb:
+        newline = newline.replace("$" + cols[0], cols[1])
     return newline
+
+# Initialize output lines
+outlines = []
+outlines.append("<html>")
+
+# Read template
+with open("styles/head.html", "r") as fp:
+    lines = fp.readlines()
+outstr = ""
+for line in lines:
+    outstr = outstr + web_swapper(line)
+outlines.append(outstr)
+outlines.append("\\begin{document}")
 
 # Loop over lines in file
 for count, line in enumerate(inlines):
@@ -115,7 +126,7 @@ for count, line in enumerate(inlines):
             try:
                 styler = getattr(formatters, style[1])
                 outline = styler(topic_list)
-                outlines.append(latex_swapper(outline))
+                outlines.append(web_swapper(outline))
             except AttributeError:
                 raise ValueError(f"Line {count} format spec {style[1]} not recognized ...")
                 #print(f"Line {count} format spec {style[1]} not recognized ...")

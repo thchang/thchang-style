@@ -1,8 +1,9 @@
 - web:
-    profile: img/profile_2022_web.jpg
-    background: img/delvor.png
-    bgcolor: rgba(250, 250, 255, 0.9)
-    fgcolor: rgba(255, 255, 255, 1.0)
+    SHORTTITLE: Tyler Chang MCS@ANL
+    PROFILE: img/profile_2022_web.jpg
+    BGIMAGE: img/delvor.png
+    BGCOLOR: rgba(250, 250, 255, 0.9)
+    FGCOLOR: rgba(255, 255, 255, 1.0)
 
 - me:
     name: Tyler H. Chang
