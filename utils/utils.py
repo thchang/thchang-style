@@ -25,7 +25,7 @@ def parseAuthors(authorstr):
     if len(nameout) < 3:
         nameoutstr = " and ".join(nameout)
     else:
-        nameoutstr = " and ".join([", ".join(nameout[:-1]), nameout[-1]])
+        nameoutstr = ", and ".join([", ".join(nameout[:-1]), nameout[-1]])
     return nameoutstr
 
 def parseTitle(titlestr):
