@@ -92,12 +92,12 @@
         - Finalist for Outstanding Dissertation Award, nominated by CS faculty for 2020 dissertation
 
 - award:
-    year: [2019, 2018, 2017, 2016]
-    title: [Davenport Leadership Fellowship,Pratt Fellowship,Pratt Fellowship,Davenport Leadership Fellowship]
+    year: 2019
+    title: Davenport Leadership Fellowship
     institution: Virginia Tech
     department: College of Engineering
     description:
-        - Supplemental awards given by the College of Engineering on a per-year basis
+        - Supplemental award given by the College of Engineering on a per-year basis
 
 - award:
     year: 2018
@@ -107,12 +107,36 @@
         - One of 70 proposals funded by the Graduate Student Research (SCGSR) program during 2018, 2nd call
 
 - award:
+    year: 2018
+    title: Pratt Fellowship
+    institution: Virginia Tech
+    department: College of Engineering
+    description:
+        - Supplemental award given by the College of Engineering on a per-year basis
+
+- award:
+    year: 2017
+    title: Pratt Fellowship
+    institution: Virginia Tech
+    department: College of Engineering
+    description:
+        - Supplemental award given by the College of Engineering on a per-year basis
+
+- award:
     year: 2016
     title: Cunningham Doctoral Fellowship
     institution: Virginia Tech
     department: Graduate School
     description:
         - Institution-wide award guaranteeing 4 years of research funding to incoming doctoral students
+
+- award:
+    year: 2016
+    title: Davenport Leadership Fellowship
+    institution: Virginia Tech
+    department: College of Engineering
+    description:
+        - Supplemental award given by the College of Engineering on a per-year basis
 
 - award:
     year: 2016
@@ -145,3 +169,18 @@
     description:
         - 'Tutored undergraduate courses in calculus, computer science, and statistics'
 
+- degree:
+    year: May 2020
+    type: Ph.D.
+    title: Computer Science
+    institution: Virginia Polytechnic Institute & State University (Virginia Tech)
+    description:
+        - 'Thesis: Math. Softw. for Multiobjective Optimization Problems; Outstanding Dissertation Award nominee'
+
+- degree:
+    year: May 2016
+    type: B.S.
+    title: Computer Science & Mathematics (double-major)
+    institution: Virginia Wesleyan University
+    description:
+        - "Summa cum laude; 2x ACM ICPC site champion; 8x Dean's list; 4x all-ODAC (conference) for varsity tennis"

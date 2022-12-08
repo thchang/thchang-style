@@ -81,18 +81,21 @@ for count, line in enumerate(inlines):
                     for key in list(item.keys()):
                         topic_list.append(item[key])
             else:
-                for item1 in content:
-                    spec1 = item1.split(".")
-                    for item2 in H:
-                        found = True
-                        found_item = item2
+                for item2 in H:
+                    found = False
+                    found_item = item2
+                    for item1 in content:
+                        spec1 = item1.split(".")
+                        found1 = True
                         for s1 in spec1:
                             if s1 in found_item.keys():
                                 found_item = found_item[s1]
                             else:
-                                found = False
-                        if found:
-                            topic_list.append(found_item)
+                                found1 = False
+                        if found1:
+                            found = True
+                    if found:
+                        topic_list.append(found_item)
             #outlines.append(str(topic_list))
             # Load styler
             import formatters

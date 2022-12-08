@@ -5,6 +5,9 @@ info/meta.yaml, titleTex: me
 # Interests
 info/about.yaml, singlelineTex: bio.interests
 
+# Education
+info/about.yaml, degreeLongTex: degree
+
 # Research Experience
 info/about.yaml, experienceLongTex: experience
 

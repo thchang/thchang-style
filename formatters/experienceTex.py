@@ -38,7 +38,7 @@ def experienceShortTex(inlist):
             if 'department' in item.keys():
                 outstr = outstr + f", {item['department']}"
         outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+    return "\n\n\\smallskip\n\n".join(outlist)
 
 def experienceLongTex(inlist):
     outlist = []
@@ -87,5 +87,39 @@ def experienceLongTex(inlist):
                 for i2 in item['description']:
                     outstr = outstr + "\n\\bullitem "
                     outstr = outstr + f"{i2}"
+        outlist.append(outstr)
+    return "\n\n\\bigskip\n\n".join(outlist)
+
+def degreeLongTex(inlist):
+    outlist = []
+    for item in inlist:
+        outstr = ""
+        if 'year' not in item.keys() or 'title' not in item.keys() or \
+           'institution' not in item.keys() or 'type' not in item.keys():
+            raise ValueError("'year', 'type', 'title', and 'institution' are "
+                             + "required keys for degree formatter")
+        outstr = outstr + (f"{item['type']}, {item['year']}, " +
+                           f"{item['title']}, {item['institution']}\n")
+        if 'description' in item.keys():
+            if isinstance(item['description'], str):
+                outstr = outstr + "\n\\bullitem {\\sl "
+                outstr = outstr + f"{item['description']}" + "}\n"
+            elif isinstance(item['description'], list):
+                for i2 in item['description']:
+                    outstr = outstr + "\n\\bullitem {\\sl "
+                    outstr = outstr + f"{i2}" + "}\n"
+        outlist.append(outstr)
+    return "\n\n\\bigskip\n\n".join(outlist)
+
+def degreeShortTex(inlist):
+    outlist = []
+    for item in inlist:
+        outstr = ""
+        if 'year' not in item.keys() or 'title' not in item.keys() or \
+           'institution' not in item.keys() or 'type' not in item.keys():
+            raise ValueError("'year', 'type', 'title', and 'institution' are "
+                             + "required keys for degree formatter")
+        outstr = outstr + (f"{item['type']}, {item['year']}, " +
+                           f"{item['title']}, {item['institution']}\n")
         outlist.append(outstr)
     return "\n\n\\bigskip\n\n".join(outlist)
