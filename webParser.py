@@ -1,4 +1,5 @@
 import sys
+import yaml
 
 with open(sys.argv[1], "r") as fp:
     inlines = fp.readlines()
@@ -18,14 +19,28 @@ global swaplines
 with open("styles/latex-subs.csv") as fp:
     swaplines = fp.readlines()
 
+# Read metadata
+global metanames
+metanames = []
+with open("info/meta.yaml") as fp:
+    yamllist = yaml.load(fp, Loader=yaml.Loader)
+    for item in yamllist:
+        if 'me' in item.keys():
+            metanames.append(item['me']['name'])
+            if 'alias' in item['me'].keys():
+                for ai in item['me']['alias']:
+                    metanames.append(ai)
+
 def latex_swapper(line):
     global swaplines
+    global metanames
     newline = line
     for swaps in swaplines:
         cols = [ci.strip() for ci in swaps.split(",")]
         newline = newline.replace(cols[0], cols[1])
+    for name in metanames:
+        newline = newline.replace(name, "{\\bf " + name + "}")
     return newline
-
 
 # Loop over lines in file
 for count, line in enumerate(inlines):
@@ -68,8 +83,6 @@ for count, line in enumerate(inlines):
                 yaml_text = utils.bib2yml(fname)
             # Otherwise, just load yaml
             else:
-                import yaml
-
                 with open(fname) as fp:
                     yaml_lines = fp.readlines()
                 yaml_text = "\n".join(yaml_lines)
