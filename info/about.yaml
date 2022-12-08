@@ -24,6 +24,12 @@
         Check out some of my Software below or on my GitHub, and don't
         hesitate to reach out if you have questions, comments, or feedback!
         "
+    interests:
+        - numerical optimization
+        - machine learning
+        - analysis of algorithms
+        - parallel computing
+        - scientific software
 
 - experience:
     year: Jun 2020 - Present
@@ -114,3 +120,28 @@
     institution: Virginia Wesleyan University
     description:
         - One of 2 students selected to share award by Depts. of Mathematics and Computer Science
+
+- teaching:
+    year: Jan 2022 - Present
+    title: Adjunct Professor
+    institution: College of DuPage
+    department: Dept. of Computer and Information Science
+    description:
+        - 'CIS 2531: Introduction to Python Programming'
+
+- teaching:
+    year: Jan 2020 - May 2020
+    title: Instructor of Record
+    institution: Virginia Tech
+    department: Dept. of Computer Science
+    description:
+        - 'CS 3114: Data Structures and Algorithms (in Java)'
+
+- teaching:
+    year: Jan 2013 - Dec 2015
+    title: Subject Tutor
+    institution: Virginia Wesleyan University
+    department: Learning Center
+    description:
+        - 'Tutored undergraduate courses in calculus, computer science, and statistics'
+

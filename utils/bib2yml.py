@@ -108,16 +108,18 @@ def addEntry():
     if entry_type is None or entry_content is None:
         return
     entry_content = entry_content.strip()
-    entry_content = entry_content.replace("\\bf", "")
-    entry_content = entry_content.replace("\\sl", "")
-    entry_content = entry_content.replace("\\it", "")
-    entry_content = entry_content.replace("\\url", "")
-    entry_content = entry_content.replace("\\%", "%")
     entry_content = entry_content.replace("$", "")
-    entry_content = entry_content.replace("\\$", "$")
-    entry_content = entry_content.replace("\\sim", "TILDE")
-    entry_content = entry_content.replace("\\{", "{")
-    entry_content = entry_content.replace("\\}", "}")
+    entry_content = entry_content.replace("\\$", "$DOLLAR")
+    entry_content = entry_content.replace("\\bf", "$BOLD1")
+    entry_content = entry_content.replace("\\textbf", "$BOLD2")
+    entry_content = entry_content.replace("\\sl", "$SLANTED")
+    entry_content = entry_content.replace("\\it", "$ITALICS1")
+    entry_content = entry_content.replace("\\textit", "$ITALICS2")
+    entry_content = entry_content.replace("\\url", "$URL")
+    entry_content = entry_content.replace("\\%", "$PERCENT")
+    entry_content = entry_content.replace("\\sim", "$TILDE")
+    entry_content = entry_content.replace("\\{", "$LBRACK")
+    entry_content = entry_content.replace("\\}", "$RBRACK")
     if (    (entry_content[0] == "{" and entry_content[-1] == "}") or
             (entry_content[0] == '"' and entry_content[-1] == '"') or
             (entry_content[0] == "'" and entry_content[-1] == "'")):

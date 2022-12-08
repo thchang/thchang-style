@@ -13,6 +13,20 @@ with open("styles/cv-style.tex", "r") as fp:
 outlines.append("".join(lines))
 outlines.append("\\begin{document}")
 
+# Read swaps
+global swaplines
+with open("styles/latex-subs.csv") as fp:
+    swaplines = fp.readlines()
+
+def latex_swapper(line):
+    global swaplines
+    newline = line
+    for swaps in swaplines:
+        cols = [ci.strip() for ci in swaps.split(",")]
+        newline = newline.replace(cols[0], cols[1])
+    return newline
+
+
 # Loop over lines in file
 for count, line in enumerate(inlines):
     # Parse first line
@@ -34,7 +48,10 @@ for count, line in enumerate(inlines):
         parts = line.strip().split(":")
         style = [si.strip() for si in parts[0].strip().split(",")]
         if len(parts) > 1:
-            content = [si.strip() for si in parts[1].strip().split(",")]
+            if parts[1].strip() == "":
+                content = []
+            else:
+                content = [si.strip() for si in parts[1].strip().split(",")]
         else:
             content = []
         if len(style) < 2:
@@ -58,10 +75,12 @@ for count, line in enumerate(inlines):
                 yaml_text = "\n".join(yaml_lines)
             # Extract list/dictionary from yaml object
             H = yaml.load(yaml_text, Loader=yaml.Loader)
+            topic_list = []
             if len(content) == 0:
-                topic_list = H
+                for item in H:
+                    for key in list(item.keys()):
+                        topic_list.append(item[key])
             else:
-                topic_list = []
                 for item1 in content:
                     spec1 = item1.split(".")
                     for item2 in H:
@@ -79,7 +98,8 @@ for count, line in enumerate(inlines):
             import formatters
             try:
                 styler = getattr(formatters, style[1])
-                outlines.append(styler(topic_list))
+                outline = styler(topic_list)
+                outlines.append(latex_swapper(outline))
             except AttributeError:
                 raise ValueError(f"Line {count} format spec {style[1]} not recognized ...")
                 #print(f"Line {count} format spec {style[1]} not recognized ...")

@@ -5,38 +5,54 @@
     fgcolor: rgba(255, 255, 255, 1.0)
 
 - me:
-    name: Chang, Tyler H.
+    name: Tyler H. Chang
     institution: Argonne National Laboratory
     department: Mathematics and Computer Science (MCS) Division
     address: 9700 S. Cass Ave, Bldg. 240, Lemont, IL 60439
     website: https://thchang.github.io
     github: https://github.com/thchang
     email: tchang@anl.gov
-    interests:
-        - numerical optimization
-        - machine learning
-        - analysis of algorithms
-        - parallel computing
-        - scientific software
 
 - advisor:
-    name: Watson, Layne T.
+    name: Layne T. Watson
     type: phd
     institution: Virginia Tech
     website: https://people.cs.vt.edu/~ltw/shortvita.html
 
 - advisor:
-    name: Wild, Stefan M.
+    name: Stefan M. Wild
     type: postdoc
     institution: Lawrence Berkley National Laboratory
     website: https://wildsm.github.io
 
 - advisee:
-    name: Garg, Manisha
-    type: student
-    institution: University of Illinois Urbana-Champaign
+    name: Student Name2
+    type: summer student via Other DOE Internship program
+    institution: Some University2
+    wesbite: https://www.youtube.com
+    year: Jun 2021 - Aug 2021
+    description:
+        - "Project: YouTubing stuff"
+
+- advisee:
+    name: Student Name1
+    type: summer student via Argonne Internship program
+    institution: Some University1
+    wesbite: https://www.google.com
+    year: Jun 2020 - Aug 2020
+    description:
+        - "Project: googling stuff"
+
+- mentee:
+    name: Mentee Name
+    type: friend via Argonne friendship program
+    institution: Some University
+    wesbite: https://www.facebook.com
+    year: Jun 2020
+    description:
+        - "Friendship level: OK"
 
 - collaborator:
-    name: Lux, Thomas C. H.
+    name: Thomas C. H. Lux
     institution: Meta Research
     website: https://tchlux.github.io

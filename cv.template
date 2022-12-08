@@ -1,16 +1,18 @@
 PDFLATEX
 
-# Tyler Chang
-info/meta.yaml, twocolTex: me.institution, me.email, me.department, me.website, me.address, me.github
+info/meta.yaml, titleTex: me
 
 # Interests
-info/meta.yaml, singlelineTex: me.interests
+info/about.yaml, singlelineTex: bio.interests
 
 # Research Experience
 info/about.yaml, experienceLongTex: experience
 
 # Awards
 info/about.yaml, experienceShortTex: award
+
+# Publicly Available Software
+info/software.yaml, softwareTex:
 
 # Publications
 
@@ -29,7 +31,7 @@ info/pubs.bib, articleTex: article
 ## Peer-Reviewed Conference Papers
 info/pubs.bib, proceedingsTex: inproceedings
 
-## Tech. Reports and Dissertations
+## Technical Reports and Dissertations
 info/pubs.bib, techreportTex: techreport, thesis
 
 # Talks
@@ -42,3 +44,45 @@ info/talks.bib, talkTex: seminar
 
 ## Tutorials and Guest Lectures
 info/talks.bib, talkTex: tutorial, guestlecture
+
+# Funding
+## Current
+info/funding.yaml, proposalTex: funding
+
+## Pending
+info/funding.yaml, proposalTex: proposalreject
+
+# Professional Services and Activities
+## Journal Referee
+info/service.yaml, bulletDateTex: journalref
+
+## Conference Reviewer
+info/service.yaml, bulletNoDateTex: confref
+
+## Professional Membership
+info/service.yaml, bulletDateTex: minisymporg
+
+## Professional Membership
+info/service.yaml, bulletDateTex: member
+
+# Institutional Services
+## Argonne
+info/service.yaml, experienceLongTex: argonne
+
+## Virginia Tech
+info/service.yaml, experienceLongTex: virginiatech
+
+# Advising
+info/meta.yaml, peopleTex: advisee
+
+# Mentoring
+info/meta.yaml, peopleShortTex: mentee
+
+# Post-Dissertation Courses
+info/learning.yaml, multilineTex:
+
+# Teaching
+info/about.yaml, experienceLongTex: teaching
+
+# Misc. Travel Awards
+info/minor.yaml, multilineTex: travelaward

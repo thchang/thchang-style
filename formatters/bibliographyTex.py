@@ -22,14 +22,14 @@ def articleTex(inlist):
         if 'note' in item.keys():
             outstr = outstr + f"{item['note']}. "
         if 'doi' in item.keys():
-            outstr = (outstr + "{\\tt doi:~\\href{https://doi.org/" +
+            outstr = (outstr + "{\\tt \\small doi: \\href{https://doi.org/" +
                       f"{item['doi']}" + "}{" + f"{item['doi']}" + "}}")
         elif 'url' in item.keys():
-            outstr = outstr + "{\\tt url:~\\url{" + f"{item['url']}" + "}}"
+            outstr = outstr + "{\\tt \\small url: \\url{" + f"{item['url']}" + "}}"
         elif 'isbn' in item.keys():
-            outstr = outstr + "In ISBN:~{\\tt " + f"{item['isbn']}" + "}"
+            outstr = outstr + "In ISBN: {\\tt \\small " + f"{item['isbn']}" + "}"
         outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+    return "\n\n\\medskip\n\n".join(outlist)
 
 def proceedingsTex(inlist):
     outlist = []
@@ -58,14 +58,14 @@ def proceedingsTex(inlist):
         if 'note' in item.keys():
             outstr = outstr + f"{item['note']}. "
         if 'doi' in item.keys():
-            outstr = (outstr + "{\\tt doi:~\\href{https://doi.org/" +
+            outstr = (outstr + "{\\tt \\small doi: \\href{https://doi.org/" +
                       f"{item['doi']}" + "}{" + f"{item['doi']}" + "}}")
         elif 'url' in item.keys():
-            outstr = outstr + "{\\tt url:~\\url{" + f"{item['url']}" + "}}"
+            outstr = outstr + "{\\tt \\small url: \\url{" + f"{item['url']}" + "}}"
         elif 'isbn' in item.keys():
-            outstr = outstr + "In ISBN:~{\\tt " + f"{item['isbn']}" + "}"
+            outstr = outstr + "In ISBN: {\\tt \\small " + f"{item['isbn']}" + "}"
         outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+    return "\n\n\\medskip\n\n".join(outlist)
 
 def techreportTex(inlist):
     outlist = []
@@ -91,14 +91,14 @@ def techreportTex(inlist):
         if 'note' in item.keys():
             outstr = outstr + f"{item['note']}. "
         if 'doi' in item.keys():
-            outstr = (outstr + "{\\tt doi:~\\href{https://doi.org/" +
+            outstr = (outstr + "{\\tt \\small doi: \\href{https://doi.org/" +
                       f"{item['doi']}" + "}{" + f"{item['doi']}" + "}}")
         elif 'url' in item.keys():
-            outstr = outstr + "{\\tt url:~\\url{" + f"{item['url']}" + "}}"
+            outstr = outstr + "{\\tt \\small url: \\url{" + f"{item['url']}" + "}}"
         elif 'isbn' in item.keys():
-            outstr = outstr + "In ISBN:~{\\tt " + f"{item['isbn']}" + "}"
+            outstr = outstr + "In ISBN: {\\tt \\small " + f"{item['isbn']}" + "}"
         outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+    return "\n\n\\medskip\n\n".join(outlist)
 
 def talkTex(inlist):
     outlist = []
@@ -129,7 +129,7 @@ def talkTex(inlist):
         if 'note' in item.keys():
             outstr = outstr + f"{item['note']}. "
         outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+    return "\n\n\\medskip\n\n".join(outlist)
 
 def miscPubTex(inlist):
     outlist = []
@@ -169,5 +169,94 @@ def miscPubTex(inlist):
         if 'note' in item.keys():
             outstr = outstr + f"{item['note']}. "
         outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+    return "\n\n\\medskip\n\n".join(outlist)
+
+def softwareTex(inlist):
+    outlist = []
+    for item in inlist:
+        outstr = ""
+        if 'year' in item.keys():
+            outstr = outstr + f"{item['year']}. "
+        if 'title' in item.keys():
+            outstr = outstr + "{\\bf " + f"{item['title']}" + "}"
+            if 'subtitle' in item.keys():
+                outstr = outstr + f": {item['subtitle']}. "
+            else:
+                outstr = outstr + ". "
+            if 'version' in item.keys():
+                outstr = outstr + f"Release: {item['version']}"
+        outstr = outstr + "\\\\\n"
+        if 'author' in item.keys():
+            outstr = outstr + f"Devs: {item['author']} \\hskip 2em"
+        if 'language' in item.keys():
+            outstr = (outstr + "Primary Prog. Lang: {\\tt " +
+                      f"{item['language']}" + "}")
+        if 'note' in item.keys():
+            outstr = outstr + f"\\\\\n{item['note']}"
+        if 'doi' in item.keys():
+            outstr = (outstr + "\\\\\n{\\tt \\small doi: \\href{https://doi.org/" +
+                      f"{item['doi']}" + "}{" + f"{item['doi']}" + "}}")
+        if 'git' in item.keys():
+            outstr = (outstr + "\\\\\n{\\tt \\small git: \\url{" +
+                      f"{item['git']}" + "}}")
+        if 'url' in item.keys():
+            outstr = outstr + "\\\\\n{\\tt \\small url: \\url{" + f"{item['url']}" + "}}"
+        outlist.append(outstr)
+    return "\n\n\\medskip\n\n".join(outlist)
+
+def proposalTex(inlist):
+    outlist = []
+    for item in inlist:
+        outstr = ""
+        if 'year' in item.keys():
+            outstr = outstr + "\\tabboxsmall{" f"{item['year']}." + "} "
+        if 'title' in item.keys():
+            outstr = outstr + f"{item['title']}"
+            if 'subtitle' in item.keys():
+                outstr = outstr + f": {item['subtitle']}. "
+            else:
+                outstr = outstr + ". "
+        outstr = outstr + "\\\\\n"
+        if 'role' in item.keys():
+            outstr = (outstr + "\\tabboxmed{{\\bf Role: " +
+                      f"{item['role']}." + "}}")
+            if 'collaborators' in item.keys():
+                for collab in item['collaborators']:
+                    for key in collab.keys():
+                        outstr = (outstr + "\\tabboxmed{" +
+                                  f" {key}: {collab[key]}." + "}")
+        outstr = outstr + "\\\\\n"
+        if 'agency' in item.keys():
+            outstr = outstr + f"{item['agency']}"
+        if 'foa' in item.keys():
+            if 'agency' in item.keys():
+                outstr = outstr + ": "
+            outstr = outstr + "{\\it " + f"{item['foa']}" + "}"
+        if 'number' in item.keys():
+            if 'foa' in item.keys():
+                outstr = outstr + f" ({item['number']})"
+            else:
+                outstr = outstr + f" {item['number']}"
+        outstr = outstr + ".\\\\\n"
+        if 'type' in item.keys():
+            outstr = (outstr + f"Type: {item['type']}")
+        if 'numpages' in item.keys():
+            outstr = (outstr + f" ({item['numpages']})")
+        if 'budget' in item.keys():
+            outstr = (outstr + f".\\hskip 2em Budget: {item['budget']}")
+        if 'length' in item.keys():
+            outstr = (outstr + f".\\hskip 2em Length: {item['length']}")
+        outstr = outstr + "."
+        if 'note' in item.keys():
+            outstr = outstr + f"\\\\\n{item['note']}"
+        if 'doi' in item.keys():
+            outstr = (outstr + "\\\\\n{\\tt \\small doi: \\href{https://doi.org/" +
+                      f"{item['doi']}" + "}{" + f"{item['doi']}" + "}}")
+        if 'git' in item.keys():
+            outstr = (outstr + "\\\\\n{\\tt \\small git: \\url{" +
+                      f"{item['git']}" + "}}")
+        if 'url' in item.keys():
+            outstr = outstr + "\\\\\n{\\tt \\small url: \\url{" + f"{item['url']}" + "}}"
+        outlist.append(outstr)
+    return "\n\n\\medskip\n\n".join(outlist)
 

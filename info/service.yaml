@@ -1,0 +1,83 @@
+- journalref:
+    title: ACM Transactions on Mathematical Software
+    year: 2021--Present
+
+- journalref:
+    title: The Visual Computer Journal
+    year: 2021
+
+- journalref:
+    title: Quantum Information Processing
+    year: 2021
+
+- journalref:
+    title: 'MDPI: Mathematical and Computer Applications'
+    year: 2021
+
+- journalref:
+    title: Journal of Machine Learning Research
+    year: 2019
+
+- confref:
+    title: Int. Conf. for High Performance Computing, Networking, Storage, and Analysis 2021 (SC 21)
+    year: 2021
+
+- confref:
+    title: IEEE SoutheastCon 2020
+    year: 2020
+
+- confref:
+    title: IEEE SoutheastCon 2019
+    year: 2019
+
+- confref:
+    title: IEEE SoutheastCon 2018
+    year: 2018
+
+- minisymporg:
+    title: SIAM Conference on Optimization
+    year: 2021
+
+- minisymporg:
+    title: SIAM Conference on Computational Science and Engineering
+    year: 2021
+
+- member:
+    title: ACM
+    year: 2015--Present
+
+- member:
+    title: SIAM
+    year: 2016--Present
+
+- member:
+    title: MOS
+    year: 2022--Present
+
+- argonne:
+    year: Nov 2022 - Present
+    title: Organizing Committee
+    institution: FASTMath Institute Seminar Series
+    description:
+        - Providing input on topics and recruiting seminar speakers
+
+- argonne:
+    year: Nov 2022
+    title: Technical Reviewer
+    institution: Sustainable Research Pathways
+    description:
+        - Providing technical reviews of faculty and student submissions to SRP program
+
+- virginiatech:
+    year: Aug 2017 - May 2020
+    title: Founding Member
+    institution: Virginia Tech, Computer Science Graduate Counsel
+    description:
+        - Organized professional and social events for graduate students and communicated student concerns to faculty
+
+- virginiatech:
+    year: Mar 2019
+    title: Primary Student Organizer
+    institution: Virginia Tech, Comp. Sci. Graduate Preview Weekend
+    description:
+        - Organized recruitment events for prospective graduate students and coordinated meetings with faculty

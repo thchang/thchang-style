@@ -1,4 +1,4 @@
-from .twocolTex import *
-from .singlelineTex import *
+from .titleTex import *
+from .miscTex import *
 from .bibliographyTex import *
 from .experienceTex import *

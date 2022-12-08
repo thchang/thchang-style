@@ -1,5 +1,5 @@
 % Useful packages
-\usepackage{geometry, hyperref, sectsty, ulem}
+\usepackage{geometry, hyperref, sectsty}
 
 % Reduce bibtex indent
 \makeatletter
@@ -34,3 +34,9 @@
 
 % Define hrulefull macro for section delimiters
 \def\hrulefull{\noindent\rule{\textwidth}{0.2pt}}
+
+% Define tab macros
+\newcommand\tabboxsmall[1]{\noindent\hbox to 0.07\textwidth{#1\hfill}\hskip 2em}
+\newcommand\tabboxmed[1]{\noindent\hbox to 0.18\textwidth{#1\hfill}\hskip 2em}
+\newcommand\tabboxlarge[1]{\noindent\hbox to 0.47\textwidth{#1\hfill}\hskip 2em}
+

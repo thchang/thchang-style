@@ -1,0 +1,26 @@
+- proposalreject:
+    year: FY 1999
+    title: My Big Expensive Institution
+    agency: DOE ASCR
+    foa: Big Cash Money in 1999
+    number: DE-FOA-999999
+    type: full proposal
+    numpages: 20 pages + appendices
+    role: investigator
+    collaborators:
+        - Director: A. Guy
+        - ANL Lead: B. Guy
+    budget: $99.9M
+    length: 5 years
+
+- funding:
+    year: FY 2022
+    title: Money for my mixtape
+    agency: Lil Wayne
+    foa: Lil Cash Money in 2022
+    type: Unrestriced gift
+    role: co-PI
+    collaborators:
+        - With: O. Guy
+    budget: $20
+    length: 6 months

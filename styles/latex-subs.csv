@@ -1,0 +1,14 @@
+$BOLD1, \bf
+$BOLD2, \textbf
+$SLANTED, \sl
+$ITALICS1, \it
+$ITALICS2, \textit
+$URL, \url
+$PERCENT, \%
+$DOLLAR, $
+&, \&
+$AND, \&
+$TILDE, \(\sim\)
+$LBRACK, \{
+$RBRACK, \}
+$, \$
