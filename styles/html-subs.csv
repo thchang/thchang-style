@@ -1,0 +1,13 @@
+$BOLD1,
+$BOLD2,
+$SLANTED,
+$ITALICS1,
+$ITALICS2,
+$URL,
+$PERCENT, %
+$DOLLAR, $
+&, &amp
+$AND, &amp
+$TILDE, &tilde
+$LBRACK, {
+$RBRACK, }

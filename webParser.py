@@ -6,7 +6,7 @@ with open(sys.argv[1], "r") as fp:
 
 # Read swaps
 global swaplines
-with open("styles/latex-subs.csv") as fp:
+with open("styles/html-subs.csv") as fp:
     swaplines = fp.readlines()
 
 # Read metadata
@@ -51,7 +51,8 @@ outstr = ""
 for line in lines:
     outstr = outstr + web_swapper(line)
 outlines.append(outstr)
-outlines.append("\\begin{document}")
+outlines.append("<body>")
+outlines.append('<div class="container-fluid">')
 
 # Loop over lines in file
 for count, line in enumerate(inlines):
@@ -130,6 +131,8 @@ for count, line in enumerate(inlines):
             except AttributeError:
                 raise ValueError(f"Line {count} format spec {style[1]} not recognized ...")
                 #print(f"Line {count} format spec {style[1]} not recognized ...")
-outlines.append("\\end{document}")
+outlines.append('</div>')
+outlines.append("</body>")
+outlines.append("</html>")
 
 print("\n".join(outlines))
