@@ -1,0 +1,91 @@
+HTML
+
+info/meta.yaml, titleTex: me
+
+# Interests
+info/about.yaml, singlelineTex: bio.interests
+
+# Education
+info/about.yaml, degreeLongTex: degree
+
+# Research Experience
+info/about.yaml, experienceLongTex: experience
+
+# Awards
+info/about.yaml, experienceShortTex: award
+
+# Publicly Available Software
+info/software.yaml, softwareWeb:
+
+# Publications
+
+## Publications In-Press
+info/pubs.bib, articleWeb: inpress
+
+## Publications Under Review
+info/pubs.bib, miscPubWeb: submitted
+
+## Publications In Preparation
+info/pubs.bib, miscPubWeb: inpreparation
+
+## Peer-Reviewed Journal Articles
+info/pubs.bib, articleWeb: article
+
+## Peer-Reviewed Conference Papers
+info/pubs.bib, proceedingsWeb: inproceedings
+
+## Technical Reports and Dissertations
+info/pubs.bib, techreportWeb: techreport, thesis
+
+# Talks
+
+## Conference Talks
+info/talks.bib, talkWeb: conferencetalk
+
+## Seminars and Colloquia
+info/talks.bib, talkWeb: seminar
+
+## Tutorials and Guest Lectures
+info/talks.bib, talkWeb: tutorial, guestlecture
+
+# Funding
+## Current
+info/funding.yaml, proposalWeb: funding
+
+## Pending
+info/funding.yaml, proposalWeb: proposalreject
+
+# Professional Services and Activities
+## Journal Referee
+info/service.yaml, bulletDateTex: journalref
+
+## Conference Reviewer
+info/service.yaml, bulletNoDateTex: confref
+
+## Minisymposium Organizer
+info/service.yaml, bulletDateTex: minisymporg
+
+## Professional Membership
+info/service.yaml, bulletDateTex: member
+
+# Institutional Services
+## Argonne
+info/service.yaml, experienceLongTex: argonne
+
+## Virginia Tech
+info/service.yaml, experienceLongTex: virginiatech
+
+# Advising
+info/meta.yaml, peopleTex: advisee
+
+# Mentoring
+info/meta.yaml, peopleShortTex: mentee
+
+# Post-Dissertation Courses
+info/learning.yaml, multilineTex:
+
+# Teaching
+info/about.yaml, experienceLongTex: teaching
+
+# Misc. Travel Awards
+info/minor.yaml, multilineTex: travelaward
