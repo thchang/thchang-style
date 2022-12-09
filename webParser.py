@@ -102,7 +102,7 @@ for count, line in enumerate(inlines):
             if firstRow:
                 firstRow = False
             else:
-                outlines.append('<a href="#top">^top</a>')
+                outlines.append('<br><p style="text-align: right"><a href="#top">^top</a></p>')
                 outlines.append("</div>\n</div>\n</div>")
             titleline = " ".join(words[1:])
             outlines.append(rowtemplate.replace("$TITLE", titleline))
@@ -167,7 +167,7 @@ for count, line in enumerate(inlines):
             except AttributeError:
                 raise ValueError(f"Line {count} format spec {style[1]} not recognized ...")
                 #print(f"Line {count} format spec {style[1]} not recognized ...")
-outlines.append('<a href="#top">^top</a>')
+outlines.append('<br><p style="text-align: right"><a href="#top">^top</a></p>')
 outlines.append("</div>\n</div>\n</div>\n")
 outlines.append('</div>')
 outlines.append("</body>")
