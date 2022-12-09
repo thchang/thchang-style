@@ -1,16 +1,16 @@
-def experienceShortTex(inlist):
+def experienceShortWeb(inlist):
     outlist = []
     for item in inlist:
-        outstr = ""
         if 'year' not in item.keys():
             raise ValueError("'year' key is required for experience formatter")
+        outstr = "<li>"
         if isinstance(item['year'], list):
             for i, year in enumerate(item['year']):
                 if i > 0:
-                    outstr = outstr + "\\\\\n \\tabboxsmall{" + f"{year}" + ".} "
+                    outstr = outstr + f"</li>\n<li>{year}. "
                 else:
-                    outstr = outstr + "\\tabboxsmall{" + f"{year}" + ".} "
-                outstr = outstr + "{\\bf "
+                    outstr = outstr + f"{year}. "
+                outstr = outstr + "<b>"
                 if 'title' in item.keys():
                     if isinstance(item['title'], list):
                         outstr = outstr + f"{item['title'][i]}"
@@ -26,40 +26,41 @@ def experienceShortTex(inlist):
                         outstr = outstr + f": {item['institution'][i]}"
                     else:
                         outstr = outstr + f": {item['institution']}"
-                outstr = outstr + "}"
+                outstr = outstr + "</b>"
                 if 'department' in item.keys():
                     if isinstance(item['department'], list):
                         outstr = outstr + f", {item['department'][i]}"
                     else:
                         outstr = outstr + f", {item['department']}"
         else:
-            outstr = outstr + "\\tabboxsmall{" + f"{item['year']}" + ".} "
-            outstr = outstr + "{\\bf "
+            outstr = outstr + f"{item['year']}. "
+            outstr = outstr + "<b> "
             if 'title' in item.keys():
                 outstr = outstr + f"{item['title']}"
             if 'subtitle' in item.keys():
-                outstr = outstr + f", {item['subtitle']}"
+                outstr = outstr + f", {item['title']}"
             if 'institution' in item.keys():
                 outstr = outstr + f": {item['institution']}"
-            outstr = outstr + "}"
+            outstr = outstr + "</b>"
             if 'department' in item.keys():
                 outstr = outstr + f", {item['department']}"
+        outstr = outstr + "</li>\n"
         outlist.append(outstr)
-    return "\n\n\\smallskip\n\n".join(outlist)
+    return "<ul>\n" + "".join(outlist) + "</ul>"
 
-def experienceLongTex(inlist):
+def experienceLongWeb(inlist):
     outlist = []
     for item in inlist:
-        outstr = ""
         if 'year' not in item.keys():
             raise ValueError("'year' key is required for experience formatter")
+        outstr = "<li>"
         if isinstance(item['year'], list):
             for i, year in enumerate(item['year']):
                 if i > 0:
-                    outstr = outstr + "\\\\\n \\tabboxmed{" + f"{year}" + ".} "
+                    outstr = outstr + f"\n    <br>{year}. "
                 else:
-                    outstr = outstr + "\\tabboxmed{" + f"{year}" + ".} "
-                outstr = outstr + "{\\bf "
+                    outstr = outstr + f"{year}. "
+                outstr = outstr + "<b>"
                 if 'title' in item.keys():
                     if isinstance(item['title'], list):
                         outstr = outstr + f"{item['title'][i]}"
@@ -75,39 +76,42 @@ def experienceLongTex(inlist):
                         outstr = outstr + f": {item['institution'][i]}"
                     else:
                         outstr = outstr + f": {item['institution']}"
-                outstr = outstr + "}"
+                outstr = outstr + "</b>"
                 if 'department' in item.keys():
                     if isinstance(item['department'], list):
                         outstr = outstr + f", {item['department'][i]}"
                     else:
                         outstr = outstr + f", {item['department']}"
         else:
-            outstr = outstr + "\\tabboxmed{" + f"{item['year']}" + ".} "
-            outstr = outstr + "{\\bf "
+            outstr = outstr + f"{item['year']}. "
+            outstr = outstr + "<b> "
             if 'title' in item.keys():
                 outstr = outstr + f"{item['title']}"
             if 'subtitle' in item.keys():
                 outstr = outstr + f", {item['subtitle']}"
             if 'institution' in item.keys():
                 outstr = outstr + f": {item['institution']}"
-            outstr = outstr + "}"
+            outstr = outstr + "</b>"
             if 'department' in item.keys():
                 outstr = outstr + f", {item['department']}"
         if 'description' in item.keys():
+            outstr = outstr + "\n    <ul>"
             if isinstance(item['description'], str):
-                outstr = outstr + "\n\\bullitem "
-                outstr = outstr + f"{item['description']}"
+                outstr = outstr + "\n    <li>"
+                outstr = outstr + f"{item['description']}</li>\n"
             elif isinstance(item['description'], list):
                 for i2 in item['description']:
-                    outstr = outstr + "\n\\bullitem "
-                    outstr = outstr + f"{i2}"
+                    outstr = outstr + "\n    <li>"
+                    outstr = outstr + f"{i2}</li>\n"
+            outstr = outstr + "    </ul>\n"
+        outstr = outstr + "</li>\n"
         outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+    return "<ul>\n" + "".join(outlist) + "</ul>"
 
-def degreeLongTex(inlist):
+def degreeLongWeb(inlist):
     outlist = []
     for item in inlist:
-        outstr = ""
+        outstr = "<li>"
         if 'year' not in item.keys() or 'title' not in item.keys() or \
            'institution' not in item.keys() or 'subtitle' not in item.keys():
             raise ValueError("'year', 'title', 'subtitle', and 'institution'"
@@ -115,25 +119,28 @@ def degreeLongTex(inlist):
         outstr = outstr + (f"{item['title']}, {item['year']}, " +
                            f"{item['subtitle']}, {item['institution']}\n")
         if 'description' in item.keys():
+            outstr = outstr + "\n    <ul>"
             if isinstance(item['description'], str):
-                outstr = outstr + "\n\\bullitem {\\sl "
-                outstr = outstr + f"{item['description']}" + "}\n"
+                outstr = outstr + "\n    <li>"
+                outstr = outstr + f"<i>{item['description']}</i></li>\n"
             elif isinstance(item['description'], list):
                 for i2 in item['description']:
-                    outstr = outstr + "\n\\bullitem {\\sl "
-                    outstr = outstr + f"{i2}" + "}\n"
+                    outstr = outstr + "\n    <li>"
+                    outstr = outstr + f"<i>{i2}</i></li>\n"
+            outstr = outstr + "    </ul>\n"
+        outstr = outstr + "</li>\n"
         outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+    return "<ul>\n" + "".join(outlist) + "</ul>"
 
-def degreeShortTex(inlist):
+def degreeShortWeb(inlist):
     outlist = []
     for item in inlist:
-        outstr = ""
+        outstr = "<li>"
         if 'year' not in item.keys() or 'title' not in item.keys() or \
            'institution' not in item.keys() or 'subtitle' not in item.keys():
             raise ValueError("'year', 'title', 'subtitle', and 'institution'"
                              + " are required keys for degree formatter")
         outstr = outstr + (f"{item['title']}, {item['year']}, " +
                            f"{item['subtitle']}, {item['institution']}\n")
-        outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+        outstr = outstr + "</li>\n"
+    return "<ul>\n" + "".join(outlist) + "</ul>"

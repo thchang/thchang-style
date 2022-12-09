@@ -41,6 +41,38 @@
         - Deployed optimization solvers for accelerator design, material manufacturing, and inverse problems
         - Advised graduate and undergraduate interns and contributed to research proposals
 
+- teaching:
+    year: Jan 2022 - Present
+    title: Adjunct Professor
+    institution: College of DuPage
+    department: Dept. of Computer and Information Science
+    description:
+        - 'CIS 2531: Introduction to Python Programming'
+
+- award:
+    year: 2021
+    title: Nominee for Outstanding Dissertation Award
+    institution: Virginia Tech
+    department: Graduate School
+    description:
+        - Finalist for Outstanding Dissertation Award, nominated by CS faculty for 2020 dissertation
+
+- degree:
+    year: May 2020
+    title: Ph.D.
+    subtitle: Computer Science
+    institution: Virginia Polytechnic Institute & State University (Virginia Tech)
+    description:
+        - 'Thesis: Math. Softw. for Multiobjective Optimization Problems; Outstanding Dissertation Award nominee'
+
+- teaching:
+    year: Jan 2020 - May 2020
+    title: Instructor of Record
+    institution: Virginia Tech
+    department: Dept. of Computer Science
+    description:
+        - 'CS 3114: Data Structures and Algorithms (in Java)'
+
 - experience:
     year: Aug 2016 - May 2020
     title: Cunningham fellow
@@ -51,46 +83,6 @@
         - Applied solvers to problems in HPC performance modeling and tuning
         - Conducted fundamental research in approximation theory and computational geometry
 
-- experience:
-    year: Jun 2019 - Dec 2019
-    title: SCGSR awardee
-    institution: Argonne National Laboratory
-    department: MCS Division
-    description:
-        - Conducting research in multiobjective optimization software via DOE SCGSR program (see awards)
-
-- experience:
-    year: Feb 2016 - Aug 2016
-    title: Research assistant
-    institution: Old Dominion University
-    department: Dept. of Computer Science
-    description:
-        - Aided in parallelizing NASA's FUN3D CFD kernel on NVIDIA GPUs using CUDA and MPI
-
-- experience:
-    year: ["Dec 2015 - Jan 2016", "May 2015 - Aug 2015"]
-    title: [Intern, Intern]
-    institution: [US Army Research Labs, US Army Research Labs]
-    department: [Computational Science Division, Computational Science Division]
-    description:
-        - Accelerating software for real-time optimal control (summer) & using AR technology for info viz (winter)
-
-- experience:
-    year: ["Dec 2014 - Jan 2015", "May 2014 - Aug 2014"]
-    title: [Intern, Intern]
-    institution: [US Army Research Labs, US Army Research Labs]
-    department: [Guidance Technology Branch, Guidance Technology Branch]
-    description:
-        - Using OpenCV for real-time sensing (summer) & developing software for embedded systems (winter)
-
-- award:
-    year: 2021
-    title: Nominee for Outstanding Dissertation Award
-    institution: Virginia Tech
-    department: Graduate School
-    description:
-        - Finalist for Outstanding Dissertation Award, nominated by CS faculty for 2020 dissertation
-
 - award:
     year: 2019
     title: Davenport Leadership Fellowship
@@ -98,6 +90,14 @@
     department: College of Engineering
     description:
         - Supplemental award given by the College of Engineering on a per-year basis
+
+- experience:
+    year: Jun 2019 - Dec 2019
+    title: SCGSR awardee
+    institution: Argonne National Laboratory
+    department: MCS Division
+    description:
+        - Conducting research in multiobjective optimization software via DOE SCGSR program (see awards)
 
 - award:
     year: 2018
@@ -139,6 +139,14 @@
     description:
         - Supplemental award given by the College of Engineering on a per-year basis
 
+- degree:
+    year: May 2016
+    title: B.S.
+    subtitle: Computer Science & Mathematics (double-major)
+    institution: Virginia Wesleyan University
+    description:
+        - "Summa cum laude; 2x ACM ICPC site champion; 8x Dean's list; 4x all-ODAC (conference) for varsity tennis"
+
 - award:
     year: 2016
     title: Outstanding Student in Computer Science & Mathematics
@@ -146,21 +154,21 @@
     description:
         - One of 2 students selected to share award by Depts. of Mathematics and Computer Science
 
-- teaching:
-    year: Jan 2022 - Present
-    title: Adjunct Professor
-    institution: College of DuPage
-    department: Dept. of Computer and Information Science
-    description:
-        - 'CIS 2531: Introduction to Python Programming'
-
-- teaching:
-    year: Jan 2020 - May 2020
-    title: Instructor of Record
-    institution: Virginia Tech
+- experience:
+    year: Feb 2016 - Aug 2016
+    title: Research assistant
+    institution: Old Dominion University
     department: Dept. of Computer Science
     description:
-        - 'CS 3114: Data Structures and Algorithms (in Java)'
+        - Aided in parallelizing NASA's FUN3D CFD kernel on NVIDIA GPUs using CUDA and MPI
+
+- experience:
+    year: ["Dec 2015 - Jan 2016", "May 2015 - Aug 2015"]
+    title: [Intern, Intern]
+    institution: [US Army Research Labs, US Army Research Labs]
+    department: [Computational Science Division, Computational Science Division]
+    description:
+        - Accelerating software for real-time optimal control (summer) & using AR technology for info viz (winter)
 
 - teaching:
     year: Jan 2013 - Dec 2015
@@ -170,18 +178,10 @@
     description:
         - 'Tutored undergraduate courses in calculus, computer science, and statistics'
 
-- degree:
-    year: May 2020
-    type: Ph.D.
-    title: Computer Science
-    institution: Virginia Polytechnic Institute & State University (Virginia Tech)
+- experience:
+    year: ["Dec 2014 - Jan 2015", "May 2014 - Aug 2014"]
+    title: [Intern, Intern]
+    institution: [US Army Research Labs, US Army Research Labs]
+    department: [Guidance Technology Branch, Guidance Technology Branch]
     description:
-        - 'Thesis: Math. Softw. for Multiobjective Optimization Problems; Outstanding Dissertation Award nominee'
-
-- degree:
-    year: May 2016
-    type: B.S.
-    title: Computer Science & Mathematics (double-major)
-    institution: Virginia Wesleyan University
-    description:
-        - "Summa cum laude; 2x ACM ICPC site champion; 8x Dean's list; 4x all-ODAC (conference) for varsity tennis"
+        - Using OpenCV for real-time sensing (summer) & developing software for embedded systems (winter)

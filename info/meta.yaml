@@ -1,6 +1,5 @@
 - web:
     SHORTTITLE: Tyler Chang MCS@ANL
-    PROFILE: img/profile_2022_web.jpg
     BGIMAGE: img/delvor.png
     BGCOLOR: rgba(250, 250, 255, 0.9)
     FGCOLOR: rgba(255, 255, 255, 1.0)
@@ -15,6 +14,7 @@
     website: https://thchang.github.io
     github: https://github.com/thchang
     email: tchang@anl.gov
+    image: img/profile_2022_web.jpg
 
 - advisor:
     name: Layne T. Watson

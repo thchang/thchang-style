@@ -13,11 +13,7 @@ with open("styles/html-subs.csv") as fp:
 with open("styles/body-content.html") as fp:
     rowtemp = fp.readlines()
 rowtemplate = "".join(rowtemp)
-
-global titleweb
-global contentweb
-titleweb = ""
-contentweb = ""
+titleline = ""
 
 # Read metadata
 global metanames
@@ -40,11 +36,7 @@ def web_swapper(line):
     global swaplines
     global metanames
     global metaweb
-    global titleweb
-    global contentweb
     newline = line
-    newline = newline.replace("$TITLE", titleweb)
-    newline = newline.replace("$CONTENT", contentweb)
     for swaps in swaplines:
         cols = [ci.strip() for ci in swaps.split(",")]
         newline = newline.replace(cols[0], cols[1])
@@ -57,6 +49,7 @@ def web_swapper(line):
 # Initialize output lines
 outlines = []
 outlines.append("<html>")
+firstRow = True
 
 # Read template
 with open("styles/head.html", "r") as fp:
@@ -66,7 +59,26 @@ for line in lines:
     outstr = outstr + web_swapper(line)
 outlines.append(outstr)
 outlines.append("<body>")
+outlines.append(f'<a class="anchor" name="top"></a>')
 outlines.append('<div class="container-fluid">')
+
+# Do one pass over inlines and store all targets
+with open("targets.temp", "w") as fp:
+    pass
+
+for count, line in enumerate(inlines):
+    # Parse first line
+    if count == 0:
+        continue
+    # Check for blank lines
+    elif len(line.strip()) == 0:
+        continue
+    # Just dump all target IDs to a file
+    elif line.strip()[0] == "%":
+        words = [wi.strip() for wi in line.strip().split()]
+        if len(words) > 1:
+            with open("targets.temp", "a") as fp:
+                fp.write(" ".join(words[1:]) + "\n")
 
 # Loop over lines in file
 for count, line in enumerate(inlines):
@@ -76,13 +88,24 @@ for count, line in enumerate(inlines):
     # Check for blank lines
     elif len(line.strip()) == 0:
         continue
+    # Place anchors at all targets
+    elif line.strip()[0] == "%":
+        words = [wi.strip() for wi in line.strip().split()]
+        if len(words) > 1:
+            outlines.append(f'<a class="anchor" name="{" ".join(words[1:])}"></a>')
     # Get section/subsection headings
     elif line.strip()[0] == "#":
         words = line.strip().split()
         if len(words[0]) > 1 and words[0][1] == "#":
-            outlines.append("\\subsection*{" + " ".join(words[1:]) + "}")
+            outlines.append("\n<h2>" + " ".join(words[1:]) + "</h2>\n")
         else:
-            titleweb = " ".join(words[1:])
+            if firstRow:
+                firstRow = False
+            else:
+                outlines.append('<a href="#top">^top</a>')
+                outlines.append("</div>\n</div>\n</div>")
+            titleline = " ".join(words[1:])
+            outlines.append(rowtemplate.replace("$TITLE", titleline))
     # Extract data from yaml/bib files
     else:
         # Parse + tokenize command
@@ -140,12 +163,12 @@ for count, line in enumerate(inlines):
             import formatters
             try:
                 styler = getattr(formatters, style[1])
-                contentweb = styler(topic_list)
-                if len(titleweb) > 0:
-                    outlines.append(web_swapper(rowtemplate))
+                outlines.append("<p>\n" + styler(topic_list) + "\n</p>")
             except AttributeError:
                 raise ValueError(f"Line {count} format spec {style[1]} not recognized ...")
                 #print(f"Line {count} format spec {style[1]} not recognized ...")
+outlines.append('<a href="#top">^top</a>')
+outlines.append("</div>\n</div>\n</div>\n")
 outlines.append('</div>')
 outlines.append("</body>")
 outlines.append("</html>")

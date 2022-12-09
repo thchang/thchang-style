@@ -2,6 +2,8 @@ PDFLATEX
 
 info/meta.yaml, titleTex: me
 
+% TEST: CV parser should ignore this line, but html parser will set a target
+
 # Interests
 info/about.yaml, singlelineTex: bio.interests
 

@@ -27,11 +27,10 @@ def articleWeb(inlist):
         elif 'url' in item.keys():
             outstr = (outstr + f'<a target="_blank" href="{item["url"]}">' +
                       f'url: {item["url"]}</a>')
-            outstr = outstr + f"url: {item['url']}"
         elif 'isbn' in item.keys():
             outstr = outstr + f"In ISBN: {item['isbn']}"
         outlist.append(outstr)
-    return "\n\n<br><br><br>\n\n".join(outlist)
+    return "\n<br><br>\n".join(outlist)
 
 def proceedingsWeb(inlist):
     outlist = []
@@ -65,11 +64,10 @@ def proceedingsWeb(inlist):
         elif 'url' in item.keys():
             outstr = (outstr + f'<a target="_blank" href="{item["url"]}">' +
                       f'url: {item["url"]}</a>')
-            outstr = outstr + f"url: {item['url']}"
         elif 'isbn' in item.keys():
             outstr = outstr + f"In ISBN: {item['isbn']}"
         outlist.append(outstr)
-    return "\n\n<br><br><br>\n\n".join(outlist)
+    return "\n<br><br>\n".join(outlist)
 
 def techreportWeb(inlist):
     outlist = []
@@ -100,11 +98,10 @@ def techreportWeb(inlist):
         elif 'url' in item.keys():
             outstr = (outstr + f'<a target="_blank" href="{item["url"]}">' +
                       f'url: {item["url"]}</a>')
-            outstr = outstr + f"url: {item['url']}"
         elif 'isbn' in item.keys():
             outstr = outstr + f"In ISBN: {item['isbn']}"
         outlist.append(outstr)
-    return "\n\n<br><br><br>\n\n".join(outlist)
+    return "\n<br><br>\n".join(outlist)
 
 def talkWeb(inlist):
     outlist = []
@@ -135,7 +132,7 @@ def talkWeb(inlist):
         if 'note' in item.keys():
             outstr = outstr + f"{item['note']}. "
         outlist.append(outstr)
-    return "\n\n<br><br><br>\n\n".join(outlist)
+    return "\n<br><br>\n".join(outlist)
 
 def miscPubWeb(inlist):
     outlist = []
@@ -175,7 +172,7 @@ def miscPubWeb(inlist):
         if 'note' in item.keys():
             outstr = outstr + f"{item['note']}. "
         outlist.append(outstr)
-    return "\n\n<br><br><br>\n\n".join(outlist)
+    return "\n<br><br>\n".join(outlist)
 
 def softwareWeb(inlist):
     outlist = []
@@ -211,7 +208,7 @@ def softwareWeb(inlist):
                       f'href="{item["url"]}>"' +
                       f"link: {item['url']}</a>")
         outlist.append(outstr)
-    return "\n\n<br><br><br>\n\n".join(outlist)
+    return "\n<br><br>\n".join(outlist)
 
 def proposalWeb(inlist):
     outlist = []
@@ -269,5 +266,5 @@ def proposalWeb(inlist):
                       f'href="{item["url"]}>"' +
                       f"link: {item['url']}</a>")
         outlist.append(outstr)
-    return "\n\n<br><br><br>\n\n".join(outlist)
+    return "\n<br><br>\n".join(outlist)
 

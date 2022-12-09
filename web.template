@@ -1,19 +1,21 @@
 HTML
 
-info/meta.yaml, titleTex: me
+info/meta.yaml, titleWeb: me
 
+% About
 # Interests
-info/about.yaml, singlelineTex: bio.interests
+info/about.yaml, singlelineWeb: bio.interests
 
 # Education
-info/about.yaml, degreeLongTex: degree
+info/about.yaml, degreeLongWeb: degree
 
 # Research Experience
-info/about.yaml, experienceLongTex: experience
+info/about.yaml, experienceLongWeb: experience
 
 # Awards
-info/about.yaml, experienceShortTex: award
+info/about.yaml, experienceShortWeb: award
 
+% Software
 # Publicly Available Software
 info/software.yaml, softwareWeb:
 
@@ -57,35 +59,35 @@ info/funding.yaml, proposalWeb: proposalreject
 
 # Professional Services and Activities
 ## Journal Referee
-info/service.yaml, bulletDateTex: journalref
+info/service.yaml, bulletDateWeb: journalref
 
 ## Conference Reviewer
-info/service.yaml, bulletNoDateTex: confref
+info/service.yaml, bulletNoDateWeb: confref
 
 ## Minisymposium Organizer
-info/service.yaml, bulletDateTex: minisymporg
+info/service.yaml, bulletDateWeb: minisymporg
 
 ## Professional Membership
-info/service.yaml, bulletDateTex: member
+info/service.yaml, bulletDateWeb: member
 
 # Institutional Services
 ## Argonne
-info/service.yaml, experienceLongTex: argonne
+info/service.yaml, experienceLongWeb: argonne
 
 ## Virginia Tech
-info/service.yaml, experienceLongTex: virginiatech
+info/service.yaml, experienceLongWeb: virginiatech
 
 # Advising
-info/meta.yaml, peopleTex: advisee
+info/meta.yaml, peopleWeb: advisee
 
 # Mentoring
-info/meta.yaml, peopleShortTex: mentee
+info/meta.yaml, peopleShortWeb: mentee
 
 # Post-Dissertation Courses
-info/learning.yaml, multilineTex:
+info/learning.yaml, multilineWeb:
 
 # Teaching
-info/about.yaml, experienceLongTex: teaching
+info/about.yaml, experienceLongWeb: teaching
 
 # Misc. Travel Awards
-info/minor.yaml, multilineTex: travelaward
+info/minor.yaml, multilineWeb: travelaward

@@ -96,7 +96,7 @@
 
 - software:
     title: QAML
-    subtitle: Quantume annealing math library
+    subtitle: Quantum annealing math library
     year: 2019
     author: T. C. H. Lux, T. H. Chang, and S. S. Tipirneni
     language: Python 3

@@ -50,6 +50,9 @@ for count, line in enumerate(inlines):
     # Check for blank lines
     elif len(line.strip()) == 0:
         continue
+    # Skip over targets, which are only for HTML parser
+    elif line.strip()[0] == "%":
+        continue
     # Get section/subsection headings
     elif line.strip()[0] == "#":
         words = line.strip().split()
