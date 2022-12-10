@@ -192,23 +192,64 @@ def softwareWeb(inlist):
         if 'author' in item.keys():
             outstr = outstr + f"Devs: {item['author']}"
         if 'language' in item.keys():
-            outstr = (outstr + f"<br>Primary Prog. Lang: {item['language']}")
+            outstr = (outstr + f". &nbsp Primary Prog. Lang: {item['language']}")
         if 'note' in item.keys():
             outstr = outstr + f"<br>\n{item['note']}"
-        if 'doi' in item.keys():
-            outstr = (outstr + '<br>\n <a target="_blank" ' +
-                      f'href="https://doi.org/{item["doi"]}>"' +
-                      f"doi: {item['doi']}</a>")
-        if 'git' in item.keys():
-            outstr = (outstr + '<br>\n <a target="_blank" ' +
-                      f'href="{item["git"]}">' +
-                      f"git: {item['git']}</a>")
-        if 'url' in item.keys():
-            outstr = (outstr + '<br>\n <a target="_blank" ' +
-                      f'href="{item["url"]}>"' +
-                      f"link: {item['url']}</a>")
+        if 'description' in item.keys() or 'links' in item.keys() or 'git' in item.keys() or 'url' in item.keys() or 'doi' in item.keys():
+            outstr = outstr + "\n<br>\n"
+            desc = ""
+            logo = ""
+            link = ""
+            if 'description' in item.keys():
+                outstr = outstr + f'<button onclick="{item["title"]}Desc()">More Info</button>\n'
+                desc = item['description']
+            if 'logo' in item.keys():
+                logo = f'<img src="{item["logo"]}" class="img-responsive" align="right" width="10%" hspace="20em">'
+            if 'links' in item.keys() or 'doi' in item.keys() or 'git' in item.keys() or 'url' in item.keys():
+                link = link + "<ul>\n"
+                outstr = outstr + f'<button onclick="{item["title"]}Link()">View Links</button>\n'
+                if 'doi' in item.keys():
+                    link = (link + '<li><a target="_blank" ' +
+                            f'href="https://doi.org/{item["doi"]}>"' +
+                            f"doi: {item['doi']}</a></li>\n")
+                if 'git' in item.keys():
+                    link = (link + '<li><a target="_blank" ' +
+                            f'href="{item["git"]}">' +
+                            f"Git Repository</a></li>\n")
+                if 'url' in item.keys():
+                    link = (link + '<li><a target="_blank" ' +
+                            f'href="{item["url"]}>"' +
+                            f"link: {item['url']}</a></li>\n")
+                if 'links' in item.keys():
+                    for li in item['links']:
+                        for key in li.keys():
+                            link = link + '<li><a target="_blank" '
+                            link = link + f'href="{li[key]}">{key}</a></li>\n'
+                link = link + "</ul>\n"
+            outstr = outstr + f'</p>\n<p id="{item["title"]}Info"></p>\n'
+            outstr = outstr + f"""<script>
+    function {item['title']}Desc() {{
+        document.getElementById("{item['title']}Info").innerHTML = `
+    <button onclick="{item['title']}Hide()">hide</button><br>
+    {logo}
+    {desc}
+    `;
+    }}
+
+	function {item['title']}Link() {{
+        document.getElementById("{item['title']}Info").innerHTML = `
+    <button onclick="{item['title']}Hide()">hide</button><br>
+    {link}
+    `;
+    }}
+
+    function {item['title']}Hide() {{
+        document.getElementById("{item['title']}Info").innerHTML = "";
+    }}
+    </script>\n"""
+        outlist.append("<p>\n")
         outlist.append(outstr)
-    return "\n<br><br>\n".join(outlist)
+    return "\n<br>\n".join(outlist)
 
 def proposalWeb(inlist):
     outlist = []
