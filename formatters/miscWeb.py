@@ -103,3 +103,14 @@ def peopleShortWeb(inlist):
             newstr = newstr + f", {item['type']}"
         outlist.append(newstr)
     return "\n<br>\n".join(outlist) + "\n"
+
+def paragraphWeb(inlist):
+    outlist = []
+    for item1 in inlist:
+        if isinstance(item1, str):
+            outlist.append(f"{str(item1)}")
+        elif isinstance(item1, dict):
+            for key in item1.keys():
+                if isinstance(item1[key], str):
+                    outlist.append(f"{str(item1[key])}")
+    return "\n</p>\n<p>\n".join(outlist)

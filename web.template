@@ -4,7 +4,7 @@ info/meta.yaml, titleWeb: me
 
 % About
 # About Me
-info/about.yaml, singlelineWeb: bio.interests
+info/about.yaml, paragraphWeb: bio
 info/about.yaml, timelineWeb: experience, degree, teaching
 
 % Software

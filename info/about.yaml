@@ -1,12 +1,12 @@
 - bio:
     short: >
-        "I am a Postdoc at Argonne National Laboratory in the
+        I am a Postdoc at Argonne National Laboratory in the
         Mathematics and Computer Science (MCS) Division.
         I received my Ph.D. in Computer Science from Virginia Tech in 2020,
         where my thesis was Mathematical Software for Multiobjective
-        Optimization Problems."
+        Optimization Problems.
     research-short: >
-        "My current research interests include optimization,
+        My current research interests include optimization,
         approximation theory, computational geometry, algorithms,
         and parallel computing, for applications in scientific computing,
         data science, and engineering.
@@ -23,7 +23,7 @@
         software.
         Check out some of my Software below or on my GitHub, and don't
         hesitate to reach out if you have questions, comments, or feedback!
-        "
+
     interests:
         - numerical optimization
         - machine learning
