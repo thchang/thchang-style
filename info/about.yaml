@@ -1,35 +1,27 @@
 - bio:
     short: >
-        I am a Postdoc at Argonne National Laboratory in the
-        Mathematics and Computer Science (MCS) Division.
+        I am currently a Postdoc at Argonne National Laboratory in the
+        Mathematics and Computer Science Division.
         I received my Ph.D. in Computer Science from Virginia Tech in 2020,
-        where my thesis was Mathematical Software for Multiobjective
-        Optimization Problems.
-    research-short: >
-        My current research interests include optimization,
-        approximation theory, computational geometry, algorithms,
-        and parallel computing, for applications in scientific computing,
-        data science, and engineering.
-
-        Some specific examples of my work include:
-
-          - multiobjective optimization of computationally expensive blackbox simulations; 
-          - efficiently computing Delaunay Triangulations in medium to high dimensions;
-          - Interpolation of high-dimensional blackbox functions; and
-          - producing high quality, portable Mathematical Software
-            (both serial and parallel).
-
-        I am particularly passionate about producing open-source scientific
-        software.
-        Check out some of my Software below or on my GitHub, and don't
-        hesitate to reach out if you have questions, comments, or feedback!
-
+        where my dissertation was "Mathematical Software for Multiobjective
+        Optimization Problems."
+    research-intro: >
+        I develop frameworks and algorithms at the intersection
+        of optimization, approximation theory, and machine learning.
+        I apply these tools on scientific applications such as
+        material manufacturing, aerospace engineering, and HPC tuning.
+        My active areas of research are
     interests:
         - numerical optimization
         - machine learning
+        - computational geometry
         - analysis of algorithms
-        - parallel computing
         - scientific software
+    scientific-software: >
+        I am particularly passionate about open-source software.
+        Check out some of my software contributions below or visit my GitHub,
+        and don't hesitate to reach out if you have questions, comments,
+        or feedback!
 
 - experience:
     start: Jun 2020

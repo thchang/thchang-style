@@ -113,4 +113,10 @@ def paragraphWeb(inlist):
             for key in item1.keys():
                 if isinstance(item1[key], str):
                     outlist.append(f"{str(item1[key])}")
+                elif isinstance(item1[key], list):
+                    outstr = "<ul>\n"
+                    for item2 in item1[key]:
+                        outstr = outstr + f"<li>{str(item2)}</li>\n"
+                    outstr = outstr + "</ul>"
+                    outlist.append(outstr)
     return "\n</p>\n<p>\n".join(outlist)
