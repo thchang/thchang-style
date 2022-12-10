@@ -20,9 +20,6 @@ info/pubs.bib, articleWeb: inpress
 ## Publications Under Review
 info/pubs.bib, miscPubWeb: submitted
 
-## Publications In Preparation
-info/pubs.bib, miscPubWeb: inpreparation
-
 ## Peer-Reviewed Journal Articles
 info/pubs.bib, articleWeb: article
 
@@ -31,18 +28,6 @@ info/pubs.bib, proceedingsWeb: inproceedings
 
 ## Technical Reports and Dissertations
 info/pubs.bib, techreportWeb: techreport, thesis
-
-% Talks
-# Talks
-
-## Conference Talks
-info/talks.bib, talkWeb: conferencetalk
-
-## Seminars and Colloquia
-info/talks.bib, talkWeb: seminar
-
-## Tutorials and Guest Lectures
-info/talks.bib, talkWeb: tutorial, guestlecture
 
 % Funding
 # Funding
