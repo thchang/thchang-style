@@ -403,7 +403,7 @@ def timelineWeb(inlist):
     ax.spines['bottom'].set_visible(False)
     ax.spines['left'].set_visible(False)
     plt.savefig("timeline.svg", format='svg', bbox_inches='tight')
-    return '<br><img src="timeline.svg" alt="timeline">'
+    return '<br><img src="timeline.svg" alt="timeline" width="100%">'
 
 scroller = """<br>\n<div style="height: 20em;
               padding-top: 0em;
@@ -411,4 +411,4 @@ scroller = """<br>\n<div style="height: 20em;
               text-align: justify;
               text-justify: inter-word;
               border: 0px solid black;
-              overflow:scroll;">\n<img src="timeline.svg" alt="timeline">\n</div>"""
+              overflow:scroll;">\n<img src="timeline.svg" alt="timeline" width="100%">\n</div>"""
