@@ -17,9 +17,6 @@ info/software.yaml, softwareWeb:
 ## Publications In-Press
 info/pubs.bib, articleWeb: inpress
 
-## Publications Under Review
-info/pubs.bib, miscPubWeb: submitted
-
 ## Peer-Reviewed Journal Articles
 info/pubs.bib, articleWeb: article
 
