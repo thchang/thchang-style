@@ -1,13 +1,12 @@
-$BOLD1,
-$BOLD2,
-$SLANTED,
-$ITALICS1,
-$ITALICS2,
-$URL,
+{$BOLD1:}, <b>:</b>
+$BOLD2{:}, <b>:</b>
+{$SLANTED:}, <i>:</i>
+{$ITALICS1:}, <i>:</i>
+$ITALICS2{:}, <i>:</i>
+$URL{:}, <a href=":">here</a>
 $PERCENT, %
 $DOLLAR, $
-&, &amp
 $AND, &amp
-$TILDE, &tilde
+$TILDE, &#126&nbsp
 $LBRACK, {
 $RBRACK, }

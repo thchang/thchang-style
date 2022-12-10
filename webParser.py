@@ -39,7 +39,14 @@ def web_swapper(line):
     newline = line
     for swaps in swaplines:
         cols = [ci.strip() for ci in swaps.split(",")]
-        newline = newline.replace(cols[0], cols[1])
+        if all([len(col.split(":")) > 1 for col in cols]):
+            while newline.replace(cols[0].split(":")[0], "BANG") != newline:
+                newline = newline.replace(cols[0].split(":")[0],
+                                          cols[1].split(":")[0], 1)
+                newline = newline.replace(cols[0].split(":")[1],
+                                          cols[1].split(":")[1], 1)
+        else:
+            newline = newline.replace(cols[0], cols[1])
     for name in metanames:
         newline = newline.replace(name, "<b>" + name + "</b>")
     for cols in metaweb:
@@ -163,7 +170,7 @@ for count, line in enumerate(inlines):
             import formatters
             try:
                 styler = getattr(formatters, style[1])
-                outlines.append("<p>\n" + styler(topic_list) + "\n</p>")
+                outlines.append("<p>\n" + web_swapper(styler(topic_list)) + "\n</p>")
             except AttributeError:
                 raise ValueError(f"Line {count} format spec {style[1]} not recognized ...")
                 #print(f"Line {count} format spec {style[1]} not recognized ...")

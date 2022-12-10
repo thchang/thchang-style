@@ -11,7 +11,7 @@ info/about.yaml, singlelineTex: bio.interests
 info/about.yaml, degreeLongTex: degree
 
 # Research Experience
-info/about.yaml, experienceLongTex: experience
+info/about.yaml, experienceLongTex: experience, intern
 
 # Awards
 info/about.yaml, experienceShortTex: award
@@ -87,7 +87,7 @@ info/meta.yaml, peopleShortTex: mentee
 info/learning.yaml, multilineTex:
 
 # Teaching
-info/about.yaml, experienceLongTex: teaching
+info/about.yaml, experienceLongTex: tutoring, teaching
 
 # Misc. Travel Awards
 info/minor.yaml, multilineTex: travelaward

@@ -87,7 +87,7 @@ def peopleWeb(inlist):
                 newstr = newstr + f"<li>{desc}</li>\n"
             newstr = newstr + "</ul>\n"
         outlist.append(newstr)
-    return "\n<br><br>\n".join(outlist) + "\n"
+    return "\n<br>\n".join(outlist) + "\n"
 
 def peopleShortWeb(inlist):
     outlist = []
@@ -102,4 +102,4 @@ def peopleShortWeb(inlist):
         if 'type' in item.keys():
             newstr = newstr + f", {item['type']}"
         outlist.append(newstr)
-    return "\n<br><br>\n".join(outlist) + "\n"
+    return "\n<br>\n".join(outlist) + "\n"

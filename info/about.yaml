@@ -32,7 +32,7 @@
         - scientific software
 
 - experience:
-    year: Jun 2020 - Present
+    start: Jun 2020
     title: Postdoctoral appointee
     institution: Argonne National Laboratory
     department: MCS Division
@@ -42,7 +42,7 @@
         - Advised graduate and undergraduate interns and contributed to research proposals
 
 - teaching:
-    year: Jan 2022 - Present
+    start: Jan 2022
     title: Adjunct Professor
     institution: College of DuPage
     department: Dept. of Computer and Information Science
@@ -65,16 +65,9 @@
     description:
         - 'Thesis: Math. Softw. for Multiobjective Optimization Problems; Outstanding Dissertation Award nominee'
 
-- teaching:
-    year: Jan 2020 - May 2020
-    title: Instructor of Record
-    institution: Virginia Tech
-    department: Dept. of Computer Science
-    description:
-        - 'CS 3114: Data Structures and Algorithms (in Java)'
-
 - experience:
-    year: Aug 2016 - May 2020
+    start: Aug 2016
+    end: May 2020
     title: Cunningham fellow
     institution: Virginia Tech
     department: Dept. of Computer Science
@@ -82,6 +75,15 @@
         - Designed parallel algorithms and software for multivariate interpolation and blackbox optimization
         - Applied solvers to problems in HPC performance modeling and tuning
         - Conducted fundamental research in approximation theory and computational geometry
+
+- teaching:
+    start: Jan 2020
+    end: May 2020
+    title: Instructor of Record
+    institution: Virginia Tech
+    department: Dept. of Computer Science
+    description:
+        - 'CS 3114: Data Structures and Algorithms (in Java)'
 
 - award:
     year: 2019
@@ -91,8 +93,9 @@
     description:
         - Supplemental award given by the College of Engineering on a per-year basis
 
-- experience:
-    year: Jun 2019 - Dec 2019
+- intern:
+    start: Jun 2019
+    end: Dec 2019
     title: SCGSR awardee
     institution: Argonne National Laboratory
     department: MCS Division
@@ -139,13 +142,14 @@
     description:
         - Supplemental award given by the College of Engineering on a per-year basis
 
-- degree:
-    year: May 2016
-    title: B.S.
-    subtitle: Computer Science & Mathematics (double-major)
-    institution: Virginia Wesleyan University
+- experience:
+    start: Feb 2016
+    end: Aug 2016
+    title: Research assistant
+    institution: Old Dominion University
+    department: Dept. of Computer Science
     description:
-        - "Summa cum laude; 2x ACM ICPC site champion; 8x Dean's list; 4x all-ODAC (conference) for varsity tennis"
+        - Aided in parallelizing NASA's FUN3D CFD kernel on NVIDIA GPUs using CUDA and MPI
 
 - award:
     year: 2016
@@ -154,32 +158,35 @@
     description:
         - One of 2 students selected to share award by Depts. of Mathematics and Computer Science
 
-- experience:
-    year: Feb 2016 - Aug 2016
-    title: Research assistant
-    institution: Old Dominion University
-    department: Dept. of Computer Science
+- degree:
+    year: May 2016
+    title: B.S.
+    subtitle: Computer Science & Mathematics (double-major)
+    institution: Virginia Wesleyan University
     description:
-        - Aided in parallelizing NASA's FUN3D CFD kernel on NVIDIA GPUs using CUDA and MPI
+        - "Summa cum laude; 2x ACM ICPC site champion; 8x Dean's list; 4x all-ODAC (conference) for varsity tennis"
 
-- experience:
-    year: ["Dec 2015 - Jan 2016", "May 2015 - Aug 2015"]
+- intern:
+    start: ["Dec 2015", "May 2015"]
+    end: ["Jan 2016", "Aug 2015"]
     title: [Intern, Intern]
     institution: [US Army Research Labs, US Army Research Labs]
     department: [Computational Science Division, Computational Science Division]
     description:
         - Accelerating software for real-time optimal control (summer) & using AR technology for info viz (winter)
 
-- teaching:
-    year: Jan 2013 - Dec 2015
+- tutoring:
+    start: Jan 2013
+    end: Dec 2015
     title: Subject Tutor
     institution: Virginia Wesleyan University
     department: Learning Center
     description:
         - 'Tutored undergraduate courses in calculus, computer science, and statistics'
 
-- experience:
-    year: ["Dec 2014 - Jan 2015", "May 2014 - Aug 2014"]
+- intern:
+    start: ["Dec 2014", "May 2014"]
+    end: ["Jan 2015", "Aug 2014"]
     title: [Intern, Intern]
     institution: [US Army Research Labs, US Army Research Labs]
     department: [Guidance Technology Branch, Guidance Technology Branch]
