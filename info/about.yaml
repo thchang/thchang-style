@@ -85,7 +85,7 @@
     description:
         - Supplemental award given by the College of Engineering on a per-year basis
 
-- intern:
+- appointment:
     start: Jun 2019
     end: Dec 2019
     title: SCGSR awardee

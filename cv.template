@@ -11,7 +11,7 @@ info/about.yaml, singlelineTex: bio.interests
 info/about.yaml, degreeLongTex: degree
 
 # Research Experience
-info/about.yaml, experienceLongTex: experience, intern
+info/about.yaml, experienceLongTex: experience, intern, appointment
 
 # Awards
 info/about.yaml, experienceShortTex: award

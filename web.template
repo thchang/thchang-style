@@ -5,7 +5,7 @@ info/meta.yaml, titleWeb: me
 % About
 # About Me
 info/about.yaml, paragraphWeb: bio
-info/about.yaml, timelineWeb: experience, degree, teaching
+info/about.yaml, timelineWeb: experience, degree, teaching, appointment
 
 % Software
 # Publicly Available Software
