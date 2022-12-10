@@ -41,7 +41,7 @@
     language: Fortran 2008
     git: https://github.com/vtopt/VTMOP
     description: >
-        'VTMOP is a flexible open-source Fortran package for solving generic
+        VTMOP is a flexible open-source Fortran package for solving generic
         MOPs; see ParMOO (above) for a description of MOPs.
         While many current MOP algorithms do not scale well for more than
         2 or 3 objectives, VTMOP aims at approximating tradeoff curves between
@@ -55,7 +55,7 @@
         The original VTMOP source code is implemented in Fortran 2008, using
         OpenMP to issue simulation tasks asynchronously.
         However, a VTMOP generator function is also available for Python usage
-        through the libEnsemble library.'
+        through the libEnsemble library.
     logo: img/vtmop.png
     links:
         - Docs/Webpage: https://vtopt.github.io/VTMOP
@@ -72,7 +72,7 @@
     language: Fortran 2003
     git: https://github.com/vtopt/DelaunaySparse
     description: >
-        'The Delaunay triangulation is a well-studied simplicial mesh,
+        The Delaunay triangulation is a well-studied simplicial mesh,
         widely considered optimal for interpolation applications.
         Delaunay triangulations have recently garnered some interest in
         the machine learning community, for their interpretability in the
@@ -87,7 +87,7 @@
         The resulting codebase is fast, robust, and portable; and features
         both serial and parallel implementations.
         Interfaces are available for usage as a Fortran library,
-        C/C++ library, Python module, or from the command line.'
+        C/C++ library, Python module, or from the command line.
     logo: img/delsparse.png
     links:
         - Docs/website: https://vtopt.github.io/DelaunaySparse
@@ -102,7 +102,7 @@
     language: Python 3
     git: https://github.com/tchlux/qaml
     description: >
-        'Quantum annealing (QA) is an implementation of the general purpose
+        Quantum annealing (QA) is an implementation of the general purpose
         adiabatic quantum computing (AQC) model for quantum computing.
         QA balances the theoretical properties of AQC against real-world
         practicalities, allowing for faster progress in near-term QA hardware.
@@ -111,7 +111,7 @@
         and polynomial sum-of-squares problems (with real, integer, Boolean
         or mixed variables) on the D-Wave quantum annealer.
         These broad classes of problems are ubiquitous in scientific computing,
-        machine learning, and data science.'
+        machine learning, and data science.
     logo: img/qaml-dark.svg
     links:
         - Paper: https://doi.org/10.1007/s11128-019-2489-x

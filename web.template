@@ -3,7 +3,7 @@ HTML
 info/meta.yaml, titleWeb: me
 
 % About
-# Interests
+# About Me
 info/about.yaml, singlelineWeb: bio.interests
 info/about.yaml, timelineWeb: experience, degree, teaching
 
@@ -52,8 +52,8 @@ info/funding.yaml, proposalWeb: funding
 ## Pending
 info/funding.yaml, proposalWeb: proposalreject
 
-% Service
-# Professional Services and Activities
+% Service & Awards
+# Professional Services and Awards
 ## Journal Referee
 info/service.yaml, bulletDateWeb: journalref
 
@@ -68,23 +68,20 @@ info/service.yaml, bulletDateWeb: member
 
 ## Institutional Services
 
-## Argonne
-info/service.yaml, experienceLongWeb: argonne
+info/service.yaml, experienceShortWeb: argonne, virginiatech
 
-## Virginia Tech
-info/service.yaml, experienceLongWeb: virginiatech
+## Awards
 
-% Teaching
-# Teaching
+info/about.yaml, experienceShortWeb: award
 
-## Advising
+% Teaching & Mentoring
+# Teaching and Mentoring Students
+
+## Courses Taught
+info/about.yaml, experienceLongWeb: teaching
+
+## Students Advised
 info/meta.yaml, peopleWeb: advisee
 
 ## Mentoring
 info/meta.yaml, peopleShortWeb: mentee
-
-## Teaching
-info/about.yaml, experienceLongWeb: teaching
-
-# Misc. Travel Awards
-info/minor.yaml, multilineWeb: travelaward
