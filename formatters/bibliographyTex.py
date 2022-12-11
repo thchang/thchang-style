@@ -260,3 +260,71 @@ def proposalTex(inlist):
         outlist.append(outstr)
     return "\n\n\\medskip\n\n".join(outlist)
 
+def anypubTex(inlist):
+    outlist = []
+    for item in inlist:
+        outstr = ""
+        if 'year' in item.keys():
+            outstr = outstr + f"{item['year']}. "
+        if 'author' in item.keys():
+            outstr = outstr + f"{item['author']}. "
+        if 'journal' not in item.keys() and 'booktitle' not in item.keys():
+            if 'title' in item.keys():
+                outstr = outstr + "{\\sl " + f"{item['title']}" + "}. "
+        else:
+            if 'title' in item.keys():
+                outstr = outstr + f"{item['title']}. "
+        if 'journal' in item.keys():
+            outstr = outstr + "{\\sl " + f"{item['journal']}" + "}"
+            if 'volume' in item.keys():
+                outstr = outstr + f" {item['volume']}"
+            if 'number' in item.keys():
+                outstr = outstr + f"({item['number']})"
+            if 'articleno' in item.keys():
+                outstr = outstr + f", Article {item['articleno']}"
+            if 'pages' in item.keys():
+                outstr = outstr + f", {item['pages']}"
+            outstr = outstr + ". "
+        elif 'booktitle' in item.keys():
+            if 'chapter' in item.keys():
+                outstr = outstr + f"Ch. {item['chapter']} "
+            outstr = outstr + "{\\sl In " + f"{item['booktitle']}"
+            if 'volume' in item.keys():
+                outstr = outstr + f" Vol. {item['volume']}"
+            if 'number' in item.keys():
+                outstr = outstr + f", No. {item['number']}"
+            outstr = outstr  + "}"
+            if 'articleno' in item.keys():
+                outstr = outstr + f", Article {item['articleno']}"
+            if 'pages' in item.keys():
+                outstr = outstr + f", {item['pages']}"
+            outstr = outstr + ". "
+        elif 'type' in item.keys():
+            outstr = outstr + f"{item['type']}"
+            if 'number' in item.keys():
+                outstr = outstr + f" {item['number']}"
+                outstr = outstr + ". "
+            if 'organization' in item.keys():
+                outstr = outstr + f"{item['organization']}"
+                if 'location' in item.keys():
+                    outstr = outstr + ", " + f"{item['location']}"
+                outstr = outstr + ". "
+        else:
+            if 'number' in item.keys():
+                outstr = outstr + f"{item['number']}. "
+            if 'organization' in item.keys():
+                outstr = outstr + f"{item['organization']}"
+                if 'location' in item.keys():
+                    outstr = outstr + ", " + f"{item['location']}"
+            outstr = outstr + ". "
+        if 'note' in item.keys():
+            outstr = outstr + f"{item['note']}. "
+        if 'doi' in item.keys():
+            outstr = (outstr + "{\\tt doi:} \\href{https://doi.org/" +
+                      f"{item['doi']}" + "}{" + f"{item['doi']}" + "}")
+        elif 'url' in item.keys():
+            outstr = outstr + "{\\tt url:} \\url{" + f"{item['url']}" + "}"
+        elif 'isbn' in item.keys():
+            outstr = outstr + "In {\\tt isbn:} " + f"{item['isbn']}"
+        outlist.append(outstr)
+    return "\n\n\\medskip\n\n".join(outlist)

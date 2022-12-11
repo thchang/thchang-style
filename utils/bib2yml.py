@@ -157,7 +157,7 @@ def addEntry():
             pages = f"pp. {entry_content}"
         else:
             pages = f"{entry_content} pages"
-    elif entry_type.lower() in ("organization", "publisher"):
+    elif entry_type.lower() in ("organization", "publisher", "school", "institution"):
         organization = entry_content
     elif entry_type.lower() in ("location", "address"):
         location = entry_content

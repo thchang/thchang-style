@@ -5,26 +5,22 @@ info/meta.yaml, titleWeb: me
 % About
 # About Me
 info/about.yaml, paragraphWeb: bio
-info/about.yaml, timelineWeb: experience, degree, teaching, appointment
+info/about.yaml, timelineWeb: experience, degree, teaching, appointment, intern
+
+% Research
+# Research and Publications
+## Research Statement
+info/about.yaml, paragraphWeb: research-stmt
+
+## Representative Publications
+info/shortlist.bib, anypubWeb:
+
+## All Papers and Reports
+info/pubs.bib, collapsablePubWeb: article, inproceedings, techreport, thesis, inpress
 
 % Software
 # Publicly Available Software
 info/software.yaml, softwareWeb:
-
-% Publications
-# Publications
-
-## Publications In-Press
-info/pubs.bib, articleWeb: inpress
-
-## Peer-Reviewed Journal Articles
-info/pubs.bib, articleWeb: article
-
-## Peer-Reviewed Conference Papers
-info/pubs.bib, proceedingsWeb: inproceedings
-
-## Technical Reports and Dissertations
-info/pubs.bib, techreportWeb: techreport, thesis
 
 % Funding
 # Funding
@@ -36,17 +32,14 @@ info/funding.yaml, proposalWeb: proposalreject
 
 % Service & Awards
 # Professional Services and Awards
+## Minisymposia Organized
+info/service.yaml, bulletDateWeb: minisymporg
+
 ## Journal Referee
 info/service.yaml, bulletDateWeb: journalref
 
 ## Conference Reviewer
 info/service.yaml, bulletNoDateWeb: confref
-
-## Minisymposium Organizer
-info/service.yaml, bulletDateWeb: minisymporg
-
-## Professional Membership
-info/service.yaml, bulletDateWeb: member
 
 ## Institutional Services
 
@@ -55,6 +48,9 @@ info/service.yaml, experienceShortWeb: argonne, virginiatech
 ## Awards
 
 info/about.yaml, experienceShortWeb: award
+
+## Professional Membership
+info/service.yaml, bulletDateWeb: member
 
 % Teaching & Mentoring
 # Teaching and Mentoring Students

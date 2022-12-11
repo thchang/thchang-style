@@ -40,11 +40,13 @@ def web_swapper(line):
     for swaps in swaplines:
         cols = [ci.strip() for ci in swaps.split(",")]
         if all([len(col.split(":")) > 1 for col in cols]):
-            while newline.replace(cols[0].split(":")[0], "BANG") != newline:
-                newline = newline.replace(cols[0].split(":")[0],
-                                          cols[1].split(":")[0], 1)
-                newline = newline.replace(cols[0].split(":")[1],
-                                          cols[1].split(":")[1], 1)
+            substr = newline.split(cols[0].split(":")[0])
+            if len(substr) > 1:
+                for i in range(len(substr)):
+                    if i % 2 == 1:
+                        substr[i] = substr[i].replace(cols[0].split(":")[1],
+                                                      cols[1].split(":")[1], 1)
+                newline = cols[1].split(":")[0].join(substr)
         else:
             newline = newline.replace(cols[0], cols[1])
     for name in metanames:
@@ -110,7 +112,7 @@ for count, line in enumerate(inlines):
                 firstRow = False
             else:
                 outlines.append('<br><p style="text-align: right"><a href="#top">^top</a></p>')
-                outlines.append("</div>\n</div>\n</div>")
+                outlines.append('</div>\n</div>\n</div>\n')
             titleline = " ".join(words[1:])
             outlines.append(rowtemplate.replace("$TITLE", titleline))
     # Extract data from yaml/bib files

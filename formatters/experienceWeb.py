@@ -394,6 +394,10 @@ def timelineWeb(inlist):
             dotcount = dotcount + 1
     ax.set_xticks(x_ticks)
     ax.set_yticks(y_ticks_adjusted)
+    for i in range(len(y_labels)):
+        thisyear = datetime.date.today().year
+        if y_labels[i].split()[0] == "dec" and y_labels[i].split()[1] == f"{thisyear}":
+            y_labels[i] = "present"
     ax.set_xticklabels(x_labels)
     ax.set_yticklabels(y_labels)
     plt.xlim([0.9, max_level+10])
