@@ -29,6 +29,9 @@ def articleWeb(inlist):
                       f'url: {item["url"]}</a>')
         elif 'isbn' in item.keys():
             outstr = outstr + f"In ISBN: {item['isbn']}"
+        if 'bib' in item.keys():
+            popup_text = item['bib'].replace("\\", "\\\\")
+            outstr = outstr + f"""<br><a onclick="window.prompt('Bib entry:',`{popup_text}`)">View bib entry</a>\n"""
         outlist.append(outstr)
     return "\n<br><br>\n".join(outlist)
 
@@ -66,6 +69,9 @@ def proceedingsWeb(inlist):
                       f'url: {item["url"]}</a>')
         elif 'isbn' in item.keys():
             outstr = outstr + f"In ISBN: {item['isbn']}"
+        if 'bib' in item.keys():
+            popup_text = item['bib'].replace("\\", "\\\\")
+            outstr = outstr + f"""<br><a onclick="window.prompt('Bib entry:',`{popup_text}`)">View bib entry</a>\n"""
         outlist.append(outstr)
     return "\n<br><br>\n".join(outlist)
 
@@ -100,6 +106,9 @@ def techreportWeb(inlist):
                       f'url: {item["url"]}</a>')
         elif 'isbn' in item.keys():
             outstr = outstr + f"In ISBN: {item['isbn']}"
+        if 'bib' in item.keys():
+            popup_text = item['bib'].replace("\\", "\\\\")
+            outstr = outstr + f"""<br><a onclick="window.prompt('Bib entry:',`{popup_text}`)">View bib entry</a>\n"""
         outlist.append(outstr)
     return "\n<br><br>\n".join(outlist)
 
@@ -171,6 +180,9 @@ def miscPubWeb(inlist):
             outstr = outstr + f"{item['location']}. "
         if 'note' in item.keys():
             outstr = outstr + f"{item['note']}. "
+        if 'bib' in item.keys():
+            popup_text = item['bib'].replace("\\", "\\\\")
+            outstr = outstr + f"""<br><a onclick="window.prompt('Bib entry:',`{popup_text}`)">View bib entry</a>\n"""
         outlist.append(outstr)
     return "\n<br><br>\n".join(outlist)
 
@@ -375,6 +387,9 @@ def anypubWeb(inlist):
             outstr = outstr + f'<a href="{item["url"]}">url: {item["url"]}</a>'
         elif 'isbn' in item.keys():
             outstr = outstr + "In isbn: " + f"{item['isbn']}"
+        if 'bib' in item.keys():
+            popup_text = item['bib'].replace("\\", "\\\\")
+            outstr = outstr + f"""<br><a onclick="window.prompt('Bib entry:',`{popup_text}`)">View bib entry</a>\n"""
         outlist.append(outstr)
     return "\n<br><br>\n".join(outlist)
 
@@ -444,6 +459,9 @@ def collapsablePubWeb(inlist):
             outstr = outstr + f'<a href="{item["url"]}">url: {item["url"]}</a>'
         elif 'isbn' in item.keys():
             outstr = outstr + "In isbn: " + f"{item['isbn']}"
+        if 'bib' in item.keys():
+            popup_text = item['bib'].replace("\\", "\\\\")
+            outstr = outstr + f"""<br><a onclick="window.prompt('Bib entry:',\`{popup_text}\`)">View bib entry</a>\n"""
         if 'year' in item.keys():
             if f"{item['year']}" in yearlists.keys():
                 yearlists[f'{item["year"]}'].append(outstr)

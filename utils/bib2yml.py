@@ -51,6 +51,7 @@ def reset():
     global url
     global isbn
     global note
+    global bib
 
     entry_type = None
     entry_content = None
@@ -74,6 +75,7 @@ def reset():
     url = None
     isbn = None
     note = None
+    bib = None
 
 
 def addEntry():
@@ -102,14 +104,19 @@ def addEntry():
     global url
     global isbn
     global note
+    global bib
 
     from .utils import parseAuthors, parseTitle
 
     if entry_type is None or entry_content is None:
         return
+    if entry_type.lower() in ("bib"):
+        bib = entry_content.replace("\\", "\\\\")
+        return
     entry_content = entry_content.strip()
     entry_content = entry_content.replace("$", "")
     entry_content = entry_content.replace("\\$", "$DOLLAR")
+    entry_content = entry_content.replace("\\&", "$AND")
     entry_content = entry_content.replace("\\bf", "$BOLD1")
     entry_content = entry_content.replace("\\textbf", "$BOLD2")
     entry_content = entry_content.replace("\\sl", "$SLANTED")
@@ -197,6 +204,7 @@ def joinAll():
     global url
     global isbn
     global note
+    global bib
 
     if itemtype is None:
         return ""
@@ -226,6 +234,8 @@ def joinAll():
             output = output + f'    isbn: "{isbn}"\n'
         if note is not None:
             output = output + f'    note: "{note}"\n'
+        if bib is not None:
+            output = output + f'    bib: "{bib}"\n'
     elif itemtype.lower() in ("inproceedings", "conference", "incollection",
                               "inbook"):
         output = f"- {itemtype}:\n"
@@ -261,6 +271,8 @@ def joinAll():
             output = output + f'    isbn: "{isbn}"\n'
         if note is not None:
             output = output + f'    note: "{note}"\n'
+        if bib is not None:
+            output = output + f'    bib: "{bib}"\n'
     elif itemtype.lower() in ("techreport", "mastersthesis", "phdthesis"):
         if itemtype == "techreport":
             output = "- techreport:\n    type: Technical Report\n"
@@ -292,6 +304,8 @@ def joinAll():
             output = output + f'    isbn: "{isbn}"\n'
         if note is not None:
             output = output + f'    note: "{note}"\n'
+        if bib is not None:
+            output = output + f'    bib: "{bib}"\n'
     elif itemtype.lower() in ("book", "proceedings", "booklet"):
         output = f"- {itemtype}:\n    type: Technical Report\n"
         if year is not None:
@@ -316,6 +330,8 @@ def joinAll():
             output = output + f'    isbn: "{isbn}"\n'
         if note is not None:
             output = output + f'    note: "{note}"\n'
+        if bib is not None:
+            output = output + f'    bib: "{bib}"\n'
     elif itemtype.lower() == "misc":
         if howpublished is not None:
             output = f"- {''.join(howpublished.lower().strip().split())}:\n"
@@ -347,6 +363,8 @@ def joinAll():
             output = output + f'    isbn: "{isbn}"\n'
         if note is not None:
             output = output + f'    note: "{note}"\n'
+        if bib is not None:
+            output = output + f'    bib: "{bib}"\n'
     else:
         raise Warning(f"Entry type '{itemtype}' not recognized, skipping...")
     return output + "\n"
@@ -378,6 +396,7 @@ def bib2yml(fin):
     global url
     global isbn
     global note
+    global bib
  
     # Read the input .bib file
     with open(fin, 'r') as fp:
@@ -386,28 +405,40 @@ def bib2yml(fin):
     # Initialize list of output lines and loop over all lines in the file
     reset()
     outlines = []
+    bibstr = ""
     for line in inlines:
         # Append item and join types
-        if line[0].strip() == '@':
+        if len(line.strip()) > 0 and line.strip()[0] == '@':
             # remove trailing bracket
             if entry_content is not None:
-                entry_content = entry_content[:-1].strip()
+                entry_content = entry_content.strip()[:-1]
             addEntry()
+            if len(bibstr) > 0:
+                entry_type = "bib"
+                entry_content = bibstr
+                addEntry()
             outlines.append(joinAll())
             reset()
             itemtype = line.split('@')[1].split("{")[0]
+            bibstr = line
         else:
             if len(line.strip().split('=')) >= 2:
                 addEntry()
                 entry_type = line.strip().split('=')[0].strip()
                 entry_content = "=".join(line.strip().split('=')[1:]).strip()
+                bibstr = bibstr + f"  {line}"
             elif len(line.strip()) > 0 and entry_content is not None:
                 if len(line.strip()) > 0:
                     entry_content = entry_content + " " + line.strip()
+                bibstr = bibstr + line
     # Add last trailing item to the yaml
     if entry_content is not None:
         entry_content = entry_content[:-1].strip()
     addEntry()
+    if len(bibstr) > 0:
+        entry_type = "bib"
+        entry_content = bibstr
+        addEntry()
     outlines.append(joinAll())
     
     return "".join(outlines)

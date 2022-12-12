@@ -63,3 +63,19 @@ info/meta.yaml, peopleWeb: advisee
 
 ## Mentoring
 info/meta.yaml, peopleShortWeb: mentee
+
+% Misc
+# Misc Links
+## Misc Notes
+info/linktree.yaml, linktreeWeb: notes
+
+## Resources for Computational Scientists
+info/linktree.yaml, linktreeWeb: sites, docs
+
+## My Sister is a Pro Tennis Player!
+info/linktree.yaml, linktreeWeb: sophie
+
+## My Grandfather was a Geophysicist
+info/linktree.yaml, linktreeWeb: AAT
+
+

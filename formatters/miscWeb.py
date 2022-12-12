@@ -120,3 +120,21 @@ def paragraphWeb(inlist):
                     outstr = outstr + "</ul>"
                     outlist.append(outstr)
     return "\n</p>\n<p>\n".join(outlist)
+
+def linktreeWeb(inlist):
+    outlist = []
+    for item in inlist:
+        newstr = ""
+        if isinstance(item, dict):
+            for key in item.keys():
+                newstr = (newstr + '<li><a target="_blank"' +
+                          f'href="{item[key]}">{key}</a></li>\n')
+        elif isinstance(item, list):
+            for itemi in item:
+                newstr = (newstr + '<li><a target="_blank"' +
+                          f'href="{itemi}">{itemi}</a></li>\n')
+        elif isinstance(item, str):
+            newstr = ('<li><a target="_blank"' +
+                      f'href="{item}">{item}</a></li>\n')
+        outlist.append(newstr)
+    return "<ul>\n" + "".join(outlist) + "\n</ul>\n"

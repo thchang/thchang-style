@@ -11,10 +11,16 @@
     institution: Argonne National Laboratory
     department: Mathematics & Computer Science (MCS) Division
     address: 9700 S. Cass Ave, Bldg. 240, Lemont, IL 60439
-    website: https://thchang.github.io
-    github: https://github.com/thchang
-    email: tchang@anl.gov
     image: img/profile_2022_web.jpg
+    email: tchang@anl.gov
+    website: https://thchang.github.io
+    links:
+        GitHub: https://github.com/thchang
+        Scholar: https://scholar.google.com/citations?user=XvFLOWsAAAAJ&hl=en
+        LinkedIn: https://www.linkedin.com/in/tyler-chang-2524b9182
+        Orcid: https://orcid.org/0000-0001-9541-7041
+        Twitter: https://twitter.com/thchang94
+        CV: ./output.pdf
 
 - advisor:
     name: Layne T. Watson

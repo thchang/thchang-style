@@ -31,40 +31,29 @@
     why: >
         Owing to decades of research and careful analysis, many techniques
         in blackbox optimization and approximation theory are easy to
-        interpret or verify and come with well-defined convergence guarantees.
-        These properties are critical for many scientific settings
-        such as mission-critical deployments or exploratory research.
-        However, algorithms that implement these techniques are often not
-        scalable or flexible enough for usage in modern applications,
-        which can be high-dimensional, overparameterized, and are often
-        embedded in complex design or action spaces.
+        interpret and verify.
+        These properties are important in many scientific settings
+        such as mission-critical deployments and exploratory research.
+        However, some of these techniques are not scalable or flexible
+        enough for usage in modern applications,
+        which can be high-dimensional, overparameterized, and may
+        involve complex design or action spaces.
         On the other hand, modern machine learning has been extremely
         successful in scaling to large complex problems by using
         computationally cheap heuristics for extracting structure from
         large volumes of high-dimensional data.
-    how: >
-        I believe that for many blackbox optimization and approximation theory
-        techniques, it is possible to
-        address scalability and flexibility issues and redesign algorithms
-        with modern hardware and applications in mind.
-        This allows us to integrate approximation techniques into successful
-        machine learning frameworks, producing theoretically rigorous and
-        interpretable scientific machine learning methods.
-    goals: "My long-term research goals are to:"
+    goals: "The goals of my research are to:"
     goals-list:
-        - design algorithms for leveraging blackbox optimization techniques
-          and numerical approximations
-          in modern settings, which are scalable with respect to
-          problem conditioning, dimensionality, amounts of data,
-          and extreme-scale hardware;
+        - design flexible and scalable algorithms for leveraging blackbox
+          optimization and numerical approximation techniques
+          in modern settings;
         - create hybrid machine learning/numerical algorithms, techniques, and
-          frameworks for exploiting structure in complex, high-dimensional
+          frameworks to exploit structure in complex, overparameterized
           problems;
         - improve our understanding of the behavior of classical numerical
-          methods in complex, high-dimensional scientific problems; and
-        - make these hybrid techniques accessible to other researchers,
-          practitioners, and the general public, through the production of
-          high-quality scientific software.
+          methods in complex, high-dimensional domains; and
+        - make these hybrid techniques accessible to the general public
+          through the production of high-quality scientific software.
     examples: "Some examples of my past work include:"
     examples-list:
         - multiobjective optimization of computationally expensive simulations

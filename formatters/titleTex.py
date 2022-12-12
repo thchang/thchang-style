@@ -17,22 +17,15 @@ def titleTex(inlist):
         email = False
         website = False
         github = False
-        for i in range(len(institution)):
-            if not email and 'email' in item.keys():
-                contact.append("E-mail: \\href{mailto:" +
-                               f"{item['email']}" + "}{"
-                               f"{item['email']}" + "}")
-                email = True
-            elif not website and 'website' in item.keys():
-                contact.append("Website: \\url{" +
-                               f"{item['website']}" + "}")
-                website = True
-            elif not github and 'github' in item.keys():
-                contact.append("GitHub: \\url{" +
-                               f"{item['github']}" + "}")
-                github = True
-            else:
-                contact.append("")
+        if "email" in item.keys():
+            contact.append(f"E-mail: \\href{{mailto:{item['email']}}}{{{item['email']}}}")
+        if "website" in item.keys():
+            contact.append(f"Website: \\url{{{item['website']}}}")
+        for key in item['links']:
+            if len(contact) < len(institution):
+                contact.append(f"{key}: \\url{{{item['links'][key]}}}")
+        while len(contact) < len(institution):
+            contact.append("")
         for infi, ci in zip(institution, contact):
             outstr.append("\\tabboxlarge{" + f"{infi}" + "}" + f"{ci}\\\\\n")
     return "".join(outstr)
