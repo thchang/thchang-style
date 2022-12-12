@@ -66,8 +66,11 @@ info/meta.yaml, peopleShortWeb: mentee
 
 % Misc
 # Misc Links
-## Misc Notes
+## Lecture Notes
 info/linktree.yaml, linktreeWeb: notes
+
+## Organizations I am/have been part of
+info/linktree.yaml, linktreeWeb: orgs
 
 ## Resources for Computational Scientists
 info/linktree.yaml, linktreeWeb: sites, docs

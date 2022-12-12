@@ -9,7 +9,15 @@
     Fortran numerical package index: https://fortran-lang.org/en/packages/numerical/
     Fortran compiler support: https://fortranwiki.org/fortran/show/Compiler+Support+for+Modern+Fortran
     Guide to Available Math Software: https://gams.nist.gov/
-    Argonne LANS Homepage: https://www.anl.gov/mcs/lans
+
+- orgs:
+    Argonne LANS: https://www.anl.gov/mcs/lans
+    Argonne MCS: https://www.anl.gov/mcs
+    FASTMath 5 Institute: https://scidac5-fastmath.lbl.gov/
+    Layne Watson's Lab: https://github.com/vtopt
+    The VarSys Project: https://varsys.cs.vt.edu/
+    Virginia Tech, DAC: https://sanghani.cs.vt.edu/
+    Virginia Tech, Dept. of CS: https://cs.vt.edu/
 
 - docs:
     numpy user guide: https://numpy.org/doc/stable/user/index.html#user
