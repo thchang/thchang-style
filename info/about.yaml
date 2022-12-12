@@ -65,6 +65,46 @@
         - implementation of portable and maintainable open-source
           scientific software packages.
 
+- skills:
+    Programming Languages:
+        - Python
+        - Fortran
+        - C/C++
+        - Java
+        - Matlab
+    Operating Systems:
+        - MacOS
+        - Unix/Linux
+    Markup Languages:
+        - HTML/CSS
+        - Markdown
+        - reStructuredText
+        - YAML
+        - LaTeX
+        - plain TeX
+    Tools and Frameworks:
+        - numpy
+        - pandas
+        - scipy
+        - matplotlib
+        - tensorflow.keras
+        - sklearn
+        - PIL
+        - OpenCV
+        - pytest
+        - sphinx
+        - PyPI/pip
+        - conda-forge
+        - MPI
+        - OpenMP
+        - CUDA
+        - Slurm
+        - BLAS
+        - LAPACK
+        - git
+        - GitHub Actions
+        - GitFlow
+
 - experience:
     start: Jun 2020
     title: Postdoctoral appointee
