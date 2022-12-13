@@ -18,10 +18,10 @@ if not os.path.exists(outdir) or not os.path.isdir(outdir):
 # Check which parser to use
 if lines[0].strip().lower() == "pdflatex":
     from cvParser import CvParser as Parser
-    outname = fname.split(".")[0] + ".tex"
+    outname = fname.split("/")[-1].split(".")[0] + ".tex"
 elif lines[0].strip().lower() == "html":
     from webParser import WebParser as Parser
-    outname = fname.split(".")[0] + ".html"
+    outname = fname.split("/")[-1].split(".")[0] + ".html"
 else:
     raise ValueError(f"Couldn't parse line 1 of {fname}: {lines[0]}")
 

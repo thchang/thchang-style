@@ -48,3 +48,11 @@ Then use the ``make`` command to build everything.
 
 See my website repo for an example of how I use this:
   https://github.com/thchang/thchang.github.io
+
+Note that your information (``bib`` and ``yaml`` files) must be saved in a
+directory named ``info`` in your working directory when you execute the
+``make`` command AND ``info`` mus contain a file named ``meta.yaml``,
+formatted as in my example.
+
+In general, you'll have good luck if you replace my information with yours
+but keep the same keys and format.

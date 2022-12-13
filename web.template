@@ -65,7 +65,7 @@ info/meta.yaml, peopleWeb: advisee
 info/meta.yaml, peopleShortWeb: mentee
 
 % Misc
-# Misc Links
+# Misc Information
 ## Lecture Notes
 info/linktree.yaml, linktreeWeb: notes
 
@@ -80,5 +80,4 @@ info/linktree.yaml, linktreeWeb: sophie
 
 ## My Grandfather was a Geophysicist
 info/linktree.yaml, linktreeWeb: AAT
-
 

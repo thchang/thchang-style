@@ -100,3 +100,20 @@ def peopleShortTex(inlist):
             newstr = newstr + f", {item['type']}"
         outlist.append(newstr)
     return "\n\n\\bigskip\n\n".join(outlist) + "\n\n"
+
+def skillsTex(inlist):
+    outlist = []
+    for item1 in inlist:
+        if isinstance(item1, list):
+            outlist.append(", ".join([str(item2).strip() for item2 in item1]))
+        elif isinstance(item1, dict):
+            for key2 in item1.keys():
+                outstr = ("\\hangafter=1 \\hangindent=0.22\\textwidth " +
+                          "\n\\tabboxmed{\\bf ")
+                outstr = (outstr + f"{key2}:}}" +
+                          ", ".join([str(i2).strip() for i2 in item1[key2]]))
+                outlist.append(outstr)
+        elif isinstance(item1, str):
+            outlist.append(item1.strip())
+    return "\n\n".join(outlist)
+

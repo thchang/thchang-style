@@ -138,3 +138,18 @@ def linktreeWeb(inlist):
                       f'href="{item}">{item}</a></li>\n')
         outlist.append(newstr)
     return "<ul>\n" + "".join(outlist) + "\n</ul>\n"
+
+def skillsWeb(inlist):
+    outlist = []
+    for item1 in inlist:
+        if isinstance(item1, list):
+            outlist.append(", ".join([str(item2).strip() for item2 in item1]))
+        elif isinstance(item1, dict):
+            for key2 in item1.keys():
+                outstr = (f"<b>{key2}:</b> " +
+                          ", ".join([str(i2).strip() for i2 in item1[key2]]))
+                outlist.append(outstr)
+        elif isinstance(item1, str):
+            outlist.append(item1.strip())
+    return "\n<br>\n".join(outlist)
+

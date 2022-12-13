@@ -91,3 +91,6 @@ info/about.yaml, experienceLongTex: tutoring, teaching
 
 # Misc. Travel Awards
 info/minor.yaml, multilineTex: travelaward
+
+# Technical Skills
+info/about.yaml, skillsTex: skills
