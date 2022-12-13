@@ -6,9 +6,13 @@ class CvParser:
     def __init__(self):
         """ Initialize the webParser object """
 
+        import os
+
         # Read swaps
         self.swaplines = []
-        with open("styles/latex-subs.csv") as fp:
+
+        with open(os.path.dirname(__file__) +
+                  "/styles/latex-subs.csv") as fp:
             self.swaplines = fp.readlines()
         # Read metadata
         self.metanames = []
@@ -52,13 +56,16 @@ class CvParser:
 
         """
 
+        import os
+
         with open(fname, "r") as fp:
             inlines = fp.readlines()
         # Initialize output lines
         outlines = []
         outlines.append("\\documentclass[10pt]{article}")
         # Read template
-        with open("styles/cv-style.tex", "r") as fp:
+        with open(os.path.dirname(__file__) +
+                  "/styles/cv-style.tex", "r") as fp:
             lines = fp.readlines()
         outlines.append("".join(lines))
         outlines.append("\\begin{document}")

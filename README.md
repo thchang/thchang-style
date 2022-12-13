@@ -13,12 +13,11 @@ entries in my ``cv.bst`` file to handle increasingly bazaar document types.
 
 Eventually I realized it would be better to automate website maintenance
 as well.
-But this requires increased flexibility, and advanced Python scripts.
+But this requires increased flexibility, and a lot of Python scripts.
 
 Eventually I realized I needed to store certain items (such as work experience,
 awards, degree, collaborators, and fun links) in some other format.
-I was inspired to use YAML after stumbling across Brandon Amos's tool, which
-does something very similar:
+I was inspired to use YAML after stumbling across Brandon Amos's CV:
   https://github.com/bamos/cv
 
 ## Usage

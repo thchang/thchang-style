@@ -37,4 +37,5 @@ with open(outdir + "/" + outname, "w") as fp:
     elif lines[0].strip().lower() == "html":
         if os.path.exists("timeline.svg"):
             os.rename("timeline.svg", f"{outdir}/timeline.svg")
-        shutil.copy("styles/bootstrap.min.css", f"{outdir}/bootstrap.min.css")
+        shutil.copy(os.path.dirname(__file__) + "/styles/bootstrap.min.css",
+                    f"{outdir}/bootstrap.min.css")

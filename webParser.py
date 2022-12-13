@@ -6,12 +6,16 @@ class WebParser:
     def __init__(self):
         """ Initialize the webParser object """
 
+        import os
+
         # Read swaplines in from styles document
         self.swaplines = []
-        with open("styles/html-subs.csv") as fp:
+        with open(os.path.dirname(__file__) +
+                  "/styles/html-subs.csv") as fp:
             self.swaplines = fp.readlines()
         # Read row template
-        with open("styles/body-content.html") as fp:
+        with open(os.path.dirname(__file__) +
+                  "/styles/body-content.html") as fp:
             rowtemp = fp.readlines()
         self.rowtemplate = "".join(rowtemp)
         # Read metadata
@@ -72,6 +76,8 @@ class WebParser:
 
         """
 
+        import os
+
         with open(fname, "r") as fp:
             inlines = fp.readlines()
         # Initialize output lines
@@ -79,7 +85,8 @@ class WebParser:
         outlines.append("<html>")
         firstRow = True
         # Read template
-        with open("styles/head.html", "r") as fp:
+        with open(os.path.dirname(__file__) +
+                  "/styles/head.html", "r") as fp:
             lines = fp.readlines()
         outstr = ""
         for line in lines:
