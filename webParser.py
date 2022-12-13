@@ -1,4 +1,5 @@
 import yaml
+from datetime import date
 
 class WebParser:
     """ Class for parsing website config files and producing HTMLs. """
@@ -208,6 +209,13 @@ class WebParser:
         outlines.append('<br><p style="text-align: right">' +
                         '<a href="#top">^top</a></p>')
         outlines.append("</div>\n</div>\n</div>\n")
+        outlines.append("<!-- Bottom row -->")
+        outlines.append("""<div class"row">\n""" +
+                        """<div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">\n""" +
+                        """<p style="text-align: center">\n""" +
+                        f"""<br><br>\nLast update: {date.today()}\n<br><br>\n""" + 
+                        """<a href="https://github.com/thchang/thchang-style">Copy this style</a>""" +
+                        """\n<br><br><br><br>\n</p>\n</div>\n</div>""")
         outlines.append('</div>')
         outlines.append("</body>")
         outlines.append("</html>")

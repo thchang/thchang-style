@@ -6,11 +6,18 @@ info/meta.yaml, titleWeb: me
 # About Me
 info/about.yaml, paragraphWeb: bio
 info/about.yaml, timelineWeb: experience, degree, teaching, appointment, intern
-info/meta.yaml, linkRowWeb: me
+info/meta.yaml, contactRowWeb: me
+
+% News
+# News
+## Upcoming Talks and Events
+info/news.bib, newsWeb:
+
+## Recent Talks
+info/talks.bib, newsWeb:
 
 % Research
 # Research and Publications
-## Research Statement
 info/about.yaml, paragraphWeb: research-stmt
 
 ## Representative Publications

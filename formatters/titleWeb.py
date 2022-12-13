@@ -14,7 +14,7 @@ TITLETEMPLATE = """
 
     <!-- General info -->
     <h1 class="margin-base-vertical">
-    <b> $NAME </b>
+    $NAME
     <font size="-5">
     <br><br>
     </font>
@@ -26,9 +26,7 @@ TITLETEMPLATE = """
 
     <!-- Navigation pill menu -->
     <div class = "row">
-    <ul class="nav nav-pills">
     $SECTIONS
-    </ul>
     </div>
   </div>
   </div>

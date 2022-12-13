@@ -153,7 +153,7 @@ def skillsWeb(inlist):
             outlist.append(item1.strip())
     return "\n<br>\n".join(outlist)
 
-def linkRowWeb(inlist):
+def contactRowWeb(inlist):
     outlist = []
     for item in inlist:
         linklist = []
@@ -169,4 +169,20 @@ def linkRowWeb(inlist):
                         linklist[i][0] = f"""<img src="{item['images'][linklist[i][0]]}" width="40em" hspace="10em" vspace="10em">"""
     for link in linklist:
         outlist.append(f"""<li><a href="{link[1]}">{link[0]}</a></li>""")
-    return '<ul class="nav nav-pills">\n' + "\n".join(outlist) + "\n</ul>"
+    return ('<br>\n<br>\n<ul class="nav nav-pills">\n' +
+            "\n".join(outlist) + "\n</ul>")
+
+def newsWeb(inlist):
+    maxlen = 10
+    outlist = []
+    for item in inlist:
+        outstr = ""
+        if "year" in item.keys():
+            outstr = outstr + f"<b>{item['year']}: </b>"
+        if "title" in item.keys():
+            outstr = outstr + f"<i>{item['title']}</i>"
+        if "booktitle" in item.keys():
+            outstr = outstr + f" at {item['booktitle']}"
+        if len(outlist) < maxlen:
+            outlist.append(outstr)
+    return '\n<div style="background-color:rgb(240,240,240);padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;">\n' + "\n<br><br>\n".join(outlist) + "\n</div>"

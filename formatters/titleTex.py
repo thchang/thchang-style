@@ -3,7 +3,7 @@ def titleTex(inlist):
     for item in inlist:
         if 'name' not in item.keys():
             raise ValueError(f"title data does not contain a name field")
-        outstr.append("{\\huge \\bf ")
+        outstr.append("{\\huge ")
         outstr.append(item['name'])
         outstr.append("}\n\n\\medskip\n\n")
         institution = []

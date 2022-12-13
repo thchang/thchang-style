@@ -336,7 +336,7 @@ def joinAll():
         if howpublished is not None:
             output = f"- {''.join(howpublished.lower().strip().split())}:\n"
         else:
-            output = output + "- misc:\n"
+            output = "- misc:\n"
         if year is not None:
             output = output + f'    year: "{year}"\n'
         if month is not None:

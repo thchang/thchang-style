@@ -281,7 +281,7 @@ def proposalWeb(inlist):
             if 'collaborators' in item.keys():
                 for collab in item['collaborators']:
                     for key in collab.keys():
-                        outstr = (outstr + f" {key}: {collab[key]}.")
+                        outstr = (outstr + f" &nbsp {key}: {collab[key]}.")
         outstr = outstr + "<br>\n"
         if 'agency' in item.keys():
             outstr = outstr + f"{item['agency']}"
