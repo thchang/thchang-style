@@ -32,10 +32,10 @@ content = my_parser(fname)
 # Save to build directory, build latex, and move dependencies if needed
 with open(outdir + "/" + outname, "w") as fp:
     fp.write(content)
-    if lines[0].strip().lower() == "pdflatex":
-        os.system(f"cd {outdir} && pdflatex {outname}")
-    elif lines[0].strip().lower() == "html":
-        if os.path.exists("timeline.svg"):
-            os.rename("timeline.svg", f"{outdir}/timeline.svg")
-        shutil.copy(os.path.dirname(__file__) + "/styles/bootstrap.min.css",
-                    f"{outdir}/bootstrap.min.css")
+if lines[0].strip().lower() == "pdflatex":
+    os.system(f"cd {outdir} && pdflatex {outname}")
+elif lines[0].strip().lower() == "html":
+    if os.path.exists("timeline.svg"):
+        os.rename("timeline.svg", f"{outdir}/timeline.svg")
+    shutil.copy(os.path.dirname(__file__) + "/styles/bootstrap.min.css",
+                f"{outdir}/bootstrap.min.css")

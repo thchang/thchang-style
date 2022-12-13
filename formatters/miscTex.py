@@ -28,6 +28,12 @@ def multilineTex(inlist):
         elif isinstance(item1, dict):
             if 'year' in item1.keys():
                 outstr = "\\tabboxsmall{ " + f"{item1['year']}" + ".}"
+            elif 'start' in item1.keys():
+                if 'end' in item1.keys():
+                    end = item1['end']
+                else:
+                    end = "Present"
+                outstr = "\\tabboxmed{ " + f"{item1['start']} - {end}" + ".}"
             else:
                 outstr = ""
             if 'title' in item1.keys():
@@ -73,6 +79,12 @@ def peopleTex(inlist):
         newstr = ""
         if 'year' in item.keys():
             newstr = newstr + "\\tabboxmed{ " + f"{item['year']}." + "}"
+        elif 'start' in item.keys():
+            if 'end' in item.keys():
+                end = item['end']
+            else:
+                end = "Present"
+            newstr = newstr + "\\tabboxmed{ " + f"{item['start']} - {end}" + ".}"
         if 'name' in item.keys():
             newstr = newstr + f" {item['name']}"
         if 'institution' in item.keys():
@@ -92,6 +104,12 @@ def peopleShortTex(inlist):
         newstr = ""
         if 'year' in item.keys():
             newstr = newstr + "\\tabboxsmall{ " + f"{item['year']}." + "}"
+        elif 'start' in item.keys():
+            if 'end' in item.keys():
+                end = item['end']
+            else:
+                end = "Present"
+            newstr = newstr + "\\tabboxmed{ " + f"{item['start']} - {end}" + ".}"
         if 'name' in item.keys():
             newstr = newstr + f" {item['name']}"
         if 'institution' in item.keys():

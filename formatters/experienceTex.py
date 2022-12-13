@@ -2,9 +2,11 @@ def experienceShortTex(inlist):
     outlist = []
     for item in inlist:
         outstr = ""
+        size = "small"
         if 'year' not in item.keys() and 'start' not in item.keys():
             raise ValueError("'year' or 'start' key is required for experience formatter")
         if 'start' in item.keys():
+            size = "med"
             if 'end' in item.keys():
                 if isinstance(item['start'], list):
                     years = [f"{si} - {ei}" for si, ei in zip(item['start'],
@@ -24,9 +26,9 @@ def experienceShortTex(inlist):
         if isinstance(years, list):
             for i, year in enumerate(years):
                 if i > 0:
-                    outstr = outstr + "\\\\\n \\tabboxsmall{" + f"{year}" + ".} "
+                    outstr = outstr + f"\\\\\n \\tabbox{size}{{" + f"{year}" + ".} "
                 else:
-                    outstr = outstr + "\\tabboxsmall{" + f"{year}" + ".} "
+                    outstr = outstr + f"\\tabbox{size}{{" + f"{year}" + ".} "
                 outstr = outstr + "{\\bf "
                 if 'title' in item.keys():
                     if isinstance(item['title'], list):
@@ -50,7 +52,7 @@ def experienceShortTex(inlist):
                     else:
                         outstr = outstr + f", {item['department']}"
         else:
-            outstr = outstr + "\\tabboxsmall{" + f"{years}" + ".} "
+            outstr = outstr + f"\\tabbox{size}{{" + f"{years}" + ".} "
             outstr = outstr + "{\\bf "
             if 'title' in item.keys():
                 outstr = outstr + f"{item['title']}"

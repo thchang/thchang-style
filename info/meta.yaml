@@ -1,5 +1,5 @@
 - web:
-    SHORTTITLE: Tyler Chang MCS@ANL
+    SHORTTITLE: Tyler Chang - Argonne National Laboratory
     BGIMAGE: img/delvor.png
     BGCOLOR: rgba(250, 250, 255, 0.9)
     FGCOLOR: rgba(255, 255, 255, 1.0)
@@ -15,18 +15,18 @@
     email: tchang@anl.gov
     website: https://thchang.github.io
     links:
-        github: https://github.com/thchang
-        scholar: https://scholar.google.com/citations?user=XvFLOWsAAAAJ&hl=en
-        linkedin: https://www.linkedin.com/in/tyler-chang-2524b9182
-        orcid: https://orcid.org/0000-0001-9541-7041
-        twitter: https://twitter.com/thchang94
+        GitHub: https://github.com/thchang
+        Scholar: https://scholar.google.com/citations?user=XvFLOWsAAAAJ&hl=en
+        LinkedIn: https://www.linkedin.com/in/tyler-chang-2524b9182
+        Orcid: https://orcid.org/0000-0001-9541-7041
+        Twitter: https://twitter.com/thchang94
     images:
         email: img/email-icon.png
-        github: img/github-icon.png
-        scholar: img/scholar-icon.png
-        linkedin: img/linkedin-icon.png
-        orcid: img/orcid-icon.png
-        twitter: img/twitter-icon.png
+        GitHub: img/github-icon.png
+        Scholar: img/scholar-icon.png
+        LinkedIn: img/linkedin-icon.png
+        Orcid: img/orcid-icon.png
+        Twitter: img/twitter-icon.png
     tabs:
         My CV: ./cv.pdf
 
@@ -47,7 +47,8 @@
     type: summer student via Other DOE Internship program
     institution: Some University2
     wesbite: https://www.youtube.com
-    year: Jun 2021 - Aug 2021
+    start: Jun 2021
+    end: Aug 2021
     description:
         - "Project: YouTubing stuff"
 
@@ -56,7 +57,8 @@
     type: summer student via Argonne Internship program
     institution: Some University1
     wesbite: https://www.google.com
-    year: Jun 2020 - Aug 2020
+    start: Jun 2020
+    end: Aug 2020
     description:
         - "Project: googling stuff"
 

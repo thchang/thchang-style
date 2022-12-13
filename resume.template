@@ -1,0 +1,31 @@
+PDFLATEX
+
+info/meta.yaml, titleTex: me
+
+# Technical Skills
+info/about.yaml, skillsTex: skills
+
+# Relevant Experience
+info/about.yaml, experienceLongTex: experience, intern, appointment
+
+# Education
+info/about.yaml, degreeLongTex: degree
+
+# Awards
+info/about.yaml, experienceShortTex: award
+
+# Publicly Available Software
+info/software.yaml, softwareTex:
+
+# Leadership Activities
+## Students Advised
+info/meta.yaml, peopleShortTex: advisee
+
+## Mentees
+info/meta.yaml, peopleShortTex: mentee
+
+## Minisymposia Organized
+info/service.yaml, bulletDateTex: minisymporg
+
+## Institutional Service
+info/service.yaml, experienceShortTex: argonne, virginiatech

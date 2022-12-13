@@ -55,7 +55,7 @@
     year: 2022--Present
 
 - argonne:
-    year: Nov 2022 - Present
+    start: Nov 2022
     title: Organizing Committee
     institution: FASTMath Institute Seminar Series
     description:
@@ -69,7 +69,8 @@
         - Providing technical reviews of faculty and student submissions to SRP program
 
 - virginiatech:
-    year: Aug 2017 - May 2020
+    start: Aug 2017
+    end: May 2020
     title: Founding Member
     institution: Virginia Tech, Computer Science Graduate Counsel
     description:
