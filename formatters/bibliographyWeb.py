@@ -269,6 +269,12 @@ def proposalWeb(inlist):
         outstr = ""
         if 'year' in item.keys():
             outstr = outstr + f"{item['year']}. "
+        elif 'start' in item.keys():
+            outstr = outstr + f"{item['start']} - "
+            if 'end' in item.keys():
+                outstr = outstr + f"{item['end']}. "
+            else:
+                outstr = outstr + "Present. "
         if 'title' in item.keys():
             outstr = outstr + f"{item['title']}"
             if 'subtitle' in item.keys():
