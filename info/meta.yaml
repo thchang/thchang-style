@@ -15,12 +15,20 @@
     email: tchang@anl.gov
     website: https://thchang.github.io
     links:
-        GitHub: https://github.com/thchang
-        Scholar: https://scholar.google.com/citations?user=XvFLOWsAAAAJ&hl=en
-        LinkedIn: https://www.linkedin.com/in/tyler-chang-2524b9182
-        Orcid: https://orcid.org/0000-0001-9541-7041
-        Twitter: https://twitter.com/thchang94
-        CV: ./output.pdf
+        github: https://github.com/thchang
+        scholar: https://scholar.google.com/citations?user=XvFLOWsAAAAJ&hl=en
+        linkedin: https://www.linkedin.com/in/tyler-chang-2524b9182
+        orcid: https://orcid.org/0000-0001-9541-7041
+        twitter: https://twitter.com/thchang94
+    images:
+        email: img/email-icon.png
+        github: img/github-icon.png
+        scholar: img/scholar-icon.png
+        linkedin: img/linkedin-icon.png
+        orcid: img/orcid-icon.png
+        twitter: img/twitter-icon.png
+    tabs:
+        My CV: ./cv.pdf
 
 - advisor:
     name: Layne T. Watson

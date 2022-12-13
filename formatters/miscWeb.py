@@ -153,3 +153,20 @@ def skillsWeb(inlist):
             outlist.append(item1.strip())
     return "\n<br>\n".join(outlist)
 
+def linkRowWeb(inlist):
+    outlist = []
+    for item in inlist:
+        linklist = []
+        if isinstance(item, dict):
+            if "email" in item.keys():
+                linklist.append(["email", f"mailto:{item['email']}"])
+            if "links" in item.keys():
+                for key in item["links"].keys():
+                    linklist.append([key, item["links"][key]])
+            if "images" in item.keys():
+                for i in range(len(linklist)):
+                    if linklist[i][0] in item["images"].keys():
+                        linklist[i][0] = f"""<img src="{item['images'][linklist[i][0]]}" width="40em" hspace="10em" vspace="10em">"""
+    for link in linklist:
+        outlist.append(f"""<li><a href="{link[1]}">{link[0]}</a></li>""")
+    return '<ul class="nav nav-pills">\n' + "\n".join(outlist) + "\n</ul>"

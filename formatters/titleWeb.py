@@ -50,13 +50,17 @@ def titleWeb(inlist):
             PROFILEIMAGE = '<img src="' + f'{item["image"]}' + '" class="img-responsive" align="left" width="20%" hspace="15em" vspace="30em">'
         try:
             with open("targets.temp", "r") as fp:
-                targets = fp.readlines()
+                lines = fp.readlines()
+            targets = [[f'#{line}', line] for line in lines]
         except BaseException:
             targets = []
+        if 'tabs' in item.keys():
+            for tab in item['tabs'].keys():
+                targets.append([item['tabs'][tab], tab])
     if len(targets) > 0:
         SECTIONS = '<ul class="nav nav-pills">\n'
         for ti in targets:
-            SECTIONS = SECTIONS + f'<li><a href="#{ti}">{ti}</a></li>'
+            SECTIONS = SECTIONS + f'<li><a href="{ti[0]}">{ti[1]}</a></li>'
         SECTIONS = SECTIONS + '</ul>'
     else:
         SECTIONS = ""
