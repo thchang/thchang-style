@@ -188,7 +188,7 @@ def contactRowWeb(inlist):
             if "images" in item.keys():
                 for i in range(len(linklist)):
                     if linklist[i][0] in item["images"].keys():
-                        linklist[i][0] = f"""<img src="{item['images'][linklist[i][0]]}" width="22em" hspace="6em" vspace="6em">"""
+                        linklist[i][0] = f"""<img src="{item['images'][linklist[i][0]]}" width="22em" hspace="2em" vspace="6em">"""
     for link in linklist:
         outlist.append(f"""<a href="{link[1]}">{link[0]}</a>""")
     return "\n".join(outlist)
