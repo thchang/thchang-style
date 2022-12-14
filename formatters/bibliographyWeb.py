@@ -197,16 +197,13 @@ def softwareWeb(inlist):
         if 'title' in item.keys():
             outstr = outstr + f"<b>{item['title']}</b>"
             if 'subtitle' in item.keys():
-                outstr = outstr + f": {item['subtitle']}. "
-            else:
-                outstr = outstr + ". "
+                outstr = outstr + f": {item['subtitle']}"
             if 'version' in item.keys():
-                outstr = outstr + f"Release: {item['version']}"
-        outstr = outstr + "<br>\n"
+                outstr = outstr + f"<br>\nRelease: {item['version']}"
         if 'author' in item.keys():
-            outstr = outstr + f"Devs: {item['author']}"
+            outstr = outstr + f"<br>\nDevs: {item['author']}"
         if 'language' in item.keys():
-            outstr = (outstr + f". &nbsp Primary Prog. Lang: {item['language']}")
+            outstr = (outstr + f"<br>\nPrimary Prog. Lang: {item['language']}")
         if 'note' in item.keys():
             outstr = outstr + f"<br>\n{item['note']}"
         if 'description' in item.keys() or 'links' in item.keys() or 'git' in item.keys() or 'url' in item.keys() or 'doi' in item.keys():
