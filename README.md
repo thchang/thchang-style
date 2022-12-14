@@ -24,9 +24,10 @@ I was inspired to use YAML after stumbling across Brandon Amos's CV:
 
 Using this project requires
 
- - ``pdflatex``,
+ - pdflatex,
  - GNU Make,
- - Python 3, and
+ - Python 3
+ - pyyaml, and
  - Matplotlib.
 
 After you have all dependencies, create a copy of the info folder with your
