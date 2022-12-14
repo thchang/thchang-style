@@ -141,7 +141,7 @@ class WebParser:
                         outlines.append('<br><p style="text-align: ' +
                                         'right"><a href="#top">^top</a></p>')
                         outlines.append('</div>\n</div>\n</div>\n')
-                    titleline = " ".join(words[1:]) + "\n"
+                    titleline = " ".join(words[1:])
                     outlines.append(self.rowtemplate.replace("$TITLE",
                                                              titleline))
             # Extract data from yaml/bib files
