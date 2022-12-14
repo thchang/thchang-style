@@ -6,7 +6,6 @@ info/meta.yaml, titleWeb: me
 # About Me
 info/about.yaml, paragraphWeb: bio
 info/about.yaml, timelineWeb: experience, degree, teaching, appointment, intern
-info/meta.yaml, contactRowWeb: me
 
 % News
 # News

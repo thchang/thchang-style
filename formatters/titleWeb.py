@@ -34,6 +34,7 @@ TITLETEMPLATE = """
 """
 
 def titleWeb(inlist):
+    from .miscWeb import contactRowWeb
     outstr = []
     for item in inlist:
         if 'name' not in item.keys():
@@ -44,6 +45,8 @@ def titleWeb(inlist):
         INSTITUTION = item['institution']
         if 'department' in item.keys():
             INSTITUTION = INSTITUTION + f",\n<br>{item['department']}\n"
+            contactsRow = contactRowWeb([item])
+            INSTITUTION = INSTITUTION + "<br>\n" + contactsRow + "\n"
         if 'image' in item.keys():
             PROFILEIMAGE = '<img src="' + f'{item["image"]}' + '" class="img-responsive" align="left" width="20%" hspace="15em" vspace="30em">'
         try:

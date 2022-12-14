@@ -8,6 +8,7 @@ class WebParser:
         """ Initialize the webParser object """
 
         import os
+        from formatters import contactRowWeb as cr
 
         # Read swaplines in from styles document
         self.swaplines = []
@@ -22,10 +23,12 @@ class WebParser:
         # Read metadata
         self.metanames = []
         self.metaweb = []
+        self.contactsRow = ""
         with open("info/meta.yaml") as fp:
             yamllist = yaml.load(fp, Loader=yaml.Loader)
             for item in yamllist:
                 if 'me' in item.keys():
+                    self.contactsRow = cr([item['me']])
                     self.metanames.append(item['me']['name'])
                     if 'alias' in item['me'].keys():
                         for ai in item['me']['alias']:
@@ -138,7 +141,7 @@ class WebParser:
                         outlines.append('<br><p style="text-align: ' +
                                         'right"><a href="#top">^top</a></p>')
                         outlines.append('</div>\n</div>\n</div>\n')
-                    titleline = " ".join(words[1:])
+                    titleline = " ".join(words[1:]) + "\n"
                     outlines.append(self.rowtemplate.replace("$TITLE",
                                                              titleline))
             # Extract data from yaml/bib files
@@ -211,8 +214,10 @@ class WebParser:
         outlines.append("</div>\n</div>\n</div>\n")
         outlines.append("<!-- Bottom row -->")
         outlines.append("""<div class"row">\n""" +
-                        """<div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">\n""" +
+                        """<div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2 text-center">\n""" +
                         """<p style="text-align: center">\n""" +
+                        """<br>\n""" +
+                        self.contactsRow +
                         f"""<br><br>\nLast update: {date.today()}\n<br><br>\n""" + 
                         """<a href="https://github.com/thchang/thchang-style">Copy this style</a>""" +
                         """\n<br><br><br><br>\n</p>\n</div>\n</div>""")
