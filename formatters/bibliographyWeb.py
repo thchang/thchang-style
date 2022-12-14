@@ -190,6 +190,8 @@ def softwareWeb(inlist):
     outlist = []
     for item in inlist:
         outstr = ""
+        if 'logo' in item.keys():
+            outstr = outstr + f'<img src="{item["logo"]}" display="block" align="right" height="50em" width="auto" hspace="20em">\n'
         if 'year' in item.keys():
             outstr = outstr + f"{item['year']}. "
         if 'title' in item.keys():
@@ -210,13 +212,10 @@ def softwareWeb(inlist):
         if 'description' in item.keys() or 'links' in item.keys() or 'git' in item.keys() or 'url' in item.keys() or 'doi' in item.keys():
             outstr = outstr + "\n<br>\n"
             desc = ""
-            logo = ""
             link = ""
             if 'description' in item.keys():
                 outstr = outstr + f'<button onclick="{item["title"]}Desc()">More Info</button>\n'
                 desc = item['description']
-            if 'logo' in item.keys():
-                logo = f'<img src="{item["logo"]}" class="img-responsive" align="right" width="10%" hspace="20em">'
             if 'links' in item.keys() or 'doi' in item.keys() or 'git' in item.keys() or 'url' in item.keys():
                 link = link + "<ul>\n"
                 outstr = outstr + f'<button onclick="{item["title"]}Link()">View Links</button>\n'
@@ -243,7 +242,6 @@ def softwareWeb(inlist):
     function {item['title']}Desc() {{
         document.getElementById("{item['title']}Info").innerHTML = `
     <button onclick="{item['title']}Hide()">hide</button><br>
-    {logo}
     {desc}
     `;
     }}

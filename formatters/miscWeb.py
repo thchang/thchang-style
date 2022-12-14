@@ -75,10 +75,22 @@ def peopleWeb(inlist):
         newstr = ""
         if 'year' in item.keys():
             newstr = newstr + f"{item['year']}. "
+        elif 'start' in item.keys():
+            if 'end' in item.keys():
+                end = item['end']
+            else:
+                end = "Present"
+            newstr = newstr + f"{item['start']} - {end}. "
         if 'name' in item.keys():
-            newstr = newstr + f" {item['name']}"
+            if 'website' in item.keys():
+                newstr = (newstr + f""" <a href="{item['website']}">""" +
+                          f"""{item['name']}""")
+            else:
+                newstr = newstr + f" {item['name']}"
         if 'institution' in item.keys():
             newstr = newstr + f" ({item['institution']})"
+        if 'website' in item.keys():
+            newstr = newstr + "</a>"
         if 'type' in item.keys():
             newstr = newstr + f", {item['type']}"
         if 'description' in item.keys():
@@ -87,7 +99,7 @@ def peopleWeb(inlist):
                 newstr = newstr + f"<li>{desc}</li>\n"
             newstr = newstr + "</ul>\n"
         outlist.append(newstr)
-    return "\n<br>\n".join(outlist) + "\n"
+    return "<br>\n" + "\n<br>\n".join(outlist) + "\n"
 
 def peopleShortWeb(inlist):
     outlist = []
@@ -95,14 +107,24 @@ def peopleShortWeb(inlist):
         newstr = ""
         if 'year' in item.keys():
             newstr = newstr + f"{item['year']}. "
+        elif 'start' in item.keys():
+            if 'end' in item.keys():
+                end = item['end']
+            else:
+                end = "Present"
+            newstr = newstr + f"{item['start']} - {end}. "
         if 'name' in item.keys():
-            newstr = newstr + f" {item['name']}"
+            if 'website' in item.keys():
+                newstr = (newstr + f""" <a href="{item['website']}">""" +
+                          f"""{item['name']}</a>""")
+            else:
+                newstr = newstr + f" {item['name']}"
         if 'institution' in item.keys():
             newstr = newstr + f" ({item['institution']})"
         if 'type' in item.keys():
             newstr = newstr + f", {item['type']}"
         outlist.append(newstr)
-    return "\n<br>\n".join(outlist) + "\n"
+    return "<br>\n" + "\n<br>\n".join(outlist) + "\n"
 
 def paragraphWeb(inlist):
     outlist = []
@@ -173,7 +195,7 @@ def contactRowWeb(inlist):
             "\n".join(outlist) + "\n</ul>")
 
 def newsWeb(inlist):
-    maxlen = 10
+    maxlen = 6
     outlist = []
     for item in inlist:
         outstr = ""
