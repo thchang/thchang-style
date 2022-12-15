@@ -199,12 +199,21 @@ def newsWeb(inlist):
     outlist = []
     for item in inlist:
         outstr = ""
-        if "year" in item.keys():
-            outstr = outstr + f"<b>{item['year']}: </b>"
-        if "title" in item.keys():
-            outstr = outstr + f"<i>{item['title']}</i>"
-        if "booktitle" in item.keys():
-            outstr = outstr + f" at {item['booktitle']}"
-        if len(outlist) < maxlen:
-            outlist.append(outstr)
+        if isinstance(item, dict):
+            outstr = outstr + "<b>"
+            if "month" in item.keys():
+                outstr = outstr + f"{item['month']} "
+            if "year" in item.keys():
+                outstr = outstr + f"{item['year']}: "
+            outstr = outstr + "</b>"
+            if "title" in item.keys():
+                outstr = outstr + f"<i>{item['title']}</i>"
+            if "booktitle" in item.keys():
+                outstr = outstr + f" at {item['booktitle']}"
+            if len(outlist) < maxlen:
+                outlist.append(outstr)
+        elif isinstance(item, list):
+            for xi in item:
+                if len(outlist) < maxlen:
+                    outlist.append(str(xi))
     return '\n<div style="background-color:rgb(240,240,240);padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;">\n' + "\n<br><br>\n".join(outlist) + "\n</div>"

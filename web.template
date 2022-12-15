@@ -10,7 +10,7 @@ info/about.yaml, timelineWeb: experience, degree, teaching, appointment, intern
 % News
 # News
 ## Upcoming Talks and Events
-info/news.bib, newsWeb:
+info/news.yaml, newsWeb:
 
 ## Recent Talks
 info/talks.bib, newsWeb:
