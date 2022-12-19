@@ -20,7 +20,7 @@ info/talks.bib, newsWeb:
 info/about.yaml, paragraphWeb: research-stmt
 
 ## Representative Publications
-info/shortlist.bib, anypubWeb:
+info/shortlist.bib, collapsableShortWeb:
 
 ## All Papers and Reports
 info/pubs.bib, collapsablePubWeb: article, inproceedings, techreport, thesis, inpress
