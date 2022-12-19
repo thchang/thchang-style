@@ -195,7 +195,6 @@ def contactRowWeb(inlist):
     #return '<ul class="nav nav-pills">\n' + "\n".join(outlist) + "\n</ul>"
 
 def newsWeb(inlist):
-    maxlen = 6
     outlist = []
     for item in inlist:
         outstr = ""
@@ -206,14 +205,16 @@ def newsWeb(inlist):
             if "year" in item.keys():
                 outstr = outstr + f"{item['year']}: "
             outstr = outstr + "</b>"
-            if "title" in item.keys():
+            if "description" in item.keys():
+                outstr = outstr + f"{item['description']}"
+            elif "title" in item.keys():
                 outstr = outstr + f"<i>{item['title']}</i>"
-            if "booktitle" in item.keys():
-                outstr = outstr + f" at {item['booktitle']}"
-            if len(outlist) < maxlen:
-                outlist.append(outstr)
+                if "booktitle" in item.keys():
+                    outstr = outstr + f" at {item['booktitle']}"
+                if "journal" in item.keys():
+                    outstr = outstr + f" in {item['journal']}"
+            outlist.append(outstr)
         elif isinstance(item, list):
             for xi in item:
-                if len(outlist) < maxlen:
-                    outlist.append(str(xi))
+                outlist.append(str(xi))
     return '\n<div style="background-color:rgb(240,240,240);padding-top:30px;padding-right:30px;padding-bottom:30px;padding-left:30px;">\n' + "\n<br><br>\n".join(outlist) + "\n</div>"
