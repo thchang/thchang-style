@@ -116,11 +116,13 @@ def peopleShortWeb(inlist):
         if 'name' in item.keys():
             if 'website' in item.keys():
                 newstr = (newstr + f""" <a href="{item['website']}">""" +
-                          f"""{item['name']}</a>""")
+                          f"""{item['name']}""")
             else:
                 newstr = newstr + f" {item['name']}"
         if 'institution' in item.keys():
             newstr = newstr + f" ({item['institution']})"
+        if 'website' in item.keys():
+            newstr = newstr + "</a>"
         if 'type' in item.keys():
             newstr = newstr + f", {item['type']}"
         outlist.append(newstr)
