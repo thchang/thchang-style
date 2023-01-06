@@ -103,7 +103,7 @@ def peopleShortTex(inlist):
     for item in inlist:
         newstr = ""
         if 'year' in item.keys():
-            newstr = newstr + "\\tabboxsmall{ " + f"{item['year']}." + "}"
+            newstr = newstr + "\\tabboxmed{ " + f"{item['year']}." + "}"
         elif 'start' in item.keys():
             if 'end' in item.keys():
                 end = item['end']
