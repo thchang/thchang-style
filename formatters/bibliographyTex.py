@@ -264,7 +264,7 @@ def proposalTex(inlist):
         if 'url' in item.keys():
             outstr = outstr + "\\\\\n{\\tt url: \\url{" + f"{item['url']}" + "}"
         outlist.append(outstr)
-    return "\n\n\\medskip\n\n".join(outlist)
+    return "\n\n\\bigskip\n\n".join(outlist)
 
 def anypubTex(inlist):
     outlist = []
