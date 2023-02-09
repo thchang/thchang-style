@@ -694,3 +694,100 @@ def collapsableMedWeb(inlist):
     </script>
     <p>\n"""
     return outstr
+
+def collapsableLongWeb(inlist):
+    yearlists = {}
+    for item in inlist:
+        outstr = ""
+        if 'year' in item.keys():
+            outstr = outstr + f"{item['year']}. "
+        if 'author' in item.keys():
+            outstr = outstr + f"{item['author']}. "
+        if 'journal' not in item.keys() and 'booktitle' not in item.keys():
+            if 'title' in item.keys():
+                outstr = outstr + f"<i>{item['title']}</i>. "
+        else:
+            if 'title' in item.keys():
+                outstr = outstr + f"{item['title']}. "
+        if 'journal' in item.keys():
+            outstr = outstr + f"<i>{item['journal']}</i>"
+            if 'volume' in item.keys():
+                outstr = outstr + f" {item['volume']}"
+            if 'number' in item.keys():
+                outstr = outstr + f"({item['number']})"
+            if 'articleno' in item.keys():
+                outstr = outstr + f", Article {item['articleno']}"
+            if 'pages' in item.keys():
+                outstr = outstr + f", {item['pages']}"
+            outstr = outstr + ". "
+        elif 'booktitle' in item.keys():
+            if 'chapter' in item.keys():
+                outstr = outstr + f"Ch. {item['chapter']} "
+            outstr = outstr + "<i>In " + f"{item['booktitle']}"
+            if 'volume' in item.keys():
+                outstr = outstr + f" Vol. {item['volume']}"
+            if 'number' in item.keys():
+                outstr = outstr + f", No. {item['number']}"
+            outstr = outstr  + "</i>"
+            if 'articleno' in item.keys():
+                outstr = outstr + f", Article {item['articleno']}"
+            if 'pages' in item.keys():
+                outstr = outstr + f", {item['pages']}"
+            outstr = outstr + ". "
+        elif 'type' in item.keys():
+            outstr = outstr + f"{item['type']}"
+            if 'number' in item.keys():
+                outstr = outstr + f" {item['number']}"
+            outstr = outstr + ". "
+            if 'organization' in item.keys():
+                outstr = outstr + f"{item['organization']}"
+                if 'location' in item.keys():
+                    outstr = outstr + ", " + f"{item['location']}"
+                outstr = outstr + ". "
+        else:
+            if 'number' in item.keys():
+                outstr = outstr + f"{item['number']}. "
+            if 'organization' in item.keys():
+                outstr = outstr + f"{item['organization']}"
+                if 'location' in item.keys():
+                    outstr = outstr + ", " + f"{item['location']}"
+            outstr = outstr + ". "
+        if 'note' in item.keys():
+            outstr = outstr + f"{item['note']}. "
+        if 'doi' in item.keys():
+            outstr = (outstr + '<a href="https://doi.org/' +
+                      f'{item["doi"]}">doi: {item["doi"]}</a>')
+        elif 'url' in item.keys():
+            outstr = outstr + f'<a href="{item["url"]}">url: {item["url"]}</a>'
+        elif 'isbn' in item.keys():
+            outstr = outstr + "In isbn: " + f"{item['isbn']}"
+        if 'bib' in item.keys():
+            popup_text = item['bib'].replace("\\", "\\\\")
+            outstr = outstr + f"""<br><a onclick="window.prompt('Bib entry:',\`{popup_text}\`)">View bib entry</a>\n"""
+        if "All" in yearlists.keys():
+            yearlists['All'].append(outstr)
+        else:
+            yearlists['All'] = [outstr]
+    outstr = ""
+    for key in yearlists.keys():
+        outstr = outstr + f"""    <button onclick="pubs{key}LongShow()"
+        id="pubs{key}LongButton">
+        {key} ({len(yearlists[key])} items)</button>
+    </p>
+    <p id="pubs{key}LongList"></p>
+    <script>
+    var pubs{key}LongButton = document.getElementById("pubs{key}LongButton");
+    pubs{key}LongButton.style.cssText = 'width: 100%';
+    function pubs{key}LongShow() {{
+        document.getElementById("pubs{key}LongList").innerHTML = `
+    <button onclick="pubs{key}LongHide()">hide</button><br>
+    {"<br><br>".join(yearlists[key])}
+    `;
+    }}
+
+    function pubs{key}LongHide() {{
+        document.getElementById("pubs{key}LongList").innerHTML = "";
+    }}
+    </script>
+    <p>\n"""
+    return outstr
