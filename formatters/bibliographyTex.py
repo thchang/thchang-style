@@ -222,28 +222,19 @@ def proposalTex(inlist):
                 outstr = outstr + f": {item['subtitle']}. "
             else:
                 outstr = outstr + ". "
-        outstr = outstr + "\\\\\n"
-        if 'role' in item.keys():
-            outstr = (outstr + "\\tabboxmed{{\\bf Role: " +
-                      f"{item['role']}." + "}}")
-            if 'collaborators' in item.keys():
-                for collab in item['collaborators']:
-                    for key in collab.keys():
-                        outstr = (outstr + "\\tabboxmed{" +
-                                  f" {key}: {collab[key]}." + "}")
-        outstr = outstr + "\\\\\n"
+        outstr = outstr + "\\\\\n\\tabboxsmall{\\quad}\n"
         if 'agency' in item.keys():
-            outstr = outstr + f"{item['agency']}"
+            outstr = outstr + f"{{\\it {item['agency']}}}"
         if 'foa' in item.keys():
             if 'agency' in item.keys():
-                outstr = outstr + ": "
+                outstr = outstr + "{\\it: }"
             outstr = outstr + "{\\it " + f"{item['foa']}" + "}"
         if 'number' in item.keys():
             if 'foa' in item.keys():
                 outstr = outstr + f" ({item['number']})"
             else:
                 outstr = outstr + f" {item['number']}"
-        outstr = outstr + ".\\\\\n"
+        outstr = outstr + ".\\\\\n\\tabboxsmall{\\quad}\n"
         if 'type' in item.keys():
             outstr = (outstr + f"Type: {item['type']}")
         if 'numpages' in item.keys():
@@ -253,16 +244,28 @@ def proposalTex(inlist):
         if 'length' in item.keys():
             outstr = (outstr + f".\\hskip 2em Length: {item['length']}")
         outstr = outstr + "."
+        outstr = outstr + "\\\\\n\\tabboxsmall{\\quad}\n"
+        if 'role' in item.keys():
+            outstr = (outstr + "\\tabboxmed{{\\bf Role: " +
+                      f"{item['role']}." + "}}")
+            if 'collaborators' in item.keys():
+                for collab in item['collaborators']:
+                    for key in collab.keys():
+                        outstr = (outstr + "\\tabboxmed{" +
+                                  f" {key}: {collab[key]}." + "}")
         if 'note' in item.keys():
-            outstr = outstr + f"\\\\\n{item['note']}"
+            outstr = outstr + f"\\\\\n\\tabboxsmall{{\\quad}}\n{item['note']}"
         if 'doi' in item.keys():
-            outstr = (outstr + "\\\\\n{\\tt doi:} \\href{https://doi.org/" +
+            outstr = (outstr + "\\\\\n\\tabboxsmall{\\quad}\n{\\tt doi:} " +
+                      "\\href{https://doi.org/" +
                       f"{item['doi']}" + "}{" + f"{item['doi']}" + "}")
         if 'git' in item.keys():
-            outstr = (outstr + "\\\\\n{\\tt git:} \\url{" +
+            outstr = (outstr + "\\\\\n\\tabboxsmall{\\quad}\n{\\tt git:} "+
+                      "\\url{" +
                       f"{item['git']}" + "}")
         if 'url' in item.keys():
-            outstr = outstr + "\\\\\n{\\tt url: \\url{" + f"{item['url']}" + "}"
+            outstr = (outstr + "\\\\\n\\tabboxsmall{\\quad}\n{\\tt url: " +
+                      "\\url{" + f"{item['url']}" + "}")
         outlist.append(outstr)
     return "\n\n\\bigskip\n\n".join(outlist)
 
