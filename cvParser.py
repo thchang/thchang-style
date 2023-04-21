@@ -16,6 +16,8 @@ class CvParser:
             self.swaplines = fp.readlines()
         # Read metadata
         self.metanames = []
+        self.students = []
+        self.studenttypes = []
         with open("info/meta.yaml") as fp:
             yamllist = yaml.load(fp, Loader=yaml.Loader)
             for item in yamllist:
@@ -24,6 +26,13 @@ class CvParser:
                     if 'alias' in item['me'].keys():
                         for ai in item['me']['alias']:
                             self.metanames.append(ai)
+                if 'advisee' in item.keys():
+                    if 'alias' in item['advisee'].keys():
+                        for ai in item['advisee']['alias']:
+                            self.students.append(ai)
+                    if 'type' in item['advisee'].keys():
+                        for ai in item['advisee']['type']:
+                            self.studenttypes.append(ai)
         return
     
     def latex_swapper(self, line):
@@ -43,6 +52,16 @@ class CvParser:
             newline = newline.replace(cols[0], cols[1])
         for name in self.metanames:
             newline = newline.replace(name, "{\\bf " + name + "}")
+        seentypes = []
+        for name, stype in zip(self.students, self.studenttypes):
+            if stype not in seentypes:
+                i = len(seentypes) + 1
+                newline = newline.replace(name, name + f"\\footnotemark[{i}]" +
+                                          f"\\footnotetext[{i}]{{= {stype}}}")
+                seentypes.append(stype)
+            else:
+                i = seentypes.index(stype) + 1
+                newline = newline.replace(name, name + f"\\footnotemark[{i}]")
         return newline
 
     def __call__(self, fname):
