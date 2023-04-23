@@ -91,9 +91,8 @@ def peopleWeb(inlist):
             newstr = newstr + f" ({item['institution']})"
         if 'website' in item.keys():
             newstr = newstr + "</a>"
-        #if 'type' in item.keys():
-        #    for ti in item['type']:
-        #        newstr = newstr + f", {it}"
+        if 'type' in item.keys():
+            newstr = newstr + f", {item['type']}"
         if 'description' in item.keys():
             newstr = newstr + "<ul>\n"
             for desc in item['description']:
@@ -124,9 +123,8 @@ def peopleShortWeb(inlist):
             newstr = newstr + f" ({item['institution']})"
         if 'website' in item.keys():
             newstr = newstr + "</a>"
-        #if 'type' in item.keys():
-        #    for ti in item['type']:
-        #        newstr = newstr + f", {it}"
+        if 'type' in item.keys():
+            newstr = newstr + f", {item['type']}"
         outlist.append(newstr)
     return "<br>\n" + "\n<br>\n".join(outlist) + "\n"
 
