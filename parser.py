@@ -17,7 +17,10 @@ if not os.path.exists(outdir) or not os.path.isdir(outdir):
 
 # Check which parser to use
 if lines[0].strip().lower() == "pdflatex":
-    from cvParser import CvParser as Parser
+    from cvParser import PdflParser as Parser
+    outname = fname.split("/")[-1].split(".")[0] + ".tex"
+elif lines[0].strip().lower() == "lualatex":
+    from cvParser import LualParser as Parser
     outname = fname.split("/")[-1].split(".")[0] + ".tex"
 elif lines[0].strip().lower() == "html":
     from webParser import WebParser as Parser
@@ -34,6 +37,8 @@ with open(outdir + "/" + outname, "w") as fp:
     fp.write(content)
 if lines[0].strip().lower() == "pdflatex":
     os.system(f"cd {outdir} && pdflatex {outname}")
+elif lines[0].strip().lower() == "lualatex":
+    os.system(f"cd {outdir} && lualatex -recorder {outname}")
 elif lines[0].strip().lower() == "html":
     if os.path.exists("timeline.svg"):
         os.rename("timeline.svg", f"{outdir}/timeline.svg")

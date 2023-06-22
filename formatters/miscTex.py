@@ -117,7 +117,7 @@ def peopleShortTex(inlist):
         if 'type' in item.keys():
             newstr = newstr + f", {item['type']}"
         outlist.append(newstr)
-    return "\n\n\\bigskip\n\n".join(outlist) + "\n\n"
+    return "\n\n\\smallskip\n\n".join(outlist) + "\n\n"
 
 def skillsTex(inlist):
     outlist = []

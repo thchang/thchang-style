@@ -2,7 +2,7 @@ INSTALL = .
 BUILDDIR = ./build
 IMGDIR = img
 
-all: $(BUILDDIR)/web.html $(BUILDDIR)/cv.pdf $(BUILDDIR)/resume.pdf
+all: $(BUILDDIR)/web.html $(BUILDDIR)/cv.pdf $(BUILDDIR)/resume.pdf $(BUILDDIR)/lualcv.pdf
 
 $(BUILDDIR)/web.html: info/* web.template
 	python3 $(INSTALL)/parser.py web.template $(BUILDDIR)
@@ -10,6 +10,9 @@ $(BUILDDIR)/web.html: info/* web.template
 
 $(BUILDDIR)/cv.pdf: info/* cv.template
 	python3 $(INSTALL)/parser.py cv.template $(BUILDDIR)
+
+$(BUILDDIR)/lualcv.pdf: info/* cvlual.template
+	python3 $(INSTALL)/parser.py cvlual.template $(BUILDDIR)
 
 $(BUILDDIR)/resume.pdf: info/* resume.template
 	python3 $(INSTALL)/parser.py resume.template $(BUILDDIR)
