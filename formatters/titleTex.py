@@ -59,8 +59,8 @@ def titleLualatex(inlist):
         outstr.append("\\\\\n}\n\n\\makecvheader\n\n")
         outstr.append("\\makecvfooter\n\t\\today\n")
         if 'alias' in item.keys():
-            outstr.append(f"\t{{{item['alias'][0]} - CV}}\n")
+            outstr.append(f"\t{{{item['alias'][0].replace(' ', '~')} - CV}}\n")
         else:
-            outstr.append(f"\t{{{item['name']} - CV}}\n")
+            outstr.append(f"\t{{{item['name'].replace(' ', '~')} - CV}}\n")
         outstr.append("\t{\\thepage}\n")
     return "".join(outstr)

@@ -269,6 +269,7 @@ class LualParser:
         outlines.append("".join(lines))
         outlines.append("\\begin{document}")
         # Loop over lines in file
+        nsecs = 0
         for count, line in enumerate(inlines):
             # Parse first line
             if count == 0:
@@ -287,10 +288,17 @@ class LualParser:
                                     " ".join(words[1:]) +
                                     "}\n\\nopagebreak\\medskip" +
                                     "\\nopagebreak\n\n")
+                    nsecs += 1
                 else:
-                    outlines.append("\n\n\\bigskip\n\\sectionTitle{" +
-                                    " ".join(words[1:]) + "}{\\faBookmark}\n" +
-                                    "\\nopagebreak\\bigskip\\nopagebreak\n\n")
+                    if nsecs > 0:
+                        outlines.append("\n\n\\bigskip\n\\sectionTitle{" +
+                                        " ".join(words[1:]) + "}{\\faBookmark}\n" +
+                                        "\\nopagebreak\\bigskip\\nopagebreak\n\n")
+                    else:
+                        outlines.append("\n\n\\sectionTitle{" +
+                                        " ".join(words[1:]) + "}{\\faBookmark}\n" +
+                                        "\\nopagebreak\\bigskip\\nopagebreak\n\n")
+                    nsecs += 1
             # Extract data from yaml/bib files
             else:
                 # Parse + tokenize command
