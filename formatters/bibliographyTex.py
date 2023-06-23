@@ -228,8 +228,8 @@ def proposalTex(inlist):
                       f"{item['role']}" + "}")
             if 'collaborators' in item.keys():
                 outstr = outstr + " ("
-                for collab in item['collaborators']:
-                    for ki, key in enumerate(collab.keys()):
+                for ki, collab in enumerate(item['collaborators']):
+                    for key in collab.keys():
                         if ki > 0:
                             outstr = (outstr + f", {key}: {collab[key]}")
                         else:
@@ -240,7 +240,7 @@ def proposalTex(inlist):
         if 'budget' in item.keys():
             outstr = (outstr + f"{item['budget']}")
             if 'share' in item.keys():
-                outstr = outstr + f" (our share: {item['share']})"
+                outstr = outstr + f" (my share: {item['share']})"
         if 'length' in item.keys():
             if 'budget' in item.keys():
                 outstr = outstr + " for "
