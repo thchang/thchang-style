@@ -284,20 +284,20 @@ class LualParser:
             elif line.strip()[0] == "#":
                 words = line.strip().split()
                 if len(words[0]) > 1 and words[0][1] == "#":
-                    outlines.append("\n\n\\medskip\n\\textbf{\large " +
+                    outlines.append("\n\n\\medskip\n\n\\goodbreak\n\\textbf{\large " +
                                     " ".join(words[1:]) +
-                                    "}\n\\nopagebreak\\medskip" +
+                                    "}\n\n\\nopagebreak\n\n\\medskip\n\n" +
                                     "\\nopagebreak\n\n")
                     nsecs += 1
                 else:
                     if nsecs > 0:
-                        outlines.append("\n\n\\bigskip\n\\sectionTitle{" +
-                                        " ".join(words[1:]) + "}{\\faBookmark}\n" +
-                                        "\\nopagebreak\\bigskip\\nopagebreak\n\n")
+                        outlines.append("\n\n\\bigskip\n\n\\goodbreak\n\\sectionTitle{" +
+                                        " ".join(words[1:]) + "}{\\faBookmark}\n\n" +
+                                        "\\nopagebreak\n\n\\bigskip\n\n\\nopagebreak\n\n")
                     else:
                         outlines.append("\n\n\\sectionTitle{" +
-                                        " ".join(words[1:]) + "}{\\faBookmark}\n" +
-                                        "\\nopagebreak\\bigskip\\nopagebreak\n\n")
+                                        " ".join(words[1:]) + "}{\\faBookmark}\n\n" +
+                                        "\\nopagebreak\n\n\\bigskip\n\n\\nopagebreak\n\n")
                     nsecs += 1
             # Extract data from yaml/bib files
             else:
