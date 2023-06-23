@@ -1,5 +1,6 @@
 def articleTex(inlist):
     outlist = []
+    outlist.append("\n\\begin{etaremune}")
     for item in inlist:
         outstr = ""
         if 'year' in item.keys():
@@ -29,10 +30,11 @@ def articleTex(inlist):
         elif 'isbn' in item.keys():
             outstr = outstr + "In {\\tt isbn:} " + f"{item['isbn']}"
         outlist.append(outstr)
-    return "\n\n\\medskip\n\n".join(outlist)
+    return "\n\\item ".join(outlist) + "\n\\end{etaremune}\n"
 
 def proceedingsTex(inlist):
     outlist = []
+    outlist.append("\n\\begin{etaremune}")
     for item in inlist:
         outstr = ""
         if 'year' in item.keys():
@@ -65,10 +67,11 @@ def proceedingsTex(inlist):
         elif 'isbn' in item.keys():
             outstr = outstr + "In {\\tt isbn:} " + f"{item['isbn']}"
         outlist.append(outstr)
-    return "\n\n\\medskip\n\n".join(outlist)
+    return "\n\\item ".join(outlist) + "\n\\end{etaremune}\n"
 
 def techreportTex(inlist):
     outlist = []
+    outlist.append("\n\\begin{etaremune}")
     for item in inlist:
         outstr = ""
         if 'year' in item.keys():
@@ -98,10 +101,11 @@ def techreportTex(inlist):
         elif 'isbn' in item.keys():
             outstr = outstr + "In {\\tt isbn:} " + f"{item['isbn']}"
         outlist.append(outstr)
-    return "\n\n\\medskip\n\n".join(outlist)
+    return "\n\\item ".join(outlist) + "\n\\end{etaremune}\n"
 
 def talkTex(inlist):
     outlist = []
+    outlist.append("\n\\begin{etaremune}")
     for item in inlist:
         outstr = ""
         if 'month' in item.keys():
@@ -129,10 +133,11 @@ def talkTex(inlist):
         if 'note' in item.keys():
             outstr = outstr + f"{item['note']}. "
         outlist.append(outstr)
-    return "\n\n\\medskip\n\n".join(outlist)
+    return "\n\\item ".join(outlist) + "\n\\end{etaremune}\n"
 
 def miscPubTex(inlist):
     outlist = []
+    outlist.append("\n\\begin{etaremune}")
     for item in inlist:
         outstr = ""
         if 'year' in item.keys():
@@ -169,10 +174,11 @@ def miscPubTex(inlist):
         if 'note' in item.keys():
             outstr = outstr + f"{item['note']}. "
         outlist.append(outstr)
-    return "\n\n\\medskip\n\n".join(outlist)
+    return "\n\\item ".join(outlist) + "\n\\end{etaremune}\n"
 
 def softwareTex(inlist):
     outlist = []
+    outlist.append("\n\\begin{etaremune}")
     for item in inlist:
         outstr = ""
         if 'year' in item.keys():
@@ -202,75 +208,89 @@ def softwareTex(inlist):
         if 'url' in item.keys():
             outstr = outstr + "\\\\\n{\\tt url:} \\url{" + f"{item['url']}" + "}"
         outlist.append(outstr)
-    return "\n\n\\medskip\n\n".join(outlist)
+    return "\n\\item ".join(outlist) + "\n\\end{etaremune}\n"
 
 def proposalTex(inlist):
     outlist = []
+    outlist.append("\n\\begin{etaremune}")
     for item in inlist:
         outstr = ""
         if 'year' in item.keys():
-            outstr = outstr + "\\tabboxsmall{" f"{item['year']}." + "} "
+            outstr = outstr + f"{item['year']}. "
         elif 'start' in item.keys():
-            outstr = outstr + "\\tabboxmed{" f"{item['start']} - "
+            outstr = outstr + f"{item['start']} - "
             if 'end' in item.keys():
-                outstr = outstr + f"{item['end']}.}} "
+                outstr = outstr + f"{item['end']}. "
             else:
-                outstr = outstr + "Present.} "
+                outstr = outstr + "Present. "
+        if 'role' in item.keys():
+            outstr = (outstr + "{\\bf " +
+                      f"{item['role']}" + "}")
+            if 'collaborators' in item.keys():
+                outstr = outstr + " ("
+                for collab in item['collaborators']:
+                    for ki, key in enumerate(collab.keys()):
+                        if ki > 0:
+                            outstr = (outstr + f", {key}: {collab[key]}")
+                        else:
+                            outstr = (outstr + f"{key}: {collab[key]}")
+                outstr = outstr + "), "
+            else:
+                outstr = outstr + ", "
+        if 'budget' in item.keys():
+            outstr = (outstr + f"{item['budget']}")
+            if 'share' in item.keys():
+                outstr = outstr + f" (our share: {item['share']})"
+        if 'length' in item.keys():
+            if 'budget' in item.keys():
+                outstr = outstr + " for "
+            outstr = (outstr + f"{item['length']}")
+        if 'role' in item.keys() or 'budget' in item.keys() or 'length' in item.keys():
+            outstr = outstr + ". "
         if 'title' in item.keys():
-            outstr = outstr + f"{item['title']}"
+            outstr = outstr + f"{{\\sl {item['title']}"
             if 'subtitle' in item.keys():
-                outstr = outstr + f": {item['subtitle']}. "
+                outstr = outstr + f": {item['subtitle']}}}, "
             else:
-                outstr = outstr + ". "
-        outstr = outstr + "\\\\\n\\tabboxsmall{\\quad}\n"
+                outstr = outstr + "}, "
+        if 'type' in item.keys():
+            outstr = (outstr + f"{item['type']}")
+        if 'numpages' in item.keys():
+            outstr = (outstr + f" ({item['numpages']})")
+        if 'type' in item.keys() or 'numpages' in item.keys():
+            outstr = outstr + ". "
         if 'agency' in item.keys():
-            outstr = outstr + f"{{\\it {item['agency']}}}"
+            outstr = outstr + f"{item['agency']}"
         if 'foa' in item.keys():
             if 'agency' in item.keys():
-                outstr = outstr + "{\\it: }"
-            outstr = outstr + "{\\it " + f"{item['foa']}" + "}"
+                outstr = outstr + ": "
+            outstr = outstr + f"{item['foa']}"
         if 'number' in item.keys():
             if 'foa' in item.keys():
                 outstr = outstr + f" ({item['number']})"
             else:
                 outstr = outstr + f" {item['number']}"
-        outstr = outstr + ".\\\\\n\\tabboxsmall{\\quad}\n"
-        if 'type' in item.keys():
-            outstr = (outstr + f"Type: {item['type']}")
-        if 'numpages' in item.keys():
-            outstr = (outstr + f" ({item['numpages']})")
-        if 'budget' in item.keys():
-            outstr = (outstr + f".\\hskip 2em Budget: {item['budget']}")
-        if 'length' in item.keys():
-            outstr = (outstr + f".\\hskip 2em Length: {item['length']}")
-        outstr = outstr + "."
-        outstr = outstr + "\\\\\n\\tabboxsmall{\\quad}\n"
-        if 'role' in item.keys():
-            outstr = (outstr + "\\tabboxmed{{\\bf Role: " +
-                      f"{item['role']}." + "}}")
-            if 'collaborators' in item.keys():
-                for collab in item['collaborators']:
-                    for key in collab.keys():
-                        outstr = (outstr + "\\tabboxmed{" +
-                                  f" {key}: {collab[key]}." + "}")
+        if 'agency' in item.keys() or 'foa' in item.keys() or 'number' in item.keys():
+            outstr = outstr + ". "
         if 'note' in item.keys():
-            outstr = outstr + f"\\\\\n\\tabboxsmall{{\\quad}}\n{item['note']}"
+            outstr = outstr + f"{item['note']} "
         if 'doi' in item.keys():
-            outstr = (outstr + "\\\\\n\\tabboxsmall{\\quad}\n{\\tt doi:} " +
+            outstr = (outstr + "{\\tt doi:} " +
                       "\\href{https://doi.org/" +
                       f"{item['doi']}" + "}{" + f"{item['doi']}" + "}")
         if 'git' in item.keys():
-            outstr = (outstr + "\\\\\n\\tabboxsmall{\\quad}\n{\\tt git:} "+
+            outstr = (outstr + "{\\tt git:} "+
                       "\\url{" +
                       f"{item['git']}" + "}")
         if 'url' in item.keys():
-            outstr = (outstr + "\\\\\n\\tabboxsmall{\\quad}\n{\\tt url: " +
+            outstr = (outstr + "{\\tt url}: " +
                       "\\url{" + f"{item['url']}" + "}")
         outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+    return "\n\\item ".join(outlist) + "\n\\end{etaremune}\n"
 
 def anypubTex(inlist):
     outlist = []
+    outlist.append("\n\\begin{etaremune}")
     for item in inlist:
         outstr = ""
         if 'year' in item.keys():
@@ -336,4 +356,4 @@ def anypubTex(inlist):
         elif 'isbn' in item.keys():
             outstr = outstr + "In {\\tt isbn:} " + f"{item['isbn']}"
         outlist.append(outstr)
-    return "\n\n\\medskip\n\n".join(outlist)
+    return "\n\\item ".join(outlist) + "\n\\end{etaremune}\n"

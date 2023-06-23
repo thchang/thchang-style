@@ -37,7 +37,9 @@ with open(outdir + "/" + outname, "w") as fp:
     fp.write(content)
 if lines[0].strip().lower() == "pdflatex":
     os.system(f"cd {outdir} && pdflatex {outname}")
+    os.system(f"cd {outdir} && pdflatex {outname}")
 elif lines[0].strip().lower() == "lualatex":
+    os.system(f"cd {outdir} && lualatex -recorder {outname}")
     os.system(f"cd {outdir} && lualatex -recorder {outname}")
 elif lines[0].strip().lower() == "html":
     if os.path.exists("timeline.svg"):
