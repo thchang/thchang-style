@@ -98,22 +98,22 @@
 
 \DeclareUnicodeCharacter{00E9}{\'{e}}
 % Define default accent colors
-\definecolor{basecolor}{HTML}{000066}       %BLUE
+\definecolor{basecolor}{HTML}{003580}       %BLUE
 
 \ifundef{\@green} {
   \ifundef{\@red} {
     \ifundef{\@indigo}{
       \ifundef{\@orange} {
         \ifundef{\@monochrome} {}
-        { \definecolor{basecolor}{HTML}{000000}}
+        { \definecolor{basecolor}{HTML}{000000}}         % MONOCHROME
       }
-      { \definecolor{basecolor}{HTML}{e68a00} }
+      { \definecolor{basecolor}{HTML}{c05900} }           % ORANGE
     }
-    { \definecolor{basecolor}{rgb}{0.2, 0.07, 0.48} }
+    { \definecolor{basecolor}{rgb}{0.2, 0.07, 0.48} }     % INDIGO
   }
-  { \definecolor{basecolor}{HTML}{b30000} }     %RED
+  { \definecolor{basecolor}{rgb}{0.65, 0.0, 0.1} }        % RED
 }
-{ \definecolor{basecolor}{rgb}{0.0, 0.62, 0.38} }
+{ \definecolor{basecolor}{rgb}{0.0, 0.45, 0.15} }         % GREEN
 
 \definecolor{darkGrey}{HTML}{989898}
 

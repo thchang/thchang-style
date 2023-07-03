@@ -266,7 +266,15 @@ class LualParser:
             lines[i] = line.replace("yaac-another-awesome-cv",
                                     os.path.dirname(__file__) +
                                     "/styles/lualatex/yaac-another-awesome-cv")
-        outlines.append("".join(lines))
+        # Set the color, if present
+        COLOR = "indigo"
+        with open("info/meta.yaml", "r") as fp:
+            yamllist = yaml.load(fp, Loader=yaml.Loader)
+            for item in yamllist:
+                if 'cv' in item.keys():
+                    if 'COLOR' in item['cv'].keys():
+                        COLOR = item['cv']['COLOR']
+        outlines.append("".join(lines).replace("COLOR", COLOR))
         outlines.append("\\begin{document}")
         # Loop over lines in file
         nsecs = 0

@@ -4,6 +4,9 @@
     BGCOLOR: rgba(250, 250, 255, 0.9)
     FGCOLOR: rgba(255, 255, 255, 1.0)
 
+- cv:
+    COLOR: indigo
+
 - me:
     name: Tyler H. Chang
     alias:
