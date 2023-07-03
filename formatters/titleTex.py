@@ -37,7 +37,7 @@ def titleLualatex(inlist):
     for item in inlist:
         if 'name' not in item.keys():
             raise ValueError(f"title data does not contain a name field")
-        outstr.append(f"\n\\name{{{item['name']}}}{{}}\n")
+        outstr.append(f"\n\\name{{{item['name']}}}{{ -- CV}}\n")
         institution = []
         if 'institution' in item.keys():
             if 'department' in item.keys():
