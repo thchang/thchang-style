@@ -37,9 +37,9 @@ def multilineTex(inlist):
             else:
                 outstr = ""
             if 'title' in item1.keys():
-                outstr = outstr + "{\\sl " + f"{item1['title']}" + "}"
+                outstr = outstr + "{ " + f"{item1['title']}" + "}"
             for key2 in item1.keys():
-                if key2 not in ('year', 'title'):
+                if key2 not in ('year', 'title', 'start', 'end', 'description'):
                     outstr = outstr + f", {item1[key2]}".strip()
             outlist.append(outstr)
         elif isinstance(item1, str):

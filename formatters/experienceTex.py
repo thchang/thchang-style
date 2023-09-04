@@ -171,11 +171,11 @@ def degreeLongTex(inlist):
                            f"{item['subtitle']}, {item['institution']}\n")
         if 'description' in item.keys():
             if isinstance(item['description'], str):
-                outstr = outstr + "\n\\bullitem {\\sl "
+                outstr = outstr + "\n\\bullitem { "
                 outstr = outstr + f"{item['description']}" + "}\n"
             elif isinstance(item['description'], list):
                 for i2 in item['description']:
-                    outstr = outstr + "\n\\bullitem {\\sl "
+                    outstr = outstr + "\n\\bullitem { "
                     outstr = outstr + f"{i2}" + "}\n"
         outlist.append(outstr)
     return "\n\n\\bigskip\n\n".join(outlist)

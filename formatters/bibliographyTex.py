@@ -184,7 +184,7 @@ def softwareTex(inlist):
         if 'year' in item.keys():
             outstr = outstr + f"{item['year']}. "
         if 'title' in item.keys():
-            outstr = outstr + "{\\bf " + f"{item['title']}" + "}"
+            outstr = outstr + "{ " + f"{item['title']}" + "}"
             if 'subtitle' in item.keys():
                 outstr = outstr + f": {item['subtitle']}. "
             else:
