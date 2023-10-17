@@ -80,7 +80,15 @@ def techreportTex(inlist):
             outstr = outstr + f"{item['author']}. "
         if 'title' in item.keys():
             outstr = outstr + "{\\sl " + f"{item['title']}" + "}. "
-        if 'type' in item.keys():
+        if 'booktitle' in item.keys():
+            outstr = outstr + f"In {item['booktitle']}"
+            if 'volume' in item.keys():
+                outstr = outstr + f" vol.\\ {item['volume']}"
+            if 'number' not in item.keys():
+                outstr = outstr + ". "
+            else:
+                outstr = outstr + ", "
+        elif 'type' in item.keys():
             outstr = outstr + f"{item['type']}"
             if 'number' not in item.keys():
                 outstr = outstr + ". "

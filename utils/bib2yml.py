@@ -290,6 +290,10 @@ def joinAll():
             output = output + f'    author: "{author}"\n'
         if title is not None:
             output = output + f'    title: "{title}"\n'
+        if booktitle is not None:
+            output = output + f'    booktitle: "{booktitle}"\n'
+        if volume is not None:
+            output = output + f'    volume: "{volume}"\n'
         if number is not None:
             output = output + f'    number: "{number}"\n'
         if organization is not None:
