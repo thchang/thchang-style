@@ -181,6 +181,13 @@ def miscPubTex(inlist):
             outstr = outstr + f"{item['location']}. "
         if 'note' in item.keys():
             outstr = outstr + f"{item['note']}. "
+        if 'doi' in item.keys():
+            outstr = (outstr + "{\\tt doi:} \\href{https://doi.org/" +
+                      f"{item['doi']}" + "}{" + f"{item['doi']}" + "}")
+        elif 'url' in item.keys():
+            outstr = outstr + "{\\tt url:} \\url{" + f"{item['url']}" + "}"
+        elif 'isbn' in item.keys():
+            outstr = outstr + "In {\\tt isbn:} " + f"{item['isbn']}"
         outlist.append(outstr)
     return "\n\\item ".join(outlist) + "\n\\end{etaremune}\n"
 
