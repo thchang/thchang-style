@@ -135,3 +135,26 @@ def skillsTex(inlist):
             outlist.append(item1.strip())
     return "\n\n".join(outlist)
 
+def compilationTex(inlist):
+    outlist = []
+    for item1 in inlist:
+        if isinstance(item1, list):
+            for item2 in item1:
+                outlist.append(str(item2).strip())
+        elif isinstance(item1, dict):
+            if "title" in item1 and "year" in item1:
+                outlist.append(f"{item1['title']} ({item1['year']})")
+            elif "title" in item1 and "start" in item1 and "end" in item1:
+                outlist.append(f"{item1['title']} ({item1['start']} -- {item1['end']})")
+            elif "title" in item1 and "start" in item1:
+                outlist.append(f"{item1['title']} ({item1['start']} -- Present)")
+            elif "title" in item1:
+                outlist.append(f"{item1['title']}")
+        elif isinstance(item1, str):
+            outlist.append(item1.strip())
+    if len(outlist) == 0:
+        outstr = ""
+    else:
+        outstr = "; ".join(outlist)
+    return outstr
+
