@@ -225,6 +225,42 @@ def softwareTex(inlist):
         outlist.append(outstr)
     return "\n\\item ".join(outlist) + "\n\\end{etaremune}\n"
 
+def proposalShortTex(inlist):
+    outlist = []
+    outlist.append("\n\\begin{etaremune}")
+    for item in inlist:
+        outstr = ""
+        if 'year' in item.keys():
+            outstr = outstr + f"{item['year']}. "
+        elif 'start' in item.keys():
+            outstr = outstr + f"{item['start']} - "
+            if 'end' in item.keys():
+                outstr = outstr + f"{item['end']}. "
+            else:
+                outstr = outstr + "Present. "
+        if 'role' in item.keys():
+            outstr = outstr + f"{{\\bf {item['role']}}}"
+        if 'budget' in item.keys():
+            if 'role' in item.keys():
+                outstr = outstr + ", "
+            outstr = outstr + f"{item['budget']}"
+        if 'role' in item.keys() or 'budget' in item.keys():
+            outstr = outstr + ". "
+        if 'title' in item.keys():
+            outstr = outstr + f"{{\\sl {item['title']}"
+            if 'subtitle' in item.keys():
+                outstr = outstr + f": {item['subtitle']}}}, "
+            else:
+                outstr = outstr + "}, "
+        if 'type' in item.keys():
+            outstr = (outstr + f"{item['type']}")
+        elif 'agency' in item.keys():
+            outstr = outstr + f"{item['agency']}"
+        if 'number' in item.keys():
+            outstr = outstr + f" ({item['number']})"
+        outlist.append(outstr)
+    return "\n\\item ".join(outlist) + "\n\\end{etaremune}\n"
+
 def proposalTex(inlist):
     outlist = []
     outlist.append("\n\\begin{etaremune}")

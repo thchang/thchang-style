@@ -1,7 +1,6 @@
 def experienceShortTex(inlist):
     outlist = []
     for item in inlist:
-        outstr = ""
         size = "small"
         if 'year' not in item.keys() and 'start' not in item.keys():
             raise ValueError("'year' or 'start' key is required for experience formatter")
@@ -25,21 +24,12 @@ def experienceShortTex(inlist):
                 years = f"{item['year']}"
         if isinstance(years, list):
             for i, year in enumerate(years):
-                if i > 0:
-                    outstr = outstr + f"\\\\\n \\tabbox{size}{{" + f"{year}" + ".} "
-                else:
-                    outstr = outstr + f"\\tabbox{size}{{" + f"{year}" + ".} "
-                outstr = outstr + "{\\bf "
+                outstr = f"\\tabbox{size}{{{year}.}}{{\\bf "
                 if 'title' in item.keys():
                     if isinstance(item['title'], list):
                         outstr = outstr + f"{item['title'][i]}"
                     else:
                         outstr = outstr + f"{item['title']}"
-                if 'subtitle' in item.keys():
-                    if isinstance(item['subtitle'], list):
-                        outstr = outstr + f", {item['subtitle'][i]}"
-                    else:
-                        outstr = outstr + f", {item['subtitle']}"
                 if 'institution' in item.keys():
                     if isinstance(item['institution'], list):
                         outstr = outstr + f": {item['institution'][i]}"
@@ -51,19 +41,24 @@ def experienceShortTex(inlist):
                         outstr = outstr + f", {item['department'][i]}"
                     else:
                         outstr = outstr + f", {item['department']}"
+                if 'subtitle' in item.keys():
+                    if isinstance(item['subtitle'], list):
+                        outstr = outstr + f" ({item['subtitle'][i]})"
+                    else:
+                        outstr = outstr + f" ({item['subtitle']})"
+                outlist.append(outstr)
         else:
-            outstr = outstr + f"\\tabbox{size}{{" + f"{years}" + ".} "
-            outstr = outstr + "{\\bf "
+            outstr = f"\\tabbox{size}{{{years}.}}{{\\bf "
             if 'title' in item.keys():
                 outstr = outstr + f"{item['title']}"
-            if 'subtitle' in item.keys():
-                outstr = outstr + f", {item['subtitle']}"
             if 'institution' in item.keys():
                 outstr = outstr + f": {item['institution']}"
             outstr = outstr + "}"
             if 'department' in item.keys():
                 outstr = outstr + f", {item['department']}"
-        outlist.append(outstr)
+            if 'subtitle' in item.keys():
+                outstr = outstr + f" ({item['subtitle']})"
+            outlist.append(outstr)
     return "\n\n\\smallskip\n\n".join(outlist)
 
 def experienceLongTex(inlist):
@@ -101,11 +96,6 @@ def experienceLongTex(inlist):
                         outstr = outstr + f"{item['title'][i]}"
                     else:
                         outstr = outstr + f"{item['title']}"
-                if 'subtitle' in item.keys():
-                    if isinstance(item['subtitle'], list):
-                        outstr = outstr + f", {item['subtitle'][i]}"
-                    else:
-                        outstr = outstr + f", {item['subtitle']}"
                 if 'institution' in item.keys():
                     if isinstance(item['institution'], list):
                         outstr = outstr + f": {item['institution'][i]}"
@@ -122,8 +112,6 @@ def experienceLongTex(inlist):
             outstr = outstr + "{\\bf "
             if 'title' in item.keys():
                 outstr = outstr + f"{item['title']}"
-            if 'subtitle' in item.keys():
-                outstr = outstr + f", {item['subtitle']}"
             if 'institution' in item.keys():
                 outstr = outstr + f": {item['institution']}"
             outstr = outstr + "}"
@@ -138,7 +126,7 @@ def experienceLongTex(inlist):
                     outstr = outstr + "\n\\bullitem "
                     outstr = outstr + f"{i2}"
         outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+    return "\n\n\\medskip\n\n".join(outlist)
 
 def degreeLongTex(inlist):
     outlist = []
@@ -178,7 +166,7 @@ def degreeLongTex(inlist):
                     outstr = outstr + "\n\\bullitem { "
                     outstr = outstr + f"{i2}" + "}\n"
         outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+    return "\n\n\\medskip\n\n".join(outlist)
 
 def degreeShortTex(inlist):
     outlist = []
@@ -209,5 +197,7 @@ def degreeShortTex(inlist):
                 years = f"{item['year']}"
         outstr = outstr + (f"{item['title']}, {years}, " +
                            f"{item['subtitle']}, {item['institution']}\n")
+        if 'honors' in item.keys():
+            outstr = outstr + f", {{\\sl {item['honors']}}}"
         outlist.append(outstr)
-    return "\n\n\\bigskip\n\n".join(outlist)
+    return "\n\n\\smallskip\n\n".join(outlist)

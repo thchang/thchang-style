@@ -49,6 +49,36 @@ def multilineTex(inlist):
     else:
         return "\n\n".join(outlist) + "\n\n"
 
+def numberedListTex(inlist):
+    outlist = []
+    for item1 in inlist:
+        if isinstance(item1, list):
+            for item2 in item1:
+                outlist.append(str(item2).strip())
+        elif isinstance(item1, dict):
+            if 'year' in item1.keys():
+                outstr = f"\\item {item1['year']}. "
+            elif 'start' in item1.keys():
+                if 'end' in item1.keys():
+                    end = item1['end']
+                else:
+                    end = "Present"
+                outstr = f"\\item {item1['start']} - {end}. "
+            else:
+                outstr = "\\item "
+            if 'title' in item1.keys():
+                outstr = outstr + f"{item1['title']}"
+            for key2 in item1.keys():
+                if key2 not in ('year', 'title', 'start', 'end', 'description'):
+                    outstr = outstr + f", {item1[key2]}".strip()
+            outlist.append(outstr)
+        elif isinstance(item1, str):
+            outlist.append(item1.strip())
+    if len(outlist) == 0:
+        return ""
+    else:
+        return "\n\\begin{etaremune}\n" + "\n".join(outlist) + "\n\\end{etaremune}\n"
+
 def bulletDateTex(inlist):
     outlist = []
     for item in inlist:

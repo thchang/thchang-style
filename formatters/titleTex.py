@@ -56,7 +56,7 @@ def titleLualatex(inlist):
             for key in item['links']:
                 if key.lower().strip() in ["github", "git hub", "git"]:
                     outstr.append(f"\n\t\\github{{{item['links'][key]}}}")
-        outstr.append("\\\\\n}\n\n\\makecvheader\n\n")
+        outstr.append("\n}\n\n\\makecvheader\n\n")
         outstr.append("\\makecvfooter\n\t\\today\n")
         if 'alias' in item.keys():
             outstr.append(f"\t{{{item['alias'][0].replace(' ', '~')} - CV}}\n")
