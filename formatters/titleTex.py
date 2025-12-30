@@ -48,14 +48,19 @@ def titleLualatex(inlist):
         if "email" in item.keys():
             outstr.append(f"\t\\email{{{item['email']}}}\n")
         if 'address' in item.keys():
-            outstr.append(f"\t\\address{{{item['address']}}}\\\\\n")
+            outstr.append(f"\t\\address{{{item['address']}}}\n")
         if "website" in item.keys():
             outstr.append(f"\t\\website{{{item['website']}}}" +
-                          f"{{{item['website']}}}")
+                          f"{{{item['website']}}}\\\\")
         if 'links' in item.keys():
             for key in item['links']:
                 if key.lower().strip() in ["github", "git hub", "git"]:
                     outstr.append(f"\n\t\\github{{{item['links'][key]}}}")
+                if key.lower().strip() in ["scholar", "google scholar",
+                                           "googlescholar"]:
+                    outstr.append("\n\t\\website" +
+                                  f"{{{item['links'][key]}}}" +
+                                  f"{{{item['links'][key]}}}")
         outstr.append("\n}\n\n\\makecvheader\n\n")
         outstr.append("\\makecvfooter\n\t\\today\n")
         if 'alias' in item.keys():
